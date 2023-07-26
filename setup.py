@@ -6,7 +6,7 @@ with open('README.md', encoding='utf-8') as f:
 
 setuptools.setup(
     name="PySide2-Material-Widgets",
-    version="0.1.0",
+    version="0.0.10",
     keywords="pyside2 material widgets",
     author="zhiyiYo",
     author_email="shokokawaii@outlook.com",
