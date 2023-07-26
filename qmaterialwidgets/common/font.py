@@ -1,6 +1,6 @@
 # coding: utf-8
-from PySide6.QtGui import QFont, QFontDatabase
-from PySide6.QtWidgets import QWidget, QApplication
+from PySide2.QtGui import QFont, QFontDatabase
+from PySide2.QtWidgets import QWidget, QApplication
 
 
 def setFont(widget: QWidget, fontSize=14, weight=QFont.Weight.Normal):

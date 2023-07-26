@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import List
 
-from PySide6.QtCore import (QAbstractAnimation, QEasingCurve, QPoint, QPropertyAnimation,
+from PySide2.QtCore import (QAbstractAnimation, QEasingCurve, QPoint, QPropertyAnimation,
                           Signal)
-from PySide6.QtWidgets import QGraphicsOpacityEffect, QStackedWidget, QWidget
+from PySide2.QtWidgets import QGraphicsOpacityEffect, QStackedWidget, QWidget
 
 
 class OpacityAniStackedWidget(QStackedWidget):

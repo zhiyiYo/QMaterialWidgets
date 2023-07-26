@@ -2,9 +2,9 @@
 import os
 import sys
 
-from PySide6.QtCore import Qt, QTranslator
-from PySide6.QtGui import QFont
-from PySide6.QtWidgets import QApplication
+from PySide2.QtCore import Qt, QTranslator
+from PySide2.QtGui import QFont
+from PySide2.QtWidgets import QApplication
 from qmaterialwidgets import MaterialTranslator
 
 from app.common.config import cfg
@@ -12,9 +12,15 @@ from app.view.main_window import MainWindow
 
 
 # enable dpi scale
-if cfg.get(cfg.dpiScale) != "Auto":
+if cfg.get(cfg.dpiScale) == "Auto":
+    QApplication.setHighDpiScaleFactorRoundingPolicy(Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+else:
     os.environ["QT_ENABLE_HIGHDPI_SCALING"] = "0"
     os.environ["QT_SCALE_FACTOR"] = str(cfg.get(cfg.dpiScale))
+
+QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
 
 # create application
 app = QApplication(sys.argv)
@@ -33,4 +39,4 @@ app.installTranslator(galleryTranslator)
 w = MainWindow()
 w.show()
 
-app.exec()
+app.exec_()

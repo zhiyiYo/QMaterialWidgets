@@ -1,7 +1,7 @@
 # coding:utf-8
-from PySide6.QtCore import Qt, Signal
-from PySide6.QtGui import QPixmap
-from PySide6.QtWidgets import QWidget, QFrame, QLabel, QVBoxLayout, QHBoxLayout
+from PySide2.QtCore import Qt, Signal
+from PySide2.QtGui import QPixmap
+from PySide2.QtWidgets import QWidget, QFrame, QLabel, QVBoxLayout, QHBoxLayout
 
 from qmaterialwidgets import IconWidget, TextWrap, FlowLayout, CardWidget
 from ..common.signal_bus import signalBus

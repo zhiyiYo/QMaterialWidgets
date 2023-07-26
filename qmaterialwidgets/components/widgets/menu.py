@@ -2,12 +2,13 @@
 from enum import Enum
 from typing import List, Union
 
-from PySide6.QtCore import (QEasingCurve, QEvent, QPropertyAnimation, QObject, QModelIndex,
+from PySide2.QtCore import (QEasingCurve, QEvent, QPropertyAnimation, QObject, QModelIndex,
                           Qt, QSize, QRectF, Signal, QPoint, QTimer, QObject, QParallelAnimationGroup)
-from PySide6.QtGui import (QAction, QIcon, QColor, QPainter, QPen, QPixmap, QRegion, QCursor, QTextCursor, QHoverEvent,
+from PySide2.QtGui import (QIcon, QColor, QPainter, QPen, QPixmap, QRegion, QCursor, QTextCursor, QHoverEvent,
                            QFontMetrics, QKeySequence)
-from PySide6.QtWidgets import (QApplication, QStyle, QGraphicsDropShadowEffect, QListWidget, QWidget, QHBoxLayout,
-                               QListWidgetItem, QLineEdit, QTextEdit, QStyledItemDelegate, QStyleOptionViewItem)
+from PySide2.QtWidgets import (QApplication, QStyle, QGraphicsDropShadowEffect, QListWidget, QWidget, QHBoxLayout,
+                               QListWidgetItem, QLineEdit, QTextEdit, QStyledItemDelegate, QStyleOptionViewItem,
+                               QAction)
 
 from qmaterialwidgets.common.config import Theme
 

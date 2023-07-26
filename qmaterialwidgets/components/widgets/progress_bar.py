@@ -1,10 +1,10 @@
 # coding:utf-8
 from math import floor
 
-from PySide6.QtCore import (QEasingCurve, Qt, QPropertyAnimation, Property,
+from PySide2.QtCore import (QEasingCurve, Qt, QPropertyAnimation, Property,
                           QParallelAnimationGroup, QSequentialAnimationGroup, QLocale)
-from PySide6.QtGui import QPainter, QColor
-from PySide6.QtWidgets import QProgressBar
+from PySide2.QtGui import QPainter, QColor
+from PySide2.QtWidgets import QProgressBar
 
 from ...common.style_sheet import themeColor, isDarkTheme, palette, argbToQColor
 

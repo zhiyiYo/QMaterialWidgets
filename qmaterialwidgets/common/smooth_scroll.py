@@ -3,9 +3,9 @@ from collections import deque
 from enum import Enum
 from math import cos, pi, ceil
 
-from PySide6.QtCore import QDateTime, Qt, QTimer, QPoint
-from PySide6.QtGui import QWheelEvent
-from PySide6.QtWidgets import QApplication, QScrollArea, QAbstractScrollArea
+from PySide2.QtCore import QDateTime, Qt, QTimer, QPoint
+from PySide2.QtGui import QWheelEvent
+from PySide2.QtWidgets import QApplication, QScrollArea, QAbstractScrollArea
 
 
 class SmoothScroll:

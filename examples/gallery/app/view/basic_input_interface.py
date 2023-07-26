@@ -1,6 +1,6 @@
 # coding:utf-8
-from PySide6.QtCore import Qt, QSize, QUrl
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QButtonGroup, QHBoxLayout
+from PySide2.QtCore import Qt, QSize, QUrl
+from PySide2.QtWidgets import QWidget, QVBoxLayout, QButtonGroup, QHBoxLayout
 from qmaterialwidgets import (Action, OutlinedPushButton, TransparentToolButton, FilledPushButton,
                              RadioButton, CheckBox, Slider, SwitchButton, RoundMenu, FluentIcon,
                              FilledToolButton, TransparentToggleToolButton, TransparentToolButton,

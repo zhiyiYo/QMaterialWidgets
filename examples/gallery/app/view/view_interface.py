@@ -1,6 +1,6 @@
 # coding:utf-8
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import (QListWidgetItem, QFrame, QTreeWidgetItem, QHBoxLayout,
+from PySide2.QtCore import Qt
+from PySide2.QtWidgets import (QListWidgetItem, QFrame, QTreeWidgetItem, QHBoxLayout,
                              QTreeWidgetItemIterator, QTableWidgetItem)
 from qmaterialwidgets import TableWidget, ListWidget
 
@@ -141,7 +141,7 @@ class TableFrame(Frame):
                 self.table.setItem(i, j, QTableWidgetItem(songInfo[j]))
 
         self.hBoxLayout.setContentsMargins(0, 0, 0, 0)
-        self.setFixedSize(667, 428)
+        self.setFixedSize(635, 428)
 
         self.table.resizeColumnsToContents()
         self.table.horizontalHeader().setDefaultAlignment(

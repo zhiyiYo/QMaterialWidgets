@@ -1,9 +1,9 @@
 # coding: utf-8
 import sys
 
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QListWidgetItem, QListWidget, QWidget, QHBoxLayout
+from PySide2.QtCore import Qt
+from PySide2.QtGui import QIcon
+from PySide2.QtWidgets import QApplication, QListWidgetItem, QListWidget, QWidget, QHBoxLayout
 
 from qmaterialwidgets import ListView, setTheme, Theme, ListWidget, ElevatedCardWidget
 
@@ -50,7 +50,13 @@ class Demo(QWidget):
 
 
 if __name__ == "__main__":
+    # enable dpi scale
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
     app = QApplication(sys.argv)
     w = Demo()
     w.show()
-    app.exec()
+    app.exec_()

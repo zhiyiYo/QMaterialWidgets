@@ -1,7 +1,7 @@
 # coding:utf-8
-from PySide6.QtCore import QEasingCurve, QPropertyAnimation, Qt, QEvent
-from PySide6.QtGui import QColor, QResizeEvent
-from PySide6.QtWidgets import (QDialog, QGraphicsDropShadowEffect,
+from PySide2.QtCore import QEasingCurve, QPropertyAnimation, Qt, QEvent
+from PySide2.QtGui import QColor, QResizeEvent
+from PySide2.QtWidgets import (QDialog, QGraphicsDropShadowEffect,
                              QGraphicsOpacityEffect, QHBoxLayout, QWidget, QFrame)
 
 from ...common.config import isDarkTheme
@@ -77,7 +77,6 @@ class MaskDialogBase(QDialog):
     def eventFilter(self, obj, e: QEvent):
         if obj is self.window():
             if e.type() == QEvent.Resize:
-                re = QResizeEvent(e)
-                self.resize(re.size())
+                self.resize(e.size())
 
         return super().eventFilter(obj, e)

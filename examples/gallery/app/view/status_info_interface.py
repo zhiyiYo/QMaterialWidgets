@@ -1,7 +1,7 @@
 # coding:utf-8
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QPixmap, QColor
-from PySide6.QtWidgets import QWidget, QHBoxLayout, QLabel, QVBoxLayout
+from PySide2.QtCore import Qt
+from PySide2.QtGui import QPixmap, QColor
+from PySide2.QtWidgets import QWidget, QHBoxLayout, QLabel, QVBoxLayout
 from qmaterialwidgets import (InfoBadge, ToolTipFilter, TextPushButton, ImageLabel,
                             InfoBar, InfoBarIcon, FluentIcon, InfoBarPosition, ProgressBar,
                             IndeterminateProgressBar, ProgressRing, IndeterminateProgressRing,

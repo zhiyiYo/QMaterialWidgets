@@ -1,7 +1,7 @@
 # coding: utf-8
-from PySide6.QtCore import QEasingCurve, QEvent, QObject, QPropertyAnimation, Property, Signal
-from PySide6.QtGui import QMouseEvent, QEnterEvent, QColor
-from PySide6.QtWidgets import QWidget, QLineEdit, QGraphicsDropShadowEffect
+from PySide2.QtCore import QEasingCurve, QEvent, QObject, QPropertyAnimation, Property, Signal
+from PySide2.QtGui import QMouseEvent, QEnterEvent, QColor
+from PySide2.QtWidgets import QWidget, QLineEdit, QGraphicsDropShadowEffect
 
 from .config import qconfig
 

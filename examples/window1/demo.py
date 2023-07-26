@@ -1,9 +1,9 @@
 # coding:utf-8
 import sys
 
-from PySide6.QtCore import Qt, QUrl
-from PySide6.QtGui import QIcon, QDesktopServices
-from PySide6.QtWidgets import QApplication, QFrame, QHBoxLayout
+from PySide2.QtCore import Qt, QUrl
+from PySide2.QtGui import QIcon, QDesktopServices
+from PySide2.QtWidgets import QApplication, QFrame, QHBoxLayout
 from qmaterialwidgets import (NavigationItemPosition, MessageBox, setTheme, Theme, MaterialWindow,
                               SubtitleLabel, setFont)
 from qmaterialwidgets import FluentIcon as FIF
@@ -77,9 +77,15 @@ class Window(MaterialWindow):
 
 
 if __name__ == '__main__':
+    # enable dpi scale
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
     # setTheme(Theme.DARK)
 
     app = QApplication(sys.argv)
     w = Window()
     w.show()
-    app.exec()
+    app.exec_()

@@ -1,9 +1,9 @@
 # coding: utf-8
 from enum import Enum
 
-from PySide6.QtCore import Qt, QPoint, QRect
-from PySide6.QtGui import QPainterPath, QPainter
-from PySide6.QtWidgets import QCheckBox, QStyle, QStyleOptionButton, QWidget
+from PySide2.QtCore import Qt, QPoint, QRect
+from PySide2.QtGui import QPainterPath, QPainter
+from PySide2.QtWidgets import QCheckBox, QStyle, QStyleOptionButton, QWidget
 
 from ...common.icon import MaterialIconBase, Theme, getIconColor
 from ...common.style_sheet import MaterialStyleSheet

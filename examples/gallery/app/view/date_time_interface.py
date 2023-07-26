@@ -1,5 +1,5 @@
 # coding:utf-8
-from PySide6.QtCore import Qt
+from PySide2.QtCore import Qt
 from qmaterialwidgets import TimePicker, CalendarPicker
 
 from .gallery_interface import GalleryInterface

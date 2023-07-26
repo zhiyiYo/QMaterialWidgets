@@ -1,9 +1,9 @@
 # coding: utf-8
 from enum import Enum
 
-from PySide6.QtCore import Qt, QTimer, Property, Signal, QEvent, QPoint, QRect
-from PySide6.QtGui import QColor, QPainter, QHoverEvent, QPainterPath, QPen
-from PySide6.QtWidgets import QApplication, QHBoxLayout, QLabel, QToolButton, QWidget
+from PySide2.QtCore import Qt, QTimer, Property, Signal, QEvent, QPoint, QRect
+from PySide2.QtGui import QColor, QPainter, QHoverEvent, QPainterPath, QPen
+from PySide2.QtWidgets import QApplication, QHBoxLayout, QLabel, QToolButton, QWidget
 
 from ...common.color import translucent
 from ...common.style_sheet import MaterialStyleSheet, palette, themeColor, isDarkTheme

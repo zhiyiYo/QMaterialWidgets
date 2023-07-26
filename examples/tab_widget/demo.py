@@ -1,8 +1,8 @@
 # coding:utf-8
 import sys
 
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QApplication, QWidget, QStackedWidget, QVBoxLayout, QLabel
+from PySide2.QtCore import Qt
+from PySide2.QtWidgets import QApplication, QWidget, QStackedWidget, QVBoxLayout, QLabel
 
 from qmaterialwidgets import TabWidget, setTheme, Theme, FluentIcon, palette
 

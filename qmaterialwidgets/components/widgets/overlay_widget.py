@@ -1,7 +1,7 @@
 # coding:utf-8
-from PySide6.QtCore import Qt, Signal, QEvent
-from PySide6.QtGui import QPixmap, QPainter, QColor
-from PySide6.QtWidgets import QWidget
+from PySide2.QtCore import Qt, Signal, QEvent
+from PySide2.QtGui import QPixmap, QPainter, QColor
+from PySide2.QtWidgets import QWidget
 
 
 class OverlayWidget(QWidget):

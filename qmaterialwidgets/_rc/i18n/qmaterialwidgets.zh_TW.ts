@@ -168,6 +168,14 @@
         <source>Select time</source>
         <translation>選擇時間</translation>
     </message>
+    <message>
+        <source>Cancel</source>
+        <translation>取消</translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation>確認</translation>
+    </message>
 </context>
 <context>
     <name>TimePicker</name>

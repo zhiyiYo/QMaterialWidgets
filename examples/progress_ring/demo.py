@@ -1,8 +1,8 @@
 # coding:utf-8
 import sys
 
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout, QSpinBox
+from PySide2.QtCore import Qt
+from PySide2.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout, QSpinBox
 from qmaterialwidgets import ProgressRing, setTheme, Theme, IndeterminateProgressRing, setFont
 
 
@@ -54,7 +54,13 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
+    # enable dpi scale
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
     app = QApplication(sys.argv)
     w = Demo()
     w.show()
-    app.exec()
+    app.exec_()

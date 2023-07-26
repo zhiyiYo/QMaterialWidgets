@@ -4,9 +4,9 @@ from string import Template
 from typing import Union
 import weakref
 
-from PySide6.QtCore import QFile, QObject
-from PySide6.QtGui import QColor
-from PySide6.QtWidgets import QWidget
+from PySide2.QtCore import QFile, QObject
+from PySide2.QtGui import QColor
+from PySide2.QtWidgets import QWidget
 
 from .config import qconfig, Theme, isDarkTheme
 from .color import mixColor
@@ -93,13 +93,31 @@ class MaterialStyleSheet(StyleSheetBase, Enum):
 
     MENU = "menu"
     BUTTON = "button"
+    SLIDER = "slider"
     INFO_BAR = "info_bar"
+    SPIN_BOX = "spin_box"
     TOOL_TIP = "tool_tip"
     CHECK_BOX = "check_box"
+    COMBO_BOX = "combo_box"
+    LINE_EDIT = "line_edit"
+    LIST_VIEW = "list_view"
+    TREE_VIEW = "tree_view"
     INFO_BADGE = "info_badge"
+    TAB_WIDGET = "tab_widget"
+    TABLE_VIEW = "table_view"
     MESSAGE_BOX = "message_box"
+    TIME_PICKER = "time_picker"
+    COLOR_DIALOG = "color_dialog"
+    SETTING_CARD = "setting_card"
     TEACHING_TIP = "teaching_tip"
     SWITCH_BUTTON = "switch_button"
+    STATE_TOOL_TIP = "state_tool_tip"
+    CALENDAR_PICKER = "calendar_picker"
+    MATERIAL_WINDOW = "material_window"
+    FOLDER_LIST_DIALOG = "folder_list_dialog"
+    SETTING_CARD_GROUP = "setting_card_group"
+    EXPAND_SETTING_CARD = "expand_setting_card"
+    NAVIGATION_INTERFACE = "navigation_interface"
 
     def path(self, theme=Theme.AUTO):
         theme = qconfig.theme if theme == Theme.AUTO else theme

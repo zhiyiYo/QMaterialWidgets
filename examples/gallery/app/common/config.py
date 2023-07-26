@@ -1,7 +1,7 @@
 # coding:utf-8
 from enum import Enum
 
-from PySide6.QtCore import QLocale
+from PySide2.QtCore import QLocale
 from qmaterialwidgets import (qconfig, QConfig, ConfigItem, OptionsConfigItem, BoolValidator,
                             OptionsValidator, RangeConfigItem, RangeValidator,
                             FolderListValidator, EnumSerializer, FolderValidator, ConfigSerializer, __version__)

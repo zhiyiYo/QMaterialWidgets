@@ -3,10 +3,10 @@ from enum import Enum
 from typing import Union
 import weakref
 
-from PySide6.QtCore import (Qt, QEvent, QSize, QRectF, QObject, QPropertyAnimation,
+from PySide2.QtCore import (Qt, QEvent, QSize, QRectF, QObject, QPropertyAnimation,
                           QEasingCurve, QTimer, Signal, QParallelAnimationGroup, QPoint)
-from PySide6.QtGui import QPainter, QIcon, QColor
-from PySide6.QtWidgets import (QWidget, QFrame, QLabel, QHBoxLayout, QVBoxLayout, QGraphicsOpacityEffect,
+from PySide2.QtGui import QPainter, QIcon, QColor
+from PySide2.QtWidgets import (QWidget, QFrame, QLabel, QHBoxLayout, QVBoxLayout, QGraphicsOpacityEffect,
                                QGraphicsDropShadowEffect)
 
 from ...common.auto_wrap import TextWrap

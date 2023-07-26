@@ -2,10 +2,10 @@
 
 from typing import List, Union
 
-from PySide6.QtCore import Qt, Property, QPoint, Signal, QSize
-from PySide6.QtGui import (QPainter, QPixmap, QPalette, QColor, QFont, QImage, QPainterPath,
+from PySide2.QtCore import Qt, Property, QPoint, Signal, QSize
+from PySide2.QtGui import (QPainter, QPixmap, QPalette, QColor, QFont, QImage, QPainterPath,
                          QImageReader, QBrush, QMovie)
-from PySide6.QtWidgets import QLabel, QWidget
+from PySide2.QtWidgets import QLabel, QWidget
 
 from ...common.overload import singledispatchmethod
 from ...common.font import setFont, getFont

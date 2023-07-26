@@ -1,8 +1,8 @@
 # coding:utf-8
 from ...common.style_sheet import isDarkTheme
-from PySide6.QtCore import Qt, Signal, QRectF, Property
-from PySide6.QtGui import QPixmap, QPainter, QColor, QPainterPath
-from PySide6.QtWidgets import QWidget, QFrame, QGraphicsDropShadowEffect
+from PySide2.QtCore import Qt, Signal, QRectF, Property
+from PySide2.QtGui import QPixmap, QPainter, QColor, QPainterPath
+from PySide2.QtWidgets import QWidget, QFrame, QGraphicsDropShadowEffect
 
 from ...common.style_sheet import isDarkTheme, palette, qconfig
 from ...common.animation import BackgroundAnimationWidget, DropShadowAnimation

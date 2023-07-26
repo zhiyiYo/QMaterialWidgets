@@ -1,8 +1,8 @@
 # coding:utf-8
-from PySide6.QtCore import (QEvent, QEasingCurve, Qt, Signal, QPropertyAnimation, Property, QRectF,
+from PySide2.QtCore import (QEvent, QEasingCurve, Qt, Signal, QPropertyAnimation, Property, QRectF,
                           QTimer, QPoint, QObject)
-from PySide6.QtGui import QPainter, QColor, QMouseEvent
-from PySide6.QtWidgets import (QWidget, QToolButton, QAbstractScrollArea, QGraphicsOpacityEffect,
+from PySide2.QtGui import QPainter, QColor, QMouseEvent
+from PySide2.QtWidgets import (QWidget, QToolButton, QAbstractScrollArea, QGraphicsOpacityEffect,
                              QHBoxLayout, QVBoxLayout, QApplication, QAbstractItemView, QListView)
 
 from ...common.icon import FluentIcon

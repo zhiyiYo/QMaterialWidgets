@@ -1,8 +1,8 @@
 # coding:utf-8
 import sys
 
-from PySide6.QtCore import Qt, QSize, QPoint
-from PySide6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
+from PySide2.QtCore import Qt, QSize, QPoint
+from PySide2.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
 
 from qmaterialwidgets import (InfoBadge, IconInfoBadge, setTheme, Theme, DotInfoBadge, PrimaryFloatingActionButton,
                             InfoBadgePosition, InfoBadgeManager)
@@ -90,7 +90,13 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
+    # enable dpi scale
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
     app = QApplication(sys.argv)
     w = Demo()
     w.show()
-    app.exec()
+    app.exec_()

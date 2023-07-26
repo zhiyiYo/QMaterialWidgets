@@ -1,8 +1,8 @@
 # coding:utf-8
 from typing import Union
-from PySide6.QtCore import Qt, Signal, QObject, QEvent, QSize
-from PySide6.QtGui import QColor, QIcon
-from PySide6.QtWidgets import QLabel, QFrame, QVBoxLayout, QHBoxLayout, QPushButton, QDialogButtonBox
+from PySide2.QtCore import Qt, Signal, QObject, QEvent, QSize
+from PySide2.QtGui import QColor, QIcon
+from PySide2.QtWidgets import QLabel, QFrame, QVBoxLayout, QHBoxLayout, QPushButton, QDialogButtonBox
 
 from ...common.auto_wrap import TextWrap
 from ...common.icon import MaterialIconBase

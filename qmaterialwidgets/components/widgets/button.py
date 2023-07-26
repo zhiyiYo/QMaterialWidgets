@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Union
 
-from PySide6.QtCore import Qt, QRectF, QSize, QPoint, Property, QEvent
-from PySide6.QtGui import QPainterPath, QIcon, QPainter, QColor, QPen
-from PySide6.QtWidgets import QPushButton, QToolButton, QApplication, QWidget
+from PySide2.QtCore import Qt, QRectF, QSize, QPoint, Property, QEvent
+from PySide2.QtGui import QPainterPath, QIcon, QPainter, QColor, QPen
+from PySide2.QtWidgets import QPushButton, QToolButton, QApplication, QWidget
 
 from ...common.color import translucent, mixColor
 from ...common.icon import MaterialIconBase, drawIcon, isDarkTheme, Theme, toQIcon, Icon

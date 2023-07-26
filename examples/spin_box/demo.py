@@ -1,6 +1,7 @@
 # coding:utf-8
 import sys
-from PySide6.QtWidgets import QApplication, QWidget, QVBoxLayout
+from PySide2.QtCore import Qt
+from PySide2.QtWidgets import QApplication, QWidget, QVBoxLayout
 
 from qmaterialwidgets import SpinBox, DoubleSpinBox, DateTimeEdit, DateEdit, TimeEdit, setTheme, Theme, palette
 
@@ -23,7 +24,7 @@ class Demo(QWidget):
         self.spinBox.setLabel('Label')
         self.timeEdit.setLabel('Time')
         self.dateEdit.setLabel('Date')
-        self.doubleSpinBox.setLabel('Double'*2)
+        self.doubleSpinBox.setLabel('Double')
         self.dateTimeEdit.setLabel('Date time')
 
         self.resize(500, 500)
@@ -37,7 +38,13 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
+    # enable dpi scale
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
     app = QApplication(sys.argv)
     w = Demo()
     w.show()
-    app.exec()
+    app.exec_()

@@ -1,8 +1,8 @@
 # coding:utf-8
-from PySide6.QtCore import (Qt, QRectF, QEasingCurve, QPropertyAnimation, QParallelAnimationGroup,
+from PySide2.QtCore import (Qt, QRectF, QEasingCurve, QPropertyAnimation, QParallelAnimationGroup,
                             QSequentialAnimationGroup, Property)
-from PySide6.QtGui import QColor, QPen, QPainter, QFont
-from PySide6.QtWidgets import QProgressBar
+from PySide2.QtGui import QColor, QPen, QPainter, QFont
+from PySide2.QtWidgets import QProgressBar
 
 from .progress_bar import ProgressBar
 from ...common.font import setFont

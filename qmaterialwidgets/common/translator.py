@@ -1,5 +1,5 @@
 # coding: utf-8
-from PySide6.QtCore import QTranslator, QLocale
+from PySide2.QtCore import QTranslator, QLocale
 
 
 class MaterialTranslator(QTranslator):

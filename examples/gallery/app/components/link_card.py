@@ -1,7 +1,7 @@
 # coding:utf-8
-from PySide6.QtCore import Qt, Signal, QUrl
-from PySide6.QtGui import QPixmap, QDesktopServices
-from PySide6.QtWidgets import QFrame, QLabel, QVBoxLayout, QWidget, QHBoxLayout
+from PySide2.QtCore import Qt, Signal, QUrl
+from PySide2.QtGui import QPixmap, QDesktopServices
+from PySide2.QtWidgets import QFrame, QLabel, QVBoxLayout, QWidget, QHBoxLayout
 
 from qmaterialwidgets import IconWidget, FluentIcon, TextWrap, SingleDirectionScrollArea, CardWidget
 from ..common.style_sheet import StyleSheet

@@ -1,5 +1,5 @@
 # coding: utf-8
-from PySide6.QtCore import QObject, Signal
+from PySide2.QtCore import QObject, Signal
 
 
 class SignalBus(QObject):

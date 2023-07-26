@@ -1,9 +1,10 @@
 # coding:utf-8
 import sys
+from typing import List
 
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
+from PySide2.QtCore import Qt
+from PySide2.QtGui import QIcon
+from PySide2.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
 
 from qmaterialwidgets import (OutlinedPushButton, FluentIcon, setTheme, Theme, TextPushButton,
                               StrongBodyLabel, FilledPushButton, ElevatedPushButton, TonalPushButton,
@@ -177,9 +178,15 @@ class Demo2(Widget):
 
 
 if __name__ == '__main__':
+    # enable dpi scale
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+    
     app = QApplication(sys.argv)
     w1 = Demo1()
     w1.show()
     w2 = Demo2()
     w2.show()
-    app.exec()
+    app.exec_()

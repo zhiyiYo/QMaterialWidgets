@@ -1,5 +1,5 @@
 # coding: utf-8
-from PySide6.QtCore import QObject
+from PySide2.QtCore import QObject
 
 
 class Translator(QObject):

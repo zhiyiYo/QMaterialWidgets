@@ -1,9 +1,9 @@
 # coding:utf-8
 import sys
 
-from PySide6.QtCore import Qt, Signal, QEasingCurve, QUrl
-from PySide6.QtGui import QIcon, QDesktopServices
-from PySide6.QtWidgets import QLabel, QHBoxLayout, QVBoxLayout, QApplication, QFrame, QWidget
+from PySide2.QtCore import Qt, Signal, QEasingCurve, QUrl
+from PySide2.QtGui import QIcon, QDesktopServices
+from PySide2.QtWidgets import QLabel, QHBoxLayout, QVBoxLayout, QApplication, QFrame, QWidget
 
 from qmaterialwidgets import (NavigationBar, MessageBox, isDarkTheme, setTheme, Theme, setThemeColor,
                               SearchLineEdit, PopUpAniStackedWidget, setStyleSheet, FramelessWindow)
@@ -159,7 +159,13 @@ class Window(FramelessWindow):
 
 
 if __name__ == '__main__':
+    # enable dpi scale
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
     app = QApplication(sys.argv)
     w = Window()
     w.show()
-    app.exec()
+    app.exec_()

@@ -1,9 +1,9 @@
 # coding:utf-8
 import sys
 
-from PySide6.QtCore import Qt, QEventLoop, QTimer, QSize
-from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication
+from PySide2.QtCore import Qt, QEventLoop, QTimer, QSize
+from PySide2.QtGui import QIcon
+from PySide2.QtWidgets import QApplication
 
 from qmaterialwidgets import SplashScreen
 from qframelesswindow import FramelessWindow, StandardTitleBar
@@ -38,12 +38,18 @@ class Demo(FramelessWindow):
     def createSubInterface(self):
         loop = QEventLoop(self)
         QTimer.singleShot(3000, loop.quit)
-        loop.exec()
+        loop.exec_()
 
 
 
 if __name__ == '__main__':
+    # enable dpi scale
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
     app = QApplication(sys.argv)
     w = Demo()
     w.show()
-    app.exec()
+    app.exec_()

@@ -1,7 +1,7 @@
 # coding:utf-8
 import sys
-from PySide6.QtCore import QEasingCurve
-from PySide6.QtWidgets import QApplication, QWidget, QPushButton
+from PySide2.QtCore import QEasingCurve
+from PySide2.QtWidgets import QApplication, QWidget, QPushButton
 
 from qmaterialwidgets import FlowLayout
 
@@ -33,4 +33,4 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     w = Demo()
     w.show()
-    app.exec()
+    app.exec_()

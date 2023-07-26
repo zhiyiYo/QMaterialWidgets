@@ -1,8 +1,8 @@
 # coding:utf-8
 import sys
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QColor
-from PySide6.QtWidgets import QApplication, QWidget
+from PySide2.QtCore import Qt
+from PySide2.QtGui import QColor
+from PySide2.QtWidgets import QApplication, QWidget
 
 from qmaterialwidgets import Slider, setTheme, Theme, palette
 
@@ -37,7 +37,13 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
+    # enable dpi scale
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
     app = QApplication(sys.argv)
     w = Demo()
     w.show()
-    app.exec()
+    app.exec_()

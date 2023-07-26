@@ -1,8 +1,7 @@
 # coding:utf-8
 import sys
-from PySide6.QtCore import Qt
-from PySide6.QtGui import QAction
-from PySide6.QtWidgets import QApplication, QWidget, QHBoxLayout, QLabel
+from PySide2.QtCore import Qt
+from PySide2.QtWidgets import QApplication, QWidget, QHBoxLayout, QLabel, QAction
 from qmaterialwidgets import RoundMenu, setTheme, Theme, Action, MenuAnimationType, MenuItemDelegate, CheckableMenu, MenuIndicatorType
 from qmaterialwidgets import FluentIcon as FIF
 
@@ -69,7 +68,13 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
+    # enable dpi scale
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
     app = QApplication(sys.argv)
     w = Demo()
     w.show()
-    app.exec()
+    app.exec_()

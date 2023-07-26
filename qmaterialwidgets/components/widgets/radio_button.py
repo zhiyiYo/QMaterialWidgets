@@ -1,7 +1,7 @@
 # coding:utf-8
-from PySide6.QtCore import Qt, Signal, QEvent, QRect, QPoint
-from PySide6.QtGui import QPainterPath
-from PySide6.QtWidgets import QWidget, QRadioButton
+from PySide2.QtCore import Qt, Signal, QEvent, QRect, QPoint
+from PySide2.QtGui import QPainterPath
+from PySide2.QtWidgets import QWidget, QRadioButton
 
 from .ripple import RippleOverlayWidget, RippleStyle
 from ...common.style_sheet import MaterialStyleSheet
@@ -16,7 +16,7 @@ class RadioRippleOverlayWidget(RippleOverlayWidget):
         self.rippleRadiusDuration = 300
         self.rippleOpacityDuration = 1300
         self.rippleStartOpacity = 0.5
-        
+
         path = QPainterPath()
         path.addEllipse(self.overlayGeometry())
         self.setClipPath(path)

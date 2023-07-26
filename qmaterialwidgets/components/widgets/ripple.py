@@ -3,9 +3,9 @@ from typing import List
 from enum import Enum
 
 
-from PySide6.QtCore import Qt, Signal, QEvent, QParallelAnimationGroup, QPoint, QPropertyAnimation, QEasingCurve, Property
-from PySide6.QtGui import QPixmap, QPainter, QColor, QBrush, QPainterPath
-from PySide6.QtWidgets import QWidget
+from PySide2.QtCore import Qt, Signal, QEvent, QParallelAnimationGroup, QPoint, QPropertyAnimation, QEasingCurve, Property
+from PySide2.QtGui import QPixmap, QPainter, QColor, QBrush, QPainterPath
+from PySide2.QtWidgets import QWidget
 
 from ...common.style_sheet import themeColor
 from .overlay_widget import OverlayWidget
