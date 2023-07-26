@@ -13,7 +13,7 @@ Examples are available at https://github.com/zhiyiYo/QMaterialWidgets/tree/maste
 For commercial purposes, please purchase on [爱发电](https://afdian.net/a/zhiyiYo?tab=shop) to support the development of this project.
 """
 
-__version__ = "0.0.10"
+__version__ = "0.0.11"
 
 from .components import *
 from .common import *
