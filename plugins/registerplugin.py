@@ -6,7 +6,7 @@ from date_time_plugin import *
 from navigation_plugin import *
 from status_info_plugin import *
 from text_plugin import *
-from .view_plugin import *
+from view_plugin import *
 
 
 # basic input plugins
@@ -38,9 +38,9 @@ QPyDesignerCustomWidgetCollection.addCustomWidget(SmoothScrollAreaPlugin())
 QPyDesignerCustomWidgetCollection.addCustomWidget(SingleDirectionScrollAreaPlugin())
 QPyDesignerCustomWidgetCollection.addCustomWidget(OpacityAniStackedWidgetPlugin())
 QPyDesignerCustomWidgetCollection.addCustomWidget(PopUpAniStackedWidgetPlugin())
-QPyDesignerCustomWidgetCollection.addCustomWidget(CardWidget())
-QPyDesignerCustomWidgetCollection.addCustomWidget(OutlinedCardWidget())
-QPyDesignerCustomWidgetCollection.addCustomWidget(ElevatedCardWidget())
+QPyDesignerCustomWidgetCollection.addCustomWidget(CardWidgetPlugin())
+QPyDesignerCustomWidgetCollection.addCustomWidget(OutlinedCardWidgetPlugin())
+QPyDesignerCustomWidgetCollection.addCustomWidget(ElevatedCardWidgetPlugin())
 
 # date time plugins
 QPyDesignerCustomWidgetCollection.addCustomWidget(CalendarPickerPlugin())
