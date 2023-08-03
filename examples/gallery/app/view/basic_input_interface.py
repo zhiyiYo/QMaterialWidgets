@@ -8,7 +8,8 @@ from qmaterialwidgets import (Action, OutlinedPushButton, TransparentToolButton,
                              ElevatedPushButton, OutlinedToggleToolButton, FilledToggleToolButton,
                              PrimaryFloatingActionButton, SurfaceFloatingActionButton,
                              SecondaryFloatingActionButton, TertiaryFloatingActionButton, ComboBox,
-                             FilledComboBox)
+                             FilledComboBox, FilledDropDownPushButton, TextDropDownPushButton,
+                             OutlinedDropDownPushButton, ElevatedDropDownPushButton, TonalDropDownPushButton)
 
 from .gallery_interface import GalleryInterface
 from ..common.translator import Translator
@@ -145,10 +146,57 @@ class BasicInputInterface(GalleryInterface):
 
         # editable filled combo box
         self.addExampleCard(
-            self.tr('A editable filled combo box'),
+            self.tr('An editable filled combo box'),
             self.createEditableComboBox(FilledComboBox),
             'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/combo_box/demo.py'
         )
+
+        # drop down button
+        self.dropDownMenu = RoundMenu(parent=self)
+        self.dropDownMenu.addActions([
+            Action(FluentIcon.SEND_FILL, self.tr('Send')),
+            Action(FluentIcon.SAVE, self.tr('Save')),
+        ])
+        button = FilledDropDownPushButton(self.tr('Email'), self, FluentIcon.MAIL)
+        button.setMenu(self.dropDownMenu)
+        self.addExampleCard(
+            self.tr('A filled push button with drop down menu'),
+            button,
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+        )
+
+        button = OutlinedDropDownPushButton(self.tr('Email'), self, FluentIcon.MAIL)
+        button.setMenu(self.dropDownMenu)
+        self.addExampleCard(
+            self.tr('A outlined push button with drop down menu'),
+            button,
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+        )
+
+        button = ElevatedDropDownPushButton(self.tr('Email'), self, FluentIcon.MAIL)
+        button.setMenu(self.dropDownMenu)
+        self.addExampleCard(
+            self.tr('A elevated push button with drop down menu'),
+            button,
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+        )
+
+        button = TextDropDownPushButton(self.tr('Email'), self, FluentIcon.MAIL)
+        button.setMenu(self.dropDownMenu)
+        self.addExampleCard(
+            self.tr('A text push button with drop down menu'),
+            button,
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+        )
+
+        button = TonalDropDownPushButton(self.tr('Email'), self, FluentIcon.MAIL)
+        button.setMenu(self.dropDownMenu)
+        self.addExampleCard(
+            self.tr('A tonal push button with drop down menu'),
+            button,
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+        )
+
 
         # radio button
         radioWidget = QWidget()

@@ -1,5 +1,6 @@
 # coding:utf-8
 import sys
+from typing import List
 
 from PySide6.QtCore import Qt
 from PySide6.QtGui import QIcon
@@ -8,7 +9,9 @@ from PySide6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
 from qmaterialwidgets import (OutlinedPushButton, FluentIcon, setTheme, Theme, TextPushButton,
                               StrongBodyLabel, FilledPushButton, ElevatedPushButton, TonalPushButton,
                               TransparentToolButton, FilledToolButton, TransparentToggleToolButton,
-                              TonalToolButton, OutlinedToolButton, FilledToggleToolButton, OutlinedToggleToolButton)
+                              TonalToolButton, OutlinedToolButton, FilledToggleToolButton, OutlinedToggleToolButton,
+                              OutlinedDropDownPushButton, FilledDropDownPushButton, RoundMenu, Action,
+                              TextDropDownPushButton, ElevatedDropDownPushButton, TonalDropDownPushButton, palette)
 
 
 
@@ -41,8 +44,7 @@ class Widget(QWidget):
     def __init__(self):
         super().__init__()
         # setTheme(Theme.DARK)
-        # self.setStyleSheet('Widget{background: rgb(20, 18, 24)}')
-        self.setStyleSheet('Widget{background: rgb(254, 247, 255)}')
+        self.setStyleSheet('Widget{background: '+palette.surface.name()+'}')
 
         self.vBoxLayout = QVBoxLayout(self)
         self.vBoxLayout.setSpacing(15)
@@ -81,7 +83,7 @@ class Demo1(Widget):
         self.filledButton2.setEnabled(False)
         self.filledToggleButton1.setChecked(True)
         self.filledToggleButton2.setEnabled(False)
-        self.addButtons('Transparent buttons', [
+        self.addButtons('Filled buttons', [
             self.filledButton1, self.filledButton2,
             self.filledToggleButton1, self.filledToggleButton2,
         ])
@@ -111,17 +113,25 @@ class Demo2(Widget):
 
     def __init__(self):
         super().__init__()
+        self.dropDownMenu = RoundMenu(parent=self)
+        self.dropDownMenu.addActions([
+            Action(FluentIcon.SEND_FILL, 'Send'),
+            Action(FluentIcon.SAVE, 'Save'),
+        ])
 
         # outlined buttons
         self.filledButton1 = FilledPushButton('Label', self)
         self.filledButton2 = FilledPushButton('Label', self)
         self.filledButton3 = FilledPushButton('Label', self, FluentIcon.GITHUB)
         self.filledButton4 = FilledPushButton('Label', self, FluentIcon.GITHUB)
+        self.filledButton5 = FilledDropDownPushButton('Label', self, FluentIcon.GITHUB)
         self.filledButton2.setEnabled(False)
         self.filledButton4.setEnabled(False)
+        self.filledButton5.setMenu(self.dropDownMenu)
         self.addButtons('Filled buttons', [
             self.filledButton1, self.filledButton2,
-            self.filledButton3, self.filledButton4
+            self.filledButton3, self.filledButton4,
+            self.filledButton5
         ])
 
         # outlined buttons
@@ -129,11 +139,14 @@ class Demo2(Widget):
         self.outlinedButton2 = OutlinedPushButton('Label', self)
         self.outlinedButton3 = OutlinedPushButton('Label', self, FluentIcon.GITHUB)
         self.outlinedButton4 = OutlinedPushButton('Label', self, FluentIcon.GITHUB)
+        self.outlinedButton5 = OutlinedDropDownPushButton('Label', self, FluentIcon.GITHUB)
+        self.outlinedButton5.setMenu(self.dropDownMenu)
         self.outlinedButton2.setEnabled(False)
         self.outlinedButton4.setEnabled(False)
         self.addButtons('Outlined buttons', [
             self.outlinedButton1, self.outlinedButton2,
-            self.outlinedButton3, self.outlinedButton4
+            self.outlinedButton3, self.outlinedButton4,
+            self.outlinedButton5
         ])
 
         # text buttons
@@ -141,11 +154,14 @@ class Demo2(Widget):
         self.textButton2 = TextPushButton('Label', self)
         self.textButton3 = TextPushButton('Label', self, FluentIcon.TRAIN)
         self.textButton4 = TextPushButton('Label', self, FluentIcon.TRAIN)
+        self.textButton5 = TextDropDownPushButton('Label', self, FluentIcon.TRAIN)
+        self.textButton5.setMenu(self.dropDownMenu)
         self.textButton2.setEnabled(False)
         self.textButton4.setEnabled(False)
         self.addButtons('Text buttons', [
             self.textButton1, self.textButton2,
-            self.textButton3, self.textButton4
+            self.textButton3, self.textButton4,
+            self.textButton5
         ])
 
         # elevated buttons
@@ -153,11 +169,14 @@ class Demo2(Widget):
         self.elevatedButton2 = ElevatedPushButton('Label', self)
         self.elevatedButton3 = ElevatedPushButton('Label', self, FluentIcon.BUS)
         self.elevatedButton4 = ElevatedPushButton('Label', self, FluentIcon.BUS)
+        self.elevatedButton5 = ElevatedDropDownPushButton('Label', self, FluentIcon.BUS)
+        self.elevatedButton5.setMenu(self.dropDownMenu)
         self.elevatedButton2.setEnabled(False)
         self.elevatedButton4.setEnabled(False)
         self.addButtons('Elevated buttons', [
             self.elevatedButton1, self.elevatedButton2,
-            self.elevatedButton3, self.elevatedButton4
+            self.elevatedButton3, self.elevatedButton4,
+            self.elevatedButton5
         ])
 
         # elevated buttons
@@ -165,11 +184,14 @@ class Demo2(Widget):
         self.tonalButton2 = TonalPushButton('Label', self)
         self.tonalButton3 = TonalPushButton('Label', self, FluentIcon.BUS)
         self.tonalButton4 = TonalPushButton('Label', self, FluentIcon.BUS)
+        self.tonalButton5 = TonalDropDownPushButton('Label', self, FluentIcon.BUS)
+        self.tonalButton5.setMenu(self.dropDownMenu)
         self.tonalButton2.setEnabled(False)
         self.tonalButton4.setEnabled(False)
         self.addButtons('Tonal buttons', [
             self.tonalButton1, self.tonalButton2,
-            self.tonalButton3, self.tonalButton4
+            self.tonalButton3, self.tonalButton4,
+            self.tonalButton5
         ])
 
         self.resize(500, 500)

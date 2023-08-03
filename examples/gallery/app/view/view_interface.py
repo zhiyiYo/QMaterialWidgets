@@ -141,7 +141,7 @@ class TableFrame(Frame):
                 self.table.setItem(i, j, QTableWidgetItem(songInfo[j]))
 
         self.hBoxLayout.setContentsMargins(0, 0, 0, 0)
-        self.setFixedSize(667, 428)
+        self.setFixedSize(635, 428)
 
         self.table.resizeColumnsToContents()
         self.table.horizontalHeader().setDefaultAlignment(

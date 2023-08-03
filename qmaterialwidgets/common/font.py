@@ -38,10 +38,3 @@ def getFont(fontSize=14, weight=QFont.Weight.Normal):
     return font
 
 
-def registerFonts():
-    QFontDatabase.addApplicationFont(":/qmaterialwidgets/fonts/Roboto-Bold.ttf")
-    QFontDatabase.addApplicationFont(":/qmaterialwidgets/fonts/Roboto-Thin.ttf")
-    QFontDatabase.addApplicationFont(":/qmaterialwidgets/fonts/Roboto-Light.ttf")
-    QFontDatabase.addApplicationFont(":/qmaterialwidgets/fonts/Roboto-Medium.ttf")
-    QFontDatabase.addApplicationFont(":/qmaterialwidgets/fonts/Roboto-Regular.ttf")
-
