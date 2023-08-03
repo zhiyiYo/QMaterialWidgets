@@ -2,7 +2,7 @@
 from typing import Union
 
 from PySide2.QtCore import Qt, QRectF, QSize, QPoint, Property, QEvent
-from PySide2.QtGui import QPainterPath, QIcon, QPainter, QColor, QPen
+from PySide2.QtGui import QPainterPath, QIcon, QPainter, QColor, QPen, QPalette
 from PySide2.QtWidgets import QPushButton, QToolButton, QApplication, QWidget
 
 from ...common.color import translucent, mixColor
@@ -13,6 +13,7 @@ from ...common.style_sheet import (MaterialStyleSheet, themeColor, ThemeColor, p
 from ...common.animation import BackgroundAnimationWidget, DropShadowAnimation
 from ...common.overload import singledispatchmethod
 from .ripple import RippleOverlayWidget, RippleStyle
+from .menu import RoundMenu
 
 
 
@@ -502,3 +503,83 @@ class OutlinedToggleToolButton(OutlinedToolButton):
             painter.setPen('#938F99' if isDarkTheme() else '#79747E')
 
         ToolButton._drawBackground(self, painter)
+
+
+class DropDownIcon(MaterialIconBase):
+
+    def path(self, theme=Theme.AUTO) -> str:
+        return ":/qmaterialwidgets/images/button/ArrowDropDown.svg"
+
+
+
+class DropDownButtonBase:
+    """ Drop down button base class """
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._menu = None
+        self.dropDownIcon = DropDownIcon()
+
+    def setMenu(self, menu: RoundMenu):
+        self._menu = menu
+
+    def menu(self) -> RoundMenu:
+        return self._menu
+
+    def mouseReleaseEvent(self, e):
+        super().mouseReleaseEvent(e)
+        self._showMenu()
+
+    def _showMenu(self):
+        if not self.menu():
+            return
+
+        menu = self.menu()
+        menu.view.setMinimumWidth(self.width())
+        menu.view.adjustSize()
+        menu.adjustSize()
+
+        # show menu
+        x = -menu.width()//2 + menu.layout().contentsMargins().left() + self.width()//2
+        y = self.height()
+        menu.exec(self.mapToGlobal(QPoint(x, y)))
+
+    def _hideMenu(self):
+        if self.menu():
+            self.menu().hide()
+
+    def _drawDropDownIcon(self, painter, rect):
+        color = self.palette().color(QPalette.WindowText).name()
+        self.dropDownIcon.render(painter, rect, fill=color)
+
+    def paintEvent(self, e):
+        super().paintEvent(e)
+
+        painter = QPainter(self)
+        painter.setRenderHints(QPainter.Antialiasing)
+        rect = QRectF(self.width()-36, self.height() / 2 - 12, 24, 24)
+        self._drawDropDownIcon(painter, rect)
+
+
+class OutlinedDropDownPushButton(DropDownButtonBase, OutlinedPushButton):
+    """ Drop down push button """
+
+
+class FilledDropDownPushButton(DropDownButtonBase, FilledPushButton):
+    """ Filled drop down push button """
+
+
+class ElevatedDropDownPushButton(DropDownButtonBase, ElevatedPushButton):
+    """ Elevated drop down push button """
+
+
+class TonalDropDownPushButton(DropDownButtonBase, TonalPushButton):
+    """ Tonal drop down push button """
+
+
+class TextDropDownPushButton(DropDownButtonBase, TextPushButton):
+    """ Text drop down push button """
+
+    def _drawDropDownIcon(self, painter, rect: QRectF):
+        rect.moveLeft(self.width() - 32)
+        return super()._drawDropDownIcon(painter, rect)

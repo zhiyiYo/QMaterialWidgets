@@ -1,11 +1,11 @@
 # coding:utf-8
-from PySide2.QtCore import Qt, Signal, QUrl, QEvent
-from PySide2.QtGui import QDesktopServices, QPainter, QPen, QColor
-from PySide2.QtWidgets import QWidget, QLabel, QVBoxLayout, QHBoxLayout, QFrame
+from PySide2.QtCore import Qt, Signal, QUrl, QEvent, QPoint
+from PySide2.QtGui import QDesktopServices, QPainter, QPen, QColor, QCursor
+from PySide2.QtWidgets import QWidget, QLabel, QVBoxLayout, QHBoxLayout, QFrame, QApplication
 
-from qmaterialwidgets import (ScrollArea, OutlinedPushButton, OutlinedToolButton, FluentIcon,
-                            isDarkTheme, IconWidget, Theme, ToolTipFilter, TitleLabel, CaptionLabel,
-                            StrongBodyLabel, BodyLabel, FilledPushButton, FilledToolButton, TransparentToolButton)
+from qmaterialwidgets import (ScrollArea, OutlinedPushButton, FluentIcon, isDarkTheme, IconWidget,
+                              Theme, ToolTipFilter, TitleLabel, CaptionLabel,
+                              StrongBodyLabel, BodyLabel, FilledPushButton, Slider)
 from ..common.config import cfg, FEEDBACK_URL, HELP_URL, EXAMPLE_URL
 from ..common.icon import Icon
 from ..common.style_sheet import StyleSheet
@@ -177,6 +177,7 @@ class GalleryInterface(ScrollArea):
 
         self.view.setObjectName('view')
         StyleSheet.GALLERY_INTERFACE.apply(self)
+        self.verticalScrollBar().valueChanged.connect(self.__fakeMoveMouse)
 
     def addExampleCard(self, title, widget, sourcePath: str, stretch=0):
         card = ExampleCard(title, widget, sourcePath, stretch, self.view)
@@ -191,3 +192,8 @@ class GalleryInterface(ScrollArea):
     def resizeEvent(self, e):
         super().resizeEvent(e)
         self.toolBar.resize(self.width(), self.toolBar.height())
+
+    def __fakeMoveMouse(self):
+        """ fake move mouse """
+        for slider in self.findChildren(Slider):
+            slider.hideBubble()
