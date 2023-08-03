@@ -5,7 +5,10 @@ from qmaterialwidgets import (FilledPushButton, FluentIcon, SwitchButton, RadioB
                               TransparentToolButton, TransparentToggleToolButton, OutlinedToggleToolButton,
                               OutlinedToolButton, TextPushButton, TonalPushButton, TonalToolButton,
                               ElevatedPushButton, FilledToggleToolButton, FilledComboBox, SurfaceFloatingActionButton,
-                              PrimaryFloatingActionButton, TertiaryFloatingActionButton, SecondaryFloatingActionButton)
+                              PrimaryFloatingActionButton, TertiaryFloatingActionButton, SecondaryFloatingActionButton,
+                              InputChip, FilterChip, ElevatedInputChip, ElevatedFilterChip, FilledDropDownPushButton,
+                              TextDropDownPushButton, TonalDropDownPushButton, ElevatedDropDownPushButton,
+                              OutlinedDropDownPushButton)
 
 from plugin_base import PluginBase
 from task_menu_factory import EditTextTaskMenuFactory
@@ -131,6 +134,71 @@ class FilledPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
 
     def name(self):
         return "FilledPushButton"
+
+
+class FilledDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+    """ Filled drop down push button plugin """
+
+    def createWidget(self, parent):
+        return FilledDropDownPushButton(self.toolTip(), parent)
+
+    def icon(self):
+        return super().icon('DropDownButton')
+
+    def name(self):
+        return "FilledDropDownPushButton"
+
+
+class ElevatedDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+    """ Elevated drop down push button plugin """
+
+    def createWidget(self, parent):
+        return ElevatedDropDownPushButton(self.toolTip(), parent)
+
+    def icon(self):
+        return super().icon('DropDownButton')
+
+    def name(self):
+        return "ElevatedDropDownPushButton"
+
+
+class OutlinedDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+    """ Outlined drop down push button plugin """
+
+    def createWidget(self, parent):
+        return OutlinedDropDownPushButton(self.toolTip(), parent)
+
+    def icon(self):
+        return super().icon('DropDownButton')
+
+    def name(self):
+        return "OutlinedDropDownPushButton"
+
+
+class TonalDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+    """ Tonal drop down push button plugin """
+
+    def createWidget(self, parent):
+        return TonalDropDownPushButton(self.toolTip(), parent)
+
+    def icon(self):
+        return super().icon('DropDownButton')
+
+    def name(self):
+        return "TonalDropDownPushButton"
+
+
+class TextDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+    """ Text drop down push button plugin """
+
+    def createWidget(self, parent):
+        return TextDropDownPushButton(self.toolTip(), parent)
+
+    def icon(self):
+        return super().icon('DropDownButton')
+
+    def name(self):
+        return "TextDropDownPushButton"
 
 
 class FilledToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
@@ -330,3 +398,55 @@ class IconWidgetPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
 
     def name(self):
         return "IconWidget"
+
+
+class InputChipPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+    """ Input chip plugin """
+
+    def createWidget(self, parent):
+        return InputChip(self.toolTip(), parent)
+
+    def icon(self):
+        return super().icon('Button')
+
+    def name(self):
+        return "InputChip"
+
+
+class ElevatedInputChipPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+    """ Elevated input chip plugin """
+
+    def createWidget(self, parent):
+        return ElevatedInputChip(self.toolTip(), parent)
+
+    def icon(self):
+        return super().icon('Button')
+
+    def name(self):
+        return "ElevatedInputChip"
+
+
+class FilterChipPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+    """ Input chip plugin """
+
+    def createWidget(self, parent):
+        return FilterChip(self.toolTip(), parent)
+
+    def icon(self):
+        return super().icon('DropDownButton')
+
+    def name(self):
+        return "FilterChip"
+
+
+class ElevatedFilterChipPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+    """ Elevated filter chip plugin """
+
+    def createWidget(self, parent):
+        return ElevatedFilterChip(self.toolTip(), parent)
+
+    def icon(self):
+        return super().icon('DropDownButton')
+
+    def name(self):
+        return "ElevatedFilterChip"
