@@ -1,5 +1,5 @@
 from .config import *
-from .font import setFont, getFont, registerFonts
+from .font import setFont, getFont
 from .auto_wrap import TextWrap
 from .icon import Action, Icon, getIconColor, drawSvgIcon, FluentIcon, drawIcon, MaterialIconBase, writeSvg
 from .style_sheet import (setStyleSheet, getStyleSheet, setTheme, ThemeColor, themeColor,
