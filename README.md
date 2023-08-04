@@ -41,7 +41,7 @@ pip install PySide2-Material-Widgets -i https://pypi.org/simple/
 The Community version only provides basic components, while the more advanced ones are available in the [Premium version](https://afdian.net/a/zhiyiYo?tab=shop).
 
 > **Warning**
-> Don't install PySide2-Material-Widgets and PySide2-Material-Widgets at the same time, because their package names are all `qmaterialwidgets`.
+> Don't install PySide2-Material-Widgets and PySide6-Material-Widgets at the same time, because their package names are all `qmaterialwidgets`.
 
 
 ## Run Example
@@ -49,7 +49,7 @@ You can download the executable demo from the [release page](https://github.com/
 
 After installing PySide2-Material-Widgets package using pip, you can run the demo in examples directory, for example:
 ```python
-cd examples/button
+cd examples/community/button
 python demo.py
 ```
 
@@ -62,7 +62,7 @@ Want to know more about PySide2-Material-Widgets? Please read the [help document
 Check out this [▶ example video](https://www.bilibili.com/video/BV1k14y1z74o) that shows off what PySide2-Material-Widgets are capable of 🎉
 
 ## Work with QtDesigner
-You can use PySide2-Material-Widgets in QtDesigner directly by running `python ./tools/designer.py`. If the operation is successful, you should be able to see the PySide2-Material-Widgets in the sidebar of QtDesigner.
+PySide2 doesn't support QtDesigner plugin, but you can use `Promote to` like [Tutorial Video](https://www.bilibili.com/video/BV1na4y1V7jH) does.
 
 
 ## Support

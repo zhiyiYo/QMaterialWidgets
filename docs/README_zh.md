@@ -38,7 +38,7 @@
 pip install PySide2-Material-Widgets -i https://pypi.org/simple/
 ```
 
-社区版只提供了基本的组件，[高级版](https://afdian.net/a/zhiyiYo?tab=shop)中内置了更多复杂的组件，开箱即用，快速开发。
+社区版只提供了基本的组件，[高级版](https://afdian.net/a/zhiyiYo?tab=shop)中内置了更多开箱即用的复杂组件。
 
 > **Warning**
 > 请勿同时安装 PySide2-Material-Widgets 和 PySide6-Material-Widgets，因为他们的包名都是 `qmaterialwidgets`
@@ -49,14 +49,14 @@ pip install PySide2-Material-Widgets -i https://pypi.org/simple/
 
 使用 pip 安装好 PySide2-Material-Widgets 包并下载好此仓库的代码之后，可以运行 examples 目录下的示例程序，比如：
 ```python
-cd examples/button
+cd examples/community/button
 python demo.py
 ```
 
 如果遇到 `ImportError: cannot import name 'XXX' from 'qmaterialwidgets'`，这表明 demo 中导入的组件只在高级版可用.
 
 ## 在线文档📕
-想要了解 PySide2-Material-Widgets 的正确使用姿势？请仔细阅读 [帮助文档](https://qmaterilwidgets.readthedocs.io/zh_CN/latest/) 👈
+想要了解 PySide2-Material-Widgets 的正确使用姿势？请仔细阅读 [帮助文档](https://qmaterialwidgets.readthedocs.io/zh_CN/latest/) 👈
 
 ## 支持💖
 如果这个组件库帮助了您，或者是想支持作者继续开发和维护这个组件库，可以在 [爱发电](https://afdian.net/a/zhiyiYo) 或者 [ko-fi](https://ko-fi.com/zhiyiYo) 上请作者喝一杯奶茶。您的支持就是作者开发和维护的动力 🥰。
@@ -65,7 +65,7 @@ python demo.py
 请查收哔哩哔哩上的 [视频合集](https://www.bilibili.com/video/BV1k14y1z74o)，它展示了 PySide2-Material-Widgets 的全部组件和特性 🎉
 
 ## 搭配 QtDesigner🚀
-运行 `python ./tools/designer.py` 启动安装了 PySide6-Material-Widgets 插件的 QtDesigner。如果操作成功，QtDesigner 的侧边栏中将会显示 PySide6-Material-Widgets 的组件。对于旧项目的改造，推荐使用 [视频教程](https://www.bilibili.com/video/BV1na4y1V7jH) 中介绍的 `提升为...`。
+PySide2 无法使用 QtDesigner 插件，推荐使用 [视频教程](https://www.bilibili.com/video/BV1na4y1V7jH) 中介绍的 `提升为...`。
 
 
 ## 参考
