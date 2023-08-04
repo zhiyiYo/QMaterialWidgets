@@ -49,7 +49,7 @@ You can download the executable demo from the [release page](https://github.com/
 
 After installing PySide6-Material-Widgets package using pip, you can run the demo in examples directory, for example:
 ```python
-cd examples/button
+cd examples/community/button
 python demo.py
 ```
 

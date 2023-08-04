@@ -38,7 +38,7 @@
 pip install PySide6-Material-Widgets -i https://pypi.org/simple/
 ```
 
-社区版只提供了基本的组件，[高级版](https://afdian.net/a/zhiyiYo?tab=shop)中内置了更多复杂的组件，开箱即用，快速开发。
+社区版只提供了基本的组件，[高级版](https://afdian.net/a/zhiyiYo?tab=shop)中内置了更多开箱即用的复杂组件，。
 
 > **Warning**
 > 请勿同时安装 PySide2-Material-Widgets 和 PySide6-Material-Widgets，因为他们的包名都是 `qmaterialwidgets`
@@ -49,7 +49,7 @@ pip install PySide6-Material-Widgets -i https://pypi.org/simple/
 
 使用 pip 安装好 PySide6-Material-Widgets 包并下载好此仓库的代码之后，可以运行 examples 目录下的示例程序，比如：
 ```python
-cd examples/button
+cd examples/community/button
 python demo.py
 ```
 

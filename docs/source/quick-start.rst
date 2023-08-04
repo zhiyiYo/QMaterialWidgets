@@ -26,7 +26,7 @@ demo in the examples directory, for example:
 
 .. code:: python
 
-   cd examples/button
+   cd examples/community/button
    python demo.py
 
 .. note:: If you encounter ``ImportError: cannot import name 'XXX' from 'qmaterialwidgets'``, it indicates that the imported components are only available in the Premium version.
