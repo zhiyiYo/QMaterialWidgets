@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="zh_CN" sourcelanguage="en_US">
+<TS version="2.1" language="zh_HK" sourcelanguage="en_US">
 <context>
     <name>BannerWidget</name>
     <message>
@@ -47,214 +47,249 @@
 <context>
     <name>BasicInputInterface</name>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="290"/>
+        <location filename="../../view/basic_input_interface.py" line="339"/>
         <source>Off</source>
         <translation>關</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="288"/>
+        <location filename="../../view/basic_input_interface.py" line="337"/>
         <source>On</source>
         <translation>開</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="52"/>
+        <location filename="../../view/basic_input_interface.py" line="53"/>
         <source>Accent style button</source>
         <translation>主題色按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="111"/>
+        <location filename="../../view/basic_input_interface.py" line="112"/>
         <source>Two-state CheckBox</source>
         <translation>雙態複選框</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="120"/>
+        <location filename="../../view/basic_input_interface.py" line="121"/>
         <source>Three-state CheckBox</source>
         <translation>三態複選框</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="294"/>
+        <location filename="../../view/basic_input_interface.py" line="343"/>
         <source>Star Platinum</source>
         <translation>白金之星</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="294"/>
+        <location filename="../../view/basic_input_interface.py" line="343"/>
         <source>Crazy Diamond</source>
         <translation>瘋狂鑽石</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="208"/>
+        <location filename="../../view/basic_input_interface.py" line="209"/>
         <source>Soft and Wet</source>
         <translation>軟又溼</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="294"/>
+        <location filename="../../view/basic_input_interface.py" line="343"/>
         <source>Gold Experience</source>
         <translation>黃金體驗</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="294"/>
+        <location filename="../../view/basic_input_interface.py" line="343"/>
         <source>Sticky Fingers</source>
         <translation>鋼鏈手指</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="66"/>
+        <location filename="../../view/basic_input_interface.py" line="67"/>
         <source>Outlined push button</source>
         <translation>輪廓按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="31"/>
+        <location filename="../../view/basic_input_interface.py" line="32"/>
         <source>Elevated push button</source>
         <translation>凸起按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="76"/>
+        <location filename="../../view/basic_input_interface.py" line="77"/>
         <source>Outlined tool button</source>
         <translation>輪廓工具按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="52"/>
+        <location filename="../../view/basic_input_interface.py" line="53"/>
         <source>Filled push button</source>
         <translation>填充按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="59"/>
+        <location filename="../../view/basic_input_interface.py" line="60"/>
         <source>Filled tool button</source>
         <translation>填充工具按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="90"/>
+        <location filename="../../view/basic_input_interface.py" line="91"/>
         <source>Tonal push button</source>
         <translation>色調按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="83"/>
+        <location filename="../../view/basic_input_interface.py" line="84"/>
         <source>Text push button</source>
         <translation>文本按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="97"/>
+        <location filename="../../view/basic_input_interface.py" line="98"/>
         <source>Tonal tool button</source>
         <translation>色調工具按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="104"/>
+        <location filename="../../view/basic_input_interface.py" line="105"/>
         <source>Transparent tool button</source>
         <translation>透明工具按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="217"/>
+        <location filename="../../view/basic_input_interface.py" line="218"/>
         <source>Radio button</source>
         <translation>單選按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="228"/>
+        <location filename="../../view/basic_input_interface.py" line="229"/>
         <source>Horizontal slider</source>
         <translation>水平滑動條</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="237"/>
+        <location filename="../../view/basic_input_interface.py" line="238"/>
         <source>Switch button</source>
         <translation>開關按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="244"/>
+        <location filename="../../view/basic_input_interface.py" line="245"/>
         <source>Filled toggle tool button</source>
         <translation>填充開關工具按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="251"/>
+        <location filename="../../view/basic_input_interface.py" line="252"/>
         <source>Outlined toggle tool button</source>
         <translation>輪廓開關工具按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="258"/>
+        <location filename="../../view/basic_input_interface.py" line="259"/>
         <source>Transparent toggle tool button</source>
         <translation>透明開關工具按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="38"/>
+        <location filename="../../view/basic_input_interface.py" line="39"/>
         <source>Floating action push button</source>
         <translation>浮動操作按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="45"/>
+        <location filename="../../view/basic_input_interface.py" line="46"/>
         <source>Floating action tool button</source>
         <translation>浮動操作工具按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="127"/>
+        <location filename="../../view/basic_input_interface.py" line="128"/>
         <source>A combo box with items</source>
         <translation>下拉框</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="134"/>
+        <location filename="../../view/basic_input_interface.py" line="135"/>
         <source>An editable combo box</source>
         <translation>可編輯下拉框</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="141"/>
+        <location filename="../../view/basic_input_interface.py" line="142"/>
         <source>A filled combo box with items</source>
         <translation>填充樣式下拉框</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="266"/>
+        <location filename="../../view/basic_input_interface.py" line="315"/>
         <source>Wife</source>
         <translation>腦婆</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="281"/>
+        <location filename="../../view/basic_input_interface.py" line="330"/>
         <source>Stand</source>
         <translation>替身</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="282"/>
+        <location filename="../../view/basic_input_interface.py" line="331"/>
         <source>Choose your stand</source>
         <translation>選擇你的替身</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="148"/>
+        <location filename="../../view/basic_input_interface.py" line="149"/>
         <source>An editable filled combo box</source>
         <translation>填充樣式可編輯下拉框</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="192"/>
+        <location filename="../../view/basic_input_interface.py" line="193"/>
         <source>Email</source>
         <translation>郵件</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="162"/>
+        <location filename="../../view/basic_input_interface.py" line="163"/>
         <source>A filled push button with drop down menu</source>
         <translation>帶下拉菜單的填充按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="170"/>
+        <location filename="../../view/basic_input_interface.py" line="171"/>
         <source>A outlined push button with drop down menu</source>
         <translation>帶下拉菜單的輪廓按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="178"/>
+        <location filename="../../view/basic_input_interface.py" line="179"/>
         <source>A elevated push button with drop down menu</source>
         <translation>帶下拉菜單的凸起按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="186"/>
+        <location filename="../../view/basic_input_interface.py" line="187"/>
         <source>A text push button with drop down menu</source>
         <translation>帶下拉菜單的文本按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="194"/>
+        <location filename="../../view/basic_input_interface.py" line="195"/>
         <source>A tonal push button with drop down menu</source>
         <translation>帶下拉菜單的色調按鈕</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="156"/>
+        <location filename="../../view/basic_input_interface.py" line="157"/>
         <source>Send</source>
         <translation>髮送</translation>
     </message>
     <message>
-        <location filename="../../view/basic_input_interface.py" line="156"/>
+        <location filename="../../view/basic_input_interface.py" line="157"/>
         <source>Save</source>
         <translation>存檔</translation>
+    </message>
+    <message>
+        <location filename="../../view/basic_input_interface.py" line="305"/>
+        <source>Sing</source>
+        <translation>唱</translation>
+    </message>
+    <message>
+        <location filename="../../view/basic_input_interface.py" line="284"/>
+        <source>Basketball</source>
+        <translation>籃球</translation>
+    </message>
+    <message>
+        <location filename="../../view/basic_input_interface.py" line="305"/>
+        <source>Music</source>
+        <translation>Music</translation>
+    </message>
+    <message>
+        <location filename="../../view/basic_input_interface.py" line="276"/>
+        <source>Input chip</source>
+        <translation>輸入選項卡</translation>
+    </message>
+    <message>
+        <location filename="../../view/basic_input_interface.py" line="290"/>
+        <source>Filter chip</source>
+        <translation>過濾選項卡</translation>
+    </message>
+    <message>
+        <location filename="../../view/basic_input_interface.py" line="305"/>
+        <source>Jump</source>
+        <translation>跳</translation>
+    </message>
+    <message>
+        <location filename="../../view/basic_input_interface.py" line="305"/>
+        <source>RAP</source>
+        <translation>RAP</translation>
     </message>
 </context>
 <context>

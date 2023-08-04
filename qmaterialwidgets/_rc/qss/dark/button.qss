@@ -170,3 +170,27 @@ RadioButton::indicator:disabled:checked {
             stop:0.9 #646464,
             stop:1 #646464);
 }
+
+ChipBase {
+    color: --onSurfaceVariant;
+}
+
+FilterChip[hasIcon=false][hasDropMenu=false],
+InputChip[hasIcon=false][isClosable=false] {
+    padding: 7px 16px 8px 16px;
+}
+
+FilterChip[hasIcon=true][hasDropMenu=false],
+InputChip[hasIcon=true][isClosable=false] {
+    padding: 7px 16px 8px 38px;
+}
+
+FilterChip[hasIcon=false][hasDropMenu=true],
+InputChip[hasIcon=false][isClosable=true] {
+    padding: 7px 33px 8px 16px;
+}
+
+FilterChip[hasIcon=true][hasDropMenu=true],
+InputChip[hasIcon=true][isClosable=true] {
+    padding: 7px 33px 8px 38px;
+}

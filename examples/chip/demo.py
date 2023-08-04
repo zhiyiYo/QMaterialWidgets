@@ -45,7 +45,7 @@ class Demo(QWidget):
 
     def __init__(self):
         super().__init__()
-        setTheme(Theme.DARK)
+        # setTheme(Theme.DARK)
         self.setStyleSheet('Demo{background:white}')
 
         self.vBoxLayout = QVBoxLayout(self)

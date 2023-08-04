@@ -1,4 +1,5 @@
 from .check_box import CheckBox
+from .chip import InputChip, ElevatedInputChip, FilterChip, ElevatedFilterChip
 from .card_widget import CardWidget, OutlinedCardWidget, ElevatedCardWidget
 from .button import (OutlinedPushButton, TextPushButton, FilledPushButton, ElevatedPushButton,
                      TonalPushButton, TransparentToolButton, FilledToolButton, TransparentToggleToolButton,

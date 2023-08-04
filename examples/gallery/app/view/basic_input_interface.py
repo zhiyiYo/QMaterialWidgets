@@ -9,7 +9,8 @@ from qmaterialwidgets import (Action, OutlinedPushButton, TransparentToolButton,
                              PrimaryFloatingActionButton, SurfaceFloatingActionButton,
                              SecondaryFloatingActionButton, TertiaryFloatingActionButton, ComboBox,
                              FilledComboBox, FilledDropDownPushButton, TextDropDownPushButton,
-                             OutlinedDropDownPushButton, ElevatedDropDownPushButton, TonalDropDownPushButton)
+                             OutlinedDropDownPushButton, ElevatedDropDownPushButton, TonalDropDownPushButton,
+                             FilterChip, InputChip, ElevatedFilterChip, ElevatedInputChip)
 
 from .gallery_interface import GalleryInterface
 from ..common.translator import Translator
@@ -260,6 +261,54 @@ class BasicInputInterface(GalleryInterface):
             TransparentToggleToolButton(FluentIcon.BASKETBALL, self),
             'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
         )
+
+        # chips
+        w = self.createChipView()
+        inputChip1 = InputChip(self.tr('Sing'), self)
+        inputChip2 = InputChip(self.tr('Basketball'), self, FluentIcon.BASKETBALL)
+        inputChip3 = ElevatedInputChip(self.tr('Music'), self, FluentIcon.MUSIC)
+        inputChip2.setClosable(True)
+        inputChip2.setCheckable(True)
+        w.layout().addWidget(inputChip1, 0, Qt.AlignmentFlag.AlignLeft)
+        w.layout().addWidget(inputChip2, 0, Qt.AlignmentFlag.AlignLeft)
+        w.layout().addWidget(inputChip3, 0, Qt.AlignmentFlag.AlignLeft)
+
+        self.addExampleCard(
+            self.tr('Input chip'),
+            w,
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/chip/demo.py'
+        )
+
+        w = self.createChipView()
+        filterChip1 = FilterChip(self.tr('Sing'), self)
+        filterChip2 = FilterChip(self.tr('Basketball'), self, FluentIcon.BASKETBALL)
+        filterChip3 = ElevatedFilterChip(self.tr('Music'), self, FluentIcon.MUSIC)
+        filterChip2.setMenu(self.createIKunMenu())
+        w.layout().addWidget(filterChip1, 0, Qt.AlignmentFlag.AlignLeft)
+        w.layout().addWidget(filterChip2, 0, Qt.AlignmentFlag.AlignLeft)
+        w.layout().addWidget(filterChip3, 0, Qt.AlignmentFlag.AlignLeft)
+        self.addExampleCard(
+            self.tr('Filter chip'),
+            w,
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/chip/demo.py'
+        )
+
+    def createChipView(self):
+        w = QWidget(self)
+        w.setLayout(QHBoxLayout())
+        w.layout().setContentsMargins(0, 8, 8, 8)
+        w.layout().setSpacing(15)
+        return w
+
+    def createIKunMenu(self):
+        menu = RoundMenu(parent=self)
+        menu.addActions([
+            Action(self.tr('Sing')),
+            Action(self.tr('Jump')),
+            Action(self.tr('RAP')),
+            Action(self.tr('Music')),
+        ])
+        return menu
 
     def createComboBox(self, Combo):
         comboBox = Combo()
