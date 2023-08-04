@@ -87,9 +87,6 @@ class PushButton(BackgroundAnimationWidget, QPushButton):
 
         super().paintEvent(e)
 
-        if self.icon().isNull():
-            return
-
         painter.begin(self)
         if not self.isEnabled():
             painter.setOpacity(0.3628)
@@ -535,12 +532,12 @@ class DropDownButtonBase:
             return
 
         menu = self.menu()
-        menu.view.setMinimumWidth(self.width())
+        menu.view.setMinimumWidth(self.sizeHint().width())
         menu.view.adjustSize()
         menu.adjustSize()
 
         # show menu
-        x = -menu.width()//2 + menu.layout().contentsMargins().left() + self.width()//2
+        x = -menu.width()//2 + menu.layout().contentsMargins().left() + self.sizeHint().width()//2
         y = self.height()
         menu.exec(self.mapToGlobal(QPoint(x, y)))
 
