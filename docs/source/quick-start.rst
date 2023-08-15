@@ -19,8 +19,6 @@ If you are using PySide2, you can download the code in `PySide2 <https://github.
 
 Run example
 ~~~~~~~~~~~
-You can download the executable demo from the `release page <https://github.com/zhiyiYo/QMaterialWidgets/releases>`__.
-
 After installing PySide6-Material-Widgets package using pip, you can run the
 demo in the examples directory, for example:
 

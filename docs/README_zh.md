@@ -45,8 +45,6 @@ pip install PySide6-Material-Widgets -i https://pypi.org/simple/
 
 
 ## 运行示例▶️
-[发行页面](https://github.com/zhiyiYo/QMaterialWidgets/releases)中提供了演示软件，下载 `PySide-Material-Widgets-Gallery_v*.*.*_windows_x64.zip` 之后双击 `gallery.exe` 即可运行。
-
 使用 pip 安装好 PySide6-Material-Widgets 包并下载好此仓库的代码之后，可以运行 examples 目录下的示例程序，比如：
 ```python
 cd examples/community/button
