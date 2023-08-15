@@ -45,8 +45,6 @@ The Community version only provides basic components, while the more advanced on
 
 
 ## Run Example
-You can download the executable demo from the [release page](https://github.com/zhiyiYo/QMaterialWidgets/releases).
-
 After installing PySide2-Material-Widgets package using pip, you can run the demo in examples directory, for example:
 ```python
 cd examples/community/button
