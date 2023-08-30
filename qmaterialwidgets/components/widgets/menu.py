@@ -129,6 +129,9 @@ class MenuActionListWidget(QListWidget):
 
     def __init__(self, parent=None):
         super().__init__(parent)
+        self._itemHeight = 32
+        self._maxVisibleItems = -1  # adjust visible items according to the size of screen
+
         self.setViewportMargins(0, 4, 0, 4)
         self.setTextElideMode(Qt.ElideNone)
         self.setDragEnabled(False)
@@ -176,7 +179,20 @@ class MenuActionListWidget(QListWidget):
         size += QSize(m.left()+m.right()+2, m.top()+m.bottom())
         size.setHeight(min(h, size.height()+3))
         size.setWidth(max(min(w, size.width()), self.minimumWidth()))
+
+        if self.maxVisibleItems() > 0:
+            size.setHeight(min(
+                size.height(), self.maxVisibleItems() * self._itemHeight + m.top()+m.bottom() + 3))
+
         self.setFixedSize(size)
+
+    def setMaxVisibleItems(self, num: int):
+        """ set the maximum visible items """
+        self._maxVisibleItems = num
+        self.adjustSize()
+
+    def maxVisibleItems(self):
+        return self._maxVisibleItems
 
     def setItemHeight(self, height):
         """ set the height of item """
@@ -237,6 +253,11 @@ class RoundMenu(QWidget):
 
         self.view.itemClicked.connect(self._onItemClicked)
         self.view.itemEntered.connect(self._onItemEntered)
+
+    def setMaxVisibleItems(self, num: int):
+        """ set the maximum visible items """
+        self.view.setMaxVisibleItems(num)
+        self.adjustSize()
 
     def setItemHeight(self, height):
         """ set the height of menu item """

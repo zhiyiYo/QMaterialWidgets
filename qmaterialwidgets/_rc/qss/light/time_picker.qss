@@ -1,0 +1,71 @@
+#selectTimeLabel {
+    background-color: transparent;
+    border: none;
+    font-weight: 500;
+    color: --onSurfaceVariant;
+    padding: 16px;
+}
+
+TimeLineEdit {
+    font: 38px 'Segoe UI', 'Microsoft YaHei', 'PingFang SC';
+    border-radius: 10px;
+    text-align: center;
+    selection-background-color: --ThemeColorLight1;
+}
+
+TimeLineEdit[selected=false] {
+    color: --onSurface;
+    border: 2px solid --surfaceContainerHighest;
+    background-color: --surfaceContainerHighest;
+}
+
+TimeLineEdit[selected=true] {
+    color: --onPrimaryContainer;
+    background-color: --primaryContainer;
+    border: 2px solid --primaryContainer;
+}
+
+
+#separatorLabel {
+    font: 42px 'Segoe UI', 'Microsoft YaHei', 'PingFang SC';
+    text-align: center;
+    color: black;
+}
+
+#centerWidget {
+    background-color: --surface;
+    border: none;
+    border-radius: 20px;
+}
+
+#AMPushButton, #PMPushButton {
+    font: 14px  'Segoe UI', 'Microsoft YaHei', 'PingFang SC';
+    margin: 0;
+    border-radius: 0px;
+    border: none;
+    background-color: transparent;
+}
+
+#AMPushButton[horizontal=true],
+#PMPushButton[horizontal=true] {
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+
+#AMPushButton[horizontal=false],
+#PMPushButton[horizontal=false] {
+    border-bottom-left-radius: 9px;
+    border-bottom-right-radius: 9px;
+}
+
+#AMPushButton[selected=true],
+#PMPushButton[selected=true] {
+    color: --onTertiaryContainer;
+}
+
+#AMPushButton[selected=false],
+#PMPushButton[selected=false] {
+    color: --onSurfaceVariant;
+}

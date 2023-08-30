@@ -1,6 +1,7 @@
 from .check_box import CheckBox
 from .chip import InputChip, ElevatedInputChip, FilterChip, ElevatedFilterChip
 from .card_widget import CardWidget, OutlinedCardWidget, ElevatedCardWidget
+from .combo_box import ComboBox, FilledComboBox
 from .button import (OutlinedPushButton, TextPushButton, FilledPushButton, ElevatedPushButton,
                      TonalPushButton, TransparentToolButton, FilledToolButton, TransparentToggleToolButton,
                      TonalToolButton, OutlinedToolButton, FilledToggleToolButton, OutlinedToggleToolButton,
@@ -21,9 +22,16 @@ from .progress_ring import ProgressRing, IndeterminateProgressRing
 from .info_badge import InfoBadge, InfoLevel, DotInfoBadge, IconInfoBadge, InfoBadgePosition, InfoBadgeManager
 from .tool_tip import ToolTipPosition, ToolTip, ToolTipFilter
 from .switch_button import SwitchButton, IndicatorPosition
+from .line_edit import (FilledLineEdit, LineEditButton, FilledSearchLineEdit, LineEdit, SearchLineEdit,
+                        FilledTextEdit, TextEdit)
 from .teaching_tip import TeachingTip, TeachingTipTailPosition, TeachingTipView, PopupTeachingTip
 from .flyout import FlyoutView, FlyoutViewBase, Flyout, FlyoutAnimationType, FlyoutAnimationManager
+from .bubble_widget import BubblePosition, BubbleWidget
+from .slider import Slider
 from .scroll_area import SingleDirectionScrollArea, SmoothScrollArea, ScrollArea
 from .stacked_widget import PopUpAniStackedWidget, OpacityAniStackedWidget
 from .frameless_window import FramelessWindow
 from .info_bar import InfoBar, InfoBarIcon, InfoBarPosition, InfoBarManager
+from .spin_box import SpinBox, DoubleSpinBox, DateEdit, DateTimeEdit, TimeEdit
+from .table_view import TableWidget, TableView, TableItemDelegate
+from .list_view import ListView, ListWidget

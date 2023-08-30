@@ -1,0 +1,44 @@
+
+#view {
+    background-color: transparent;
+}
+
+SegmentedWidget {
+    background-color: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+}
+
+SegmentedItem[isSelected=false] {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    background-color: transparent;
+    border: none;
+    border-radius: 6px;
+    margin: 3px 2px;
+}
+
+SegmentedItem[isSelected=false]:hover {
+    background-color: rgba(255, 255, 255, 9);
+}
+
+SegmentedItem[isSelected=false]:pressed {
+    background-color: rgba(255, 255, 255, 6);
+    margin: 3px 4px 3px 4px;
+}
+
+SegmentedItem[isSelected=true] {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgba(255, 255, 255, 0.0605);
+    border: 1px solid rgba(255, 255, 255, 0.053);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    margin: 0px;
+    color: white;
+}
+
+SegmentedItem[isSelected=true]:hover,
+SegmentedItem[isSelected=true]:pressed {
+    color: white;
+}

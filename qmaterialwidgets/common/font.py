@@ -37,4 +37,3 @@ def getFont(fontSize=14, weight=QFont.Weight.Normal):
     font.setWeight(weight)
     return font
 
-

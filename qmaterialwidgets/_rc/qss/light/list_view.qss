@@ -1,0 +1,89 @@
+ListView,
+ListWidget {
+    background: transparent;
+    outline: none;
+    border: none;
+    /* font: 13px 'Segoe UI', 'Microsoft YaHei'; */
+    selection-background-color: transparent;
+    alternate-background-color: transparent;
+}
+
+ListView::item,
+ListWidget::item {
+    background: transparent;
+    border: none;
+    padding-left: 11px;
+    padding-right: 11px;
+    height: 46px;
+}
+
+
+ListView::indicator,
+ListWidget::indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: 2px solid #49454F;
+    background-color: transparent;
+    margin-right: 8px;
+}
+
+ListView::indicator:hover,
+ListWidget::indicator:hover {
+    border: 2px solid #1D1B20;
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+ListView::indicator:pressed,
+ListWidget::indicator:pressed {
+    border: 2px solid #1D1B20;
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+ListView::indicator:checke,
+ListWidget::indicator:checked,
+ListView::indicator:indeterminate,
+ListWidget::indicator:indeterminate {
+    border: 1px solid --ThemeColorPrimary;
+    background-color: --ThemeColorPrimary;
+}
+
+ListView::indicator:checked,
+ListWidget::indicator:checked {
+    image: url(:/qmaterialwidgets/images/check_box/Accept_white.svg);
+}
+
+ListView::indicator:indeterminate,
+ListWidget::indicator:indeterminate {
+    image: url(:/qmaterialwidgets/images/check_box/PartialAccept_white.svg);
+}
+
+ListView::indicator:checked:hove,
+ListWidget::indicator:checked:hover,
+ListView::indicator:indeterminate:hover,
+ListWidget::indicator:indeterminate:hover {
+    border: 1px solid --ThemeColorLight1;
+    background-color: --ThemeColorLight1;
+}
+
+ListView::indicator:checked:presse,
+ListWidget::indicator:checked:pressed,
+ListView::indicator:indeterminate:pressed,
+ListWidget::indicator:indeterminate:pressed {
+    border: 1px solid --ThemeColorLight3;
+    background-color: --ThemeColorLight3;
+}
+
+ListView::indicator:disabled,
+ListWidget::indicator:disabled {
+    border: 2px solid rgb(199, 199, 199);
+    background-color: transparent;
+}
+
+ListView::indicator:checked:disable,
+ListWidget::indicator:checked:disabled,
+ListView::indicator:indeterminate:disabled,
+ListWidget::indicator:indeterminate:disabled {
+    border: 1px solid rgb(199, 199, 199);
+    background-color: rgb(199, 199, 199);
+}
