@@ -33,25 +33,21 @@
 ![Interface](./source/_static/Interface.jpg)
 
 ## 安装📥
-安装社区版：
+使用 pip 安装：
 ```shell
 pip install PySide6-Material-Widgets -i https://pypi.org/simple/
 ```
 
-社区版只提供了基本的组件，[高级版](https://afdian.net/a/zhiyiYo?tab=shop)中内置了更多开箱即用的复杂组件，。
-
 > **Warning**
-> 请勿同时安装 PySide2-Material-Widgets 和 PySide6-Material-Widgets，因为他们的包名都是 `qmaterialwidgets`
+> 请勿同时安装 PyQt-Material-Widgets、PyQt6-Material-Widgets、PySide2-Material-Widgets 和 PySide6-Material-Widgets，因为他们的包名都是 `qmaterialwidgets`
 
 
 ## 运行示例▶️
 使用 pip 安装好 PySide6-Material-Widgets 包并下载好此仓库的代码之后，可以运行 examples 目录下的示例程序，比如：
 ```python
-cd examples/community/button
+cd examples/gallery
 python demo.py
 ```
-
-如果遇到 `ImportError: cannot import name 'XXX' from 'qmaterialwidgets'`，这表明 demo 中导入的组件只在高级版可用.
 
 ## 在线文档📕
 想要了解 PySide6-Material-Widgets 的正确使用姿势？请仔细阅读 [帮助文档](https://qmaterilwidgets.readthedocs.io/zh_CN/latest/) 👈
@@ -71,6 +67,6 @@ python demo.py
 * [**Google/Material Design**: A website demonstrates the controls available in Material Design 3 System](https://m3.material.io/get-started)
 
 ## 许可证
-PySide6-Material-Widgets 使用双许可证。非商业用途使用 [GPLv3](../LICENSE) 许可证进行授权，商用请在 [爱发电](https://afdian.net/a/zhiyiYo?tab=shop) 上进行购买以支持作者的开发。
+PySide6-Material-Widgets 使用双许可证。非商业用途使用 [GPLv3](../LICENSE) 许可证进行授权，商用请在 [爱发电](https://afdian.net/a/zhiyiYo?tab=shop) 上进行购买以支持项目的开发。
 
 Copyright © 2023 by zhiyiYo.

@@ -33,25 +33,21 @@ English | <a href="./docs/README_zh.md">简体中文</a>
 ![Interface](https://raw.githubusercontent.com/zhiyiYo/QMaterialWidgets/master/docs/source/_static/Interface.jpg)
 
 ## Install
-To install Community version:
+To install using pip:
 ```shell
 pip install PySide6-Material-Widgets -i https://pypi.org/simple/
 ```
 
-The Community version only provides basic components, while the more advanced ones are available in the [Premium version](https://afdian.net/a/zhiyiYo?tab=shop).
-
 > **Warning**
-> Don't install PySide6-Material-Widgets and PySide2-Material-Widgets at the same time, because their package names are all `qmaterialwidgets`.
+> Don't install PyQt-Material-Widgets, PyQt6-Material-Widgets, PySide6-Material-Widgets and PySide2-Material-Widgets at the same time, because their package names are all `qmaterialwidgets`.
 
 
 ## Run Example
 After installing PySide6-Material-Widgets package using pip, you can run the demo in examples directory, for example:
 ```python
-cd examples/community/button
+cd examples/gallery
 python demo.py
 ```
-
-If you encounter `ImportError: cannot import name 'XXX' from 'qmaterialwidgets'`, it indicates that the imported components are only available in the Premium version.
 
 ## Documentation
 Want to know more about PySide6-Material-Widgets? Please read the [help document](https://qmaterialwidgets.readthedocs.io/) 👈
@@ -74,4 +70,4 @@ If this project helps you a lot and you want to support the development and main
 ## License
 PySide6-Material-Widgets adopts dual licenses. Non-commercial usage is licensed under [GPLv3](./LICENSE). For commercial purposes, please purchase on [爱发电](https://afdian.net/a/zhiyiYo?tab=shop) to support the development of this project.
 
-Copyright © 2021 by zhiyiYo.
+Copyright © 2023 by zhiyiYo.
