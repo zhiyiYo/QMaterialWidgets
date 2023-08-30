@@ -33,12 +33,10 @@ English | <a href="./docs/README_zh.md">简体中文</a>
 ![Interface](https://raw.githubusercontent.com/zhiyiYo/QMaterialWidgets/master/docs/source/_static/Interface.jpg)
 
 ## Install
-To install Community version:
+To install using pip:
 ```shell
 pip install PySide2-Material-Widgets -i https://pypi.org/simple/
 ```
-
-The Community version only provides basic components, while the more advanced ones are available in the [Premium version](https://afdian.net/a/zhiyiYo?tab=shop).
 
 > **Warning**
 > Don't install PySide2-Material-Widgets and PySide6-Material-Widgets at the same time, because their package names are all `qmaterialwidgets`.
@@ -47,11 +45,9 @@ The Community version only provides basic components, while the more advanced on
 ## Run Example
 After installing PySide2-Material-Widgets package using pip, you can run the demo in examples directory, for example:
 ```python
-cd examples/community/button
+cd examples/gallery
 python demo.py
 ```
-
-If you encounter `ImportError: cannot import name 'XXX' from 'qmaterialwidgets'`, it indicates that the imported components are only available in the Premium version.
 
 ## Documentation
 Want to know more about PySide2-Material-Widgets? Please read the [help document](https://qmaterialwidgets.readthedocs.io/) 👈
