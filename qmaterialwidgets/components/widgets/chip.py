@@ -1,8 +1,8 @@
 # coding:utf-8
 from enum import Enum
-from PySide6.QtCore import QRectF, Qt, Signal, Property, QSize
-from PySide6.QtGui import QPixmap, QPainter, QColor, QIcon
-from PySide6.QtWidgets import QWidget, QApplication, QGraphicsDropShadowEffect
+from PyQt5.QtCore import QRectF, Qt, pyqtSignal, pyqtProperty, QSize
+from PyQt5.QtGui import QPixmap, QPainter, QColor, QIcon
+from PyQt5.QtWidgets import QWidget, QApplication, QGraphicsDropShadowEffect
 
 from qmaterialwidgets.common.config import Theme
 from qmaterialwidgets.components.widgets.menu import RoundMenu
@@ -99,7 +99,7 @@ class InputChip(ChipBase):
         super().resizeEvent(e)
         self.closeButton.move(self.width() - 30, self.height()//2-12)
 
-    closable = Property(bool, isClosable, setClosable)
+    closable = pyqtProperty(bool, isClosable, setClosable)
 
 
 class EvalatedChipBase:

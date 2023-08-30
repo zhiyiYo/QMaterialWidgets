@@ -2,8 +2,8 @@
 from typing import Dict, List
 from itertools import groupby
 
-from PySide6.QtCore import Qt, QObject, Signal
-from PySide6.QtWidgets import QWidget, QStackedWidget
+from PyQt5.QtCore import Qt, QObject, pyqtSignal
+from PyQt5.QtWidgets import QWidget, QStackedWidget
 
 
 class RouteItem:
@@ -72,7 +72,7 @@ class StackedHistory:
 class Router(QObject):
     """ Router """
 
-    emptyChanged = Signal(bool)
+    emptyChanged = pyqtSignal(bool)
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)

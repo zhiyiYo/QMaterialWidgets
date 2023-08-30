@@ -2,10 +2,10 @@
 from typing import List, Union
 from math import sin, cos, radians, atan, degrees
 
-from PySide6.QtCore import Qt, Signal, QTime, QRectF, QPoint, QRect, Property, QRegularExpression
-from PySide6.QtGui import QIntValidator, QPainter, QPen, QPainterPath, QFont, QRegularExpressionValidator
-from PySide6.QtWidgets import (QWidget, QLineEdit, QApplication, QLabel, QHBoxLayout, QVBoxLayout,
-                               QPushButton, QFrame)
+from PyQt5.QtCore import Qt, pyqtSignal, QTime, QRectF, QPoint, QRect, pyqtProperty, QRegularExpression
+from PyQt5.QtGui import QIntValidator, QPainter, QPen, QPainterPath, QFont, QRegularExpressionValidator
+from PyQt5.QtWidgets import (QWidget, QLineEdit, QApplication, QLabel, QHBoxLayout, QVBoxLayout,
+                             QPushButton, QFrame)
 
 from ...common.style_sheet import MaterialStyleSheet, themeColor, palette
 from ...common.font import setFont
@@ -18,8 +18,8 @@ from ..dialog_box.mask_dialog_base import MaskDialogBase
 class TimeLineEdit(QLineEdit):
     """ Time line edit """
 
-    focused = Signal()
-    valueChanged = Signal(int)
+    focused = pyqtSignal()
+    valueChanged = pyqtSignal(int)
 
     def __init__(self, parent=None):
         super().__init__('00', parent)
@@ -60,7 +60,7 @@ class TimeLineEdit(QLineEdit):
         painter.setRenderHints(QPainter.RenderHint.Antialiasing)
         painter.setBrush(Qt.NoBrush)
         path = QPainterPath()
-        path.addRoundedRect(self.rect().adjusted(2, 2, -2, -2), 8, 8)
+        path.addRoundedRect(QRectF(self.rect().adjusted(2, 2, -2, -2)), 8, 8)
         painter.strokePath(path, QPen(themeColor(), 2))
 
 
@@ -83,7 +83,7 @@ class MinuteLineEdit(TimeLineEdit):
 class PeriodSelector(QWidget):
     """ Period selector """
 
-    periodChanged = Signal(bool)
+    periodChanged = pyqtSignal(bool)
 
     def __init__(self, orientation: Qt.Orientation, parent=None):
         super().__init__(parent)
@@ -196,7 +196,7 @@ class PeriodSelector(QWidget):
 class TimeEditWidget(QWidget):
     """ Time edit widget """
 
-    timeChanged = Signal(QTime)
+    timeChanged = pyqtSignal(QTime)
 
     def __init__(self, orientation: Qt.Orientation, parent=None):
         super().__init__(parent)
@@ -293,7 +293,7 @@ class TimeEditWidget(QWidget):
 class TimeDial(QWidget):
     """ Time dial """
 
-    valueChanged = Signal(int)
+    valueChanged = pyqtSignal(int)
 
     def __init__(self, min: int, max: int, labels: List[str], parent=None):
         super().__init__(parent=parent)
@@ -365,7 +365,7 @@ class TimeDial(QWidget):
         r = w / 2 - 4 - aw / 2
         x = int(xc + r * sin(radians(angle)))
         y = int(yc - r * cos(radians(angle)))
-        return QRect(x-aw/2, y-ah/2, aw, ah)
+        return QRect(int(x-aw/2), int(y-ah/2), aw, ah)
 
     def paintEvent(self, e):
         painter = QPainter(self)
@@ -398,7 +398,7 @@ class TimeDial(QWidget):
         painter.drawEllipse(QPoint(), 3, 3)
 
         # draw selector track
-        r = self.width() / 2
+        r = self.width() // 2
         angle = self._valueToAngle(self.value)
         rect = self._angleToRect(angle).translated(-r, -r)
         painter.setPen(QPen(themeColor(), 2))
@@ -461,8 +461,8 @@ class MinuteDial(TimeDial):
 class TimeDialView(QWidget):
     """ Time dial view """
 
-    minuteChanged = Signal(int)
-    hourChanged = Signal(int)
+    minuteChanged = pyqtSignal(int)
+    hourChanged = pyqtSignal(int)
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
@@ -500,9 +500,9 @@ class TimeDialView(QWidget):
 class TimePickerView(QFrame):
     """ Time picker view """
 
-    timeChanged = Signal(QTime)
-    rejected = Signal()
-    accepted = Signal()
+    timeChanged = pyqtSignal(QTime)
+    rejected = pyqtSignal()
+    accepted = pyqtSignal()
 
     def __init__(self, time: QTime = None, orientation=Qt.Orientation.Horizontal, parent=None):
         super().__init__(parent=parent)
@@ -593,7 +593,7 @@ class TimePickerView(QFrame):
 class TimePickerDialog(MaskDialogBase):
     """ Time picker dialog """
 
-    timeChanged = Signal(QTime)
+    timeChanged = pyqtSignal(QTime)
 
     def __init__(self, time: QTime = None, orientation=Qt.Orientation.Horizontal, parent=None):
         super().__init__(parent=parent)
@@ -616,7 +616,7 @@ class TimePickerDialog(MaskDialogBase):
 class TimePicker(LineEdit):
     """ Time picker """
 
-    timeChanged = Signal(QTime)
+    timeChanged = pyqtSignal(QTime)
 
     def __init__(self, parent=None, time: QTime = None, orientation=Qt.Orientation.Horizontal):
         super().__init__(parent)
@@ -656,5 +656,5 @@ class TimePicker(LineEdit):
     def getFormat(self):
         return self._format
 
-    time = Property(QTime, getTime, setTime)
-    timeFormat = Property(Qt.DateFormat, getFormat, setFormat)
+    time = pyqtProperty(QTime, getTime, setTime)
+    timeFormat = pyqtProperty(Qt.DateFormat, getFormat, setFormat)

@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Union
 
-from PySide6.QtCore import Qt, QSize, QRectF, QEvent
-from PySide6.QtGui import QPixmap, QPainter, QColor, QIcon
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QGraphicsDropShadowEffect
+from PyQt5.QtCore import Qt, QSize, QRectF, QEvent
+from PyQt5.QtGui import QPixmap, QPainter, QColor, QIcon
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QGraphicsDropShadowEffect
 
 from ..common.icon import MaterialIconBase, drawIcon, toQIcon
 from ..common.style_sheet import isDarkTheme, MaterialStyleSheet

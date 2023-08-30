@@ -1,9 +1,9 @@
 # coding: utf-8
 from typing import List, Optional, Union
 
-from PySide6.QtCore import Qt, QMargins, QModelIndex, QItemSelectionModel, Property, QRect
-from PySide6.QtGui import QPainter, QColor, QKeyEvent, QPalette, QBrush, QPainterPath
-from PySide6.QtWidgets import (QStyledItemDelegate, QApplication, QStyleOptionViewItem,
+from PyQt5.QtCore import Qt, QMargins, QModelIndex, QItemSelectionModel, pyqtProperty, QRectF
+from PyQt5.QtGui import QPainter, QColor, QKeyEvent, QPalette, QBrush, QPainterPath
+from PyQt5.QtWidgets import (QStyledItemDelegate, QApplication, QStyleOptionViewItem,
                              QTableView, QTableWidget, QWidget, QTableWidgetItem, QHeaderView)
 
 from ...common.font import getFont
@@ -223,7 +223,7 @@ class TableBase:
         if self.horizontalHeader().isVisible():
             y += self.horizontalHeader().height()
 
-        rect = QRect(0, y, self.width(), self.itemHeight)
+        rect = QRectF(0, y, self.width(), self.itemHeight)
         path = QPainterPath()
         path.addRect(rect)
         self.ripple.setClipPath(path)
@@ -288,7 +288,7 @@ class TableWidget(TableBase, QTableWidget):
     def setSelectRightClickedRow(self, isSelect: bool):
         self._isSelectRightClickedRow = isSelect
 
-    selectRightClickedRow = Property(bool, isSelectRightClickedRow, setSelectRightClickedRow)
+    selectRightClickedRow = pyqtProperty(bool, isSelectRightClickedRow, setSelectRightClickedRow)
 
 
 
@@ -304,4 +304,4 @@ class TableView(TableBase, QTableView):
     def setSelectRightClickedRow(self, isSelect: bool):
         self._isSelectRightClickedRow = isSelect
 
-    selectRightClickedRow = Property(bool, isSelectRightClickedRow, setSelectRightClickedRow)
+    selectRightClickedRow = pyqtProperty(bool, isSelectRightClickedRow, setSelectRightClickedRow)

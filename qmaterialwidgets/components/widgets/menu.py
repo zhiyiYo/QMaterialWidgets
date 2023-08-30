@@ -2,12 +2,13 @@
 from enum import Enum
 from typing import List, Union
 
-from PySide6.QtCore import (QEasingCurve, QEvent, QPropertyAnimation, QObject, QModelIndex,
-                          Qt, QSize, QRectF, Signal, QPoint, QTimer, QObject, QParallelAnimationGroup)
-from PySide6.QtGui import (QAction, QIcon, QColor, QPainter, QPen, QPixmap, QRegion, QCursor, QTextCursor, QHoverEvent,
-                           QFontMetrics, QKeySequence)
-from PySide6.QtWidgets import (QApplication, QStyle, QGraphicsDropShadowEffect, QListWidget, QWidget, QHBoxLayout,
-                               QListWidgetItem, QLineEdit, QTextEdit, QStyledItemDelegate, QStyleOptionViewItem)
+from PyQt5.QtCore import (QEasingCurve, QEvent, QPropertyAnimation, QObject, QModelIndex,
+                          Qt, QSize, QRectF, pyqtSignal, QPoint, QTimer, QObject, QParallelAnimationGroup)
+from PyQt5.QtGui import (QIcon, QColor, QPainter, QPen, QPixmap, QRegion, QCursor, QTextCursor, QHoverEvent,
+                         QFontMetrics, QKeySequence)
+from PyQt5.QtWidgets import (QApplication, QStyle, QGraphicsDropShadowEffect, QListWidget, QWidget, QHBoxLayout,
+                             QListWidgetItem, QLineEdit, QTextEdit, QStyledItemDelegate, QStyleOptionViewItem,
+                             QAction)
 
 from qmaterialwidgets.common.config import Theme
 
@@ -34,7 +35,7 @@ class MenuAnimationType(Enum):
 class SubMenuItemWidget(QWidget):
     """ Sub menu item """
 
-    showMenuSig = Signal(QListWidgetItem)
+    showMenuSig = pyqtSignal(QListWidgetItem)
 
     def __init__(self, menu, item, parent=None):
         """
@@ -210,7 +211,7 @@ class MenuActionListWidget(QListWidget):
 class RoundMenu(QWidget):
     """ Round corner menu """
 
-    closedSignal = Signal()
+    closed = pyqtSignal()
 
     def __init__(self, title="", parent=None):
         super().__init__(parent=parent)
@@ -388,7 +389,7 @@ class RoundMenu(QWidget):
         if before not in self._actions:
             return
 
-        beforeItem = before.property('item')
+        beforeItem = before.pyqtProperty('item')
         if not beforeItem:
             return
 
@@ -462,7 +463,7 @@ class RoundMenu(QWidget):
             raise ValueError('`before` should be in menu action list')
 
         item, w = self._createSubMenuItem(menu)
-        self.view.insertItem(self.view.row(before.property('item')), item)
+        self.view.insertItem(self.view.row(before.pyqtProperty('item')), item)
         self.view.setItemWidget(item, w)
         self.adjustSize()
 
@@ -565,7 +566,7 @@ class RoundMenu(QWidget):
 
     def closeEvent(self, e):
         e.accept()
-        self.closedSignal.emit()
+        self.closed.emit()
         self.view.clearSelection()
 
     def menuActions(self):
@@ -596,7 +597,7 @@ class RoundMenu(QWidget):
     def _onActionChanged(self):
         """ action changed slot """
         action = self.sender()  # type: QAction
-        item = action.property('item')  # type: QListWidgetItem
+        item = action.pyqtProperty('item')  # type: QListWidgetItem
         item.setIcon(self._createItemIcon(action))
 
         self._adjustItemText(item, action)

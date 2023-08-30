@@ -1,9 +1,9 @@
 # coding:utf-8
 import sys
 
-from PySide6.QtCore import Qt, Signal, QEasingCurve, QUrl
-from PySide6.QtGui import QIcon, QDesktopServices
-from PySide6.QtWidgets import QLabel, QHBoxLayout, QVBoxLayout, QApplication, QFrame, QWidget
+from PyQt5.QtCore import Qt, pyqtSignal, QEasingCurve, QUrl
+from PyQt5.QtGui import QIcon, QDesktopServices
+from PyQt5.QtWidgets import QLabel, QHBoxLayout, QVBoxLayout, QApplication, QFrame, QWidget
 
 from qmaterialwidgets import (NavigationBar, MessageBox, isDarkTheme, setTheme, Theme, setThemeColor,
                               SearchLineEdit, PopUpAniStackedWidget, setStyleSheet, FramelessWindow)
@@ -25,7 +25,7 @@ class Widget(QWidget):
 class StackedWidget(QFrame):
     """ Stacked widget """
 
-    currentChanged = Signal(int)
+    currentChanged = pyqtSignal(int)
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
@@ -159,6 +159,11 @@ class Window(FramelessWindow):
 
 
 if __name__ == '__main__':
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+    
     app = QApplication(sys.argv)
     w = Window()
     w.show()

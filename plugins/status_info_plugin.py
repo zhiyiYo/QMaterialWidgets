@@ -1,6 +1,5 @@
 # coding: utf-8
-from PySide6.QtCore import QSize, Qt
-from PySide6.QtDesigner import QDesignerCustomWidgetInterface
+from PyQt5.QtDesigner import QPyDesignerCustomWidgetPlugin
 
 from qmaterialwidgets import (InfoBar, ProgressBar, IndeterminateProgressBar, ProgressRing, InfoBarPosition,
                             IndeterminateProgressRing, InfoBadge, DotInfoBadge, IconInfoBadge, FluentIcon)
@@ -15,7 +14,7 @@ class StatusInfoPlugin(PluginBase):
 
 
 
-class ProgressBarPlugin(StatusInfoPlugin, QDesignerCustomWidgetInterface):
+class ProgressBarPlugin(StatusInfoPlugin, QPyDesignerCustomWidgetPlugin):
     """ Progress bar plugin """
 
     def createWidget(self, parent):
@@ -28,7 +27,7 @@ class ProgressBarPlugin(StatusInfoPlugin, QDesignerCustomWidgetInterface):
         return "ProgressBar"
 
 
-class IndeterminateProgressBarPlugin(StatusInfoPlugin, QDesignerCustomWidgetInterface):
+class IndeterminateProgressBarPlugin(StatusInfoPlugin, QPyDesignerCustomWidgetPlugin):
     """ Indeterminate progress bar plugin """
 
     def createWidget(self, parent):
@@ -41,7 +40,7 @@ class IndeterminateProgressBarPlugin(StatusInfoPlugin, QDesignerCustomWidgetInte
         return "IndeterminateProgressBar"
 
 
-class ProgressRingPlugin(StatusInfoPlugin, QDesignerCustomWidgetInterface):
+class ProgressRingPlugin(StatusInfoPlugin, QPyDesignerCustomWidgetPlugin):
     """ Progress ring plugin """
 
     def createWidget(self, parent):
@@ -54,7 +53,7 @@ class ProgressRingPlugin(StatusInfoPlugin, QDesignerCustomWidgetInterface):
         return "ProgressRing"
 
 
-class IndeterminateProgressRingPlugin(StatusInfoPlugin, QDesignerCustomWidgetInterface):
+class IndeterminateProgressRingPlugin(StatusInfoPlugin, QPyDesignerCustomWidgetPlugin):
     """ Progress ring plugin """
 
     def createWidget(self, parent):
@@ -68,7 +67,7 @@ class IndeterminateProgressRingPlugin(StatusInfoPlugin, QDesignerCustomWidgetInt
 
 
 
-class InfoBadgePlugin(StatusInfoPlugin, QDesignerCustomWidgetInterface):
+class InfoBadgePlugin(StatusInfoPlugin, QPyDesignerCustomWidgetPlugin):
     """ Info badge plugin """
 
     def createWidget(self, parent):
@@ -81,7 +80,7 @@ class InfoBadgePlugin(StatusInfoPlugin, QDesignerCustomWidgetInterface):
         return "InfoBadge"
 
 
-class DotInfoBadgePlugin(StatusInfoPlugin, QDesignerCustomWidgetInterface):
+class DotInfoBadgePlugin(StatusInfoPlugin, QPyDesignerCustomWidgetPlugin):
     """ Dot info badge plugin """
 
     def createWidget(self, parent):
@@ -94,7 +93,7 @@ class DotInfoBadgePlugin(StatusInfoPlugin, QDesignerCustomWidgetInterface):
         return "DotInfoBadge"
 
 
-class IconInfoBadgePlugin(StatusInfoPlugin, QDesignerCustomWidgetInterface):
+class IconInfoBadgePlugin(StatusInfoPlugin, QPyDesignerCustomWidgetPlugin):
     """ Icon info badge plugin """
 
     def createWidget(self, parent):

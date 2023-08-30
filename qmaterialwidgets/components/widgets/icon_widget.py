@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Union
 
-from PySide6.QtCore import Property
-from PySide6.QtGui import QIcon, QPainter
-from PySide6.QtWidgets import QWidget
+from PyQt5.QtCore import pyqtProperty
+from PyQt5.QtGui import QIcon, QPainter
+from PyQt5.QtWidgets import QWidget
 
 from ...common.icon import MaterialIconBase, drawIcon, toQIcon
 from ...common.overload import singledispatchmethod
@@ -44,4 +44,4 @@ class IconWidget(QWidget):
         painter.setRenderHints(QPainter.RenderHint.Antialiasing | QPainter.RenderHint.SmoothPixmapTransform)
         drawIcon(self._icon, painter, self.rect())
 
-    icon = Property(QIcon, getIcon, setIcon)
+    icon = pyqtProperty(QIcon, getIcon, setIcon)

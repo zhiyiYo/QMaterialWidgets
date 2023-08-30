@@ -1,6 +1,6 @@
 # coding: utf-8
-from PySide6.QtCore import Qt
-from PySide6.QtDesigner import QDesignerCustomWidgetInterface
+from PyQt5.QtCore import Qt
+from PyQt5.QtDesigner import QPyDesignerCustomWidgetPlugin
 
 from qmaterialwidgets import (SpinBox, DoubleSpinBox, TextEdit, TimeEdit, DateTimeEdit, LineEdit,
                               DateEdit, SearchLineEdit, FilledSearchLineEdit, FilledLineEdit, FilledTextEdit)
@@ -14,7 +14,7 @@ class TextPlugin(PluginBase):
         return super().group() + ' (Text)'
 
 
-class LineEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class LineEditPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Line edit plugin """
 
     def createWidget(self, parent):
@@ -27,7 +27,7 @@ class LineEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "LineEdit"
 
 
-class FilledLineEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class FilledLineEditPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Line edit plugin """
 
     def createWidget(self, parent):
@@ -40,7 +40,7 @@ class FilledLineEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "FilledLineEdit"
 
 
-class SearchLineEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class SearchLineEditPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Search line edit plugin """
 
     def createWidget(self, parent):
@@ -53,7 +53,7 @@ class SearchLineEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "SearchLineEdit"
 
 
-class FilledSearchLineEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class FilledSearchLineEditPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Search line edit plugin """
 
     def createWidget(self, parent):
@@ -66,7 +66,7 @@ class FilledSearchLineEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "FilledSearchLineEdit"
 
 
-class TextEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class TextEditPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Text edit plugin """
 
     def createWidget(self, parent):
@@ -79,7 +79,7 @@ class TextEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "TextEdit"
 
 
-class FilledTextEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class FilledTextEditPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Filled text edit plugin """
 
     def createWidget(self, parent):
@@ -92,7 +92,7 @@ class FilledTextEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "FilledTextEdit"
 
 
-class DateEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class DateEditPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Date edit plugin """
 
     def createWidget(self, parent):
@@ -105,7 +105,7 @@ class DateEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "DateEdit"
 
 
-class TimeEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class TimeEditPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Time edit plugin """
 
     def createWidget(self, parent):
@@ -118,7 +118,7 @@ class TimeEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "TimeEdit"
 
 
-class DateTimeEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class DateTimeEditPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Date time edit plugin """
 
     def createWidget(self, parent):
@@ -131,7 +131,7 @@ class DateTimeEditPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "DateTimeEdit"
 
 
-class SpinBoxPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class SpinBoxPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Spin box plugin """
 
     def createWidget(self, parent):
@@ -144,7 +144,7 @@ class SpinBoxPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "SpinBox"
 
 
-class DoubleSpinBoxPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class DoubleSpinBoxPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Double spin box plugin """
 
     def createWidget(self, parent):

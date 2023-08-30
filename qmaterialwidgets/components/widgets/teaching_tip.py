@@ -2,9 +2,9 @@
 from enum import Enum
 from typing import Union
 
-from PySide6.QtCore import Qt, QPoint, QObject, QPointF, QTimer, QPropertyAnimation, QEvent
-from PySide6.QtGui import QPainter, QColor, QPainterPath, QIcon, QCursor, QPolygonF, QPixmap, QImage
-from PySide6.QtWidgets import QWidget, QHBoxLayout, QApplication, QGraphicsDropShadowEffect
+from PyQt5.QtCore import Qt, QPoint, QObject, QPointF, QTimer, QPropertyAnimation, QEvent
+from PyQt5.QtGui import QPainter, QColor, QPainterPath, QIcon, QCursor, QPolygonF, QPixmap, QImage
+from PyQt5.QtWidgets import QWidget, QHBoxLayout, QApplication, QGraphicsDropShadowEffect
 
 from ...common.icon import MaterialIconBase
 from ...common.style_sheet import isDarkTheme, palette

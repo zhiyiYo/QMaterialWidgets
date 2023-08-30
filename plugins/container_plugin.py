@@ -1,6 +1,6 @@
 # coding: utf-8
-from PySide6.QtWidgets import QWidget
-from PySide6.QtDesigner import (QDesignerCustomWidgetInterface, QDesignerFormWindowInterface, QExtensionFactory,
+from PyQt5.QtWidgets import QWidget
+from PyQt5.QtDesigner import (QPyDesignerCustomWidgetPlugin, QDesignerFormWindowInterface, QExtensionFactory,
                               QPyDesignerContainerExtension)
 
 from qmaterialwidgets import (ScrollArea, SmoothScrollArea, SingleDirectionScrollArea, OpacityAniStackedWidget,
@@ -18,7 +18,7 @@ class ContainerPlugin(PluginBase):
         return True
 
 
-class CardWidgetPlugin(ContainerPlugin, QDesignerCustomWidgetInterface):
+class CardWidgetPlugin(ContainerPlugin, QPyDesignerCustomWidgetPlugin):
     """ Card widget plugin """
 
     def createWidget(self, parent):
@@ -31,7 +31,7 @@ class CardWidgetPlugin(ContainerPlugin, QDesignerCustomWidgetInterface):
         return "CardWidget"
 
 
-class OutlinedCardWidgetPlugin(ContainerPlugin, QDesignerCustomWidgetInterface):
+class OutlinedCardWidgetPlugin(ContainerPlugin, QPyDesignerCustomWidgetPlugin):
     """ Outlined card widget plugin """
 
     def createWidget(self, parent):
@@ -44,7 +44,7 @@ class OutlinedCardWidgetPlugin(ContainerPlugin, QDesignerCustomWidgetInterface):
         return "OutlinedCardWidget"
 
 
-class ElevatedCardWidgetPlugin(ContainerPlugin, QDesignerCustomWidgetInterface):
+class ElevatedCardWidgetPlugin(ContainerPlugin, QPyDesignerCustomWidgetPlugin):
     """ Elevated card widget plugin """
 
     def createWidget(self, parent):
@@ -71,7 +71,7 @@ class ScrollAreaPluginBase(ContainerPlugin):
         """
 
 
-class ScrollAreaPlugin(ScrollAreaPluginBase, QDesignerCustomWidgetInterface):
+class ScrollAreaPlugin(ScrollAreaPluginBase, QPyDesignerCustomWidgetPlugin):
     """ Scroll area plugin """
 
     def createWidget(self, parent):
@@ -87,7 +87,7 @@ class ScrollAreaPlugin(ScrollAreaPluginBase, QDesignerCustomWidgetInterface):
         return "Smooth scroll area"
 
 
-class SmoothScrollAreaPlugin(ScrollAreaPluginBase, QDesignerCustomWidgetInterface):
+class SmoothScrollAreaPlugin(ScrollAreaPluginBase, QPyDesignerCustomWidgetPlugin):
     """ Smooth scroll area plugin """
 
     def createWidget(self, parent):
@@ -100,7 +100,7 @@ class SmoothScrollAreaPlugin(ScrollAreaPluginBase, QDesignerCustomWidgetInterfac
         return "SmoothScrollArea"
 
 
-class SingleDirectionScrollAreaPlugin(ScrollAreaPluginBase, QDesignerCustomWidgetInterface):
+class SingleDirectionScrollAreaPlugin(ScrollAreaPluginBase, QPyDesignerCustomWidgetPlugin):
     """ Single direction scroll area plugin """
 
     def createWidget(self, parent):
@@ -183,7 +183,7 @@ class StackedWidgetExtensionFactory(QExtensionFactory):
 
 
 @StackedWidgetExtensionFactory.register
-class OpacityAniStackedWidgetPlugin(StackedWidgetPlugin, QDesignerCustomWidgetInterface):
+class OpacityAniStackedWidgetPlugin(StackedWidgetPlugin, QPyDesignerCustomWidgetPlugin):
     """ opacity ani stacked widget plugin """
 
     def createWidget(self, parent):
@@ -199,7 +199,7 @@ class OpacityAniStackedWidgetPlugin(StackedWidgetPlugin, QDesignerCustomWidgetIn
 
 
 @StackedWidgetExtensionFactory.register
-class PopUpAniStackedWidgetPlugin(StackedWidgetPlugin, QDesignerCustomWidgetInterface):
+class PopUpAniStackedWidgetPlugin(StackedWidgetPlugin, QPyDesignerCustomWidgetPlugin):
     """ pop up ani stacked widget plugin """
 
     def createWidget(self, parent):

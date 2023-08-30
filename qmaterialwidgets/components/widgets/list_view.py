@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import List, Union
 
-from PySide6.QtCore import Qt, QModelIndex, QItemSelectionModel, Property, QRect
-from PySide6.QtGui import QPainterPath
-from PySide6.QtWidgets import QListView, QListWidgetItem, QListView, QListWidget, QStyleOptionViewItem, QWidget
+from PyQt5.QtCore import Qt, QModelIndex, QItemSelectionModel, pyqtProperty, QRectF
+from PyQt5.QtGui import QPainterPath
+from PyQt5.QtWidgets import QListView, QListWidgetItem, QListView, QListWidget, QStyleOptionViewItem, QWidget
 
 from .scroll_bar import SmoothScrollDelegate
 from .table_view import TableItemDelegate
@@ -107,7 +107,7 @@ class ListBase:
 
         path = QPainterPath()
         itemRect = self.visualItemRect(self.currentItem())
-        path.addRect(QRect(0, itemRect.y(), self.width(), self.itemHeight))
+        path.addRect(QRectF(0, itemRect.y(), self.width(), self.itemHeight))
         self.ripple.setClipPath(path)
 
         ripple = RippleAnimation(pos, self.ripple, self)
@@ -143,7 +143,7 @@ class ListWidget(ListBase, QListWidget):
     def setSelectRightClickedRow(self, isSelect: bool):
         self._isSelectRightClickedRow = isSelect
 
-    selectRightClickedRow = Property(bool, isSelectRightClickedRow, setSelectRightClickedRow)
+    selectRightClickedRow = pyqtProperty(bool, isSelectRightClickedRow, setSelectRightClickedRow)
 
 
 class ListView(ListBase, QListView):
@@ -158,4 +158,4 @@ class ListView(ListBase, QListView):
     def setSelectRightClickedRow(self, isSelect: bool):
         self._isSelectRightClickedRow = isSelect
 
-    selectRightClickedRow = Property(bool, isSelectRightClickedRow, setSelectRightClickedRow)
+    selectRightClickedRow = pyqtProperty(bool, isSelectRightClickedRow, setSelectRightClickedRow)

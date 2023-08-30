@@ -1,6 +1,6 @@
 # coding: utf-8
-from PySide6.QtCore import Qt
-from PySide6.QtDesigner import QDesignerCustomWidgetInterface
+from PyQt5.QtCore import Qt
+from PyQt5.QtDesigner import QPyDesignerCustomWidgetPlugin
 
 from qmaterialwidgets import (BodyLabel, CaptionLabel, StrongBodyLabel, SubtitleLabel, TitleLabel, LargeTitleLabel,
                             DisplayLabel, ImageLabel)
@@ -23,7 +23,7 @@ class LabelPlugin(PluginBase):
         """
 
 
-class CaptionLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
+class CaptionLabelPlugin(LabelPlugin, QPyDesignerCustomWidgetPlugin):
     """ Caption label plugin """
 
     def createWidget(self, parent):
@@ -36,7 +36,7 @@ class CaptionLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
         return "CaptionLabel"
 
 
-class BodyLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
+class BodyLabelPlugin(LabelPlugin, QPyDesignerCustomWidgetPlugin):
     """ Body label plugin """
 
     def createWidget(self, parent):
@@ -49,7 +49,7 @@ class BodyLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
         return "BodyLabel"
 
 
-class StrongBodyLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
+class StrongBodyLabelPlugin(LabelPlugin, QPyDesignerCustomWidgetPlugin):
     """ Strong body label plugin """
 
     def createWidget(self, parent):
@@ -62,7 +62,7 @@ class StrongBodyLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
         return "StrongBodyLabel"
 
 
-class SubtitleLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
+class SubtitleLabelPlugin(LabelPlugin, QPyDesignerCustomWidgetPlugin):
     """ Subtitle label plugin """
 
     def createWidget(self, parent):
@@ -75,7 +75,7 @@ class SubtitleLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
         return "SubtitleLabel"
 
 
-class TitleLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
+class TitleLabelPlugin(LabelPlugin, QPyDesignerCustomWidgetPlugin):
     """ Title label plugin """
 
     def createWidget(self, parent):
@@ -88,7 +88,7 @@ class TitleLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
         return "TitleLabel"
 
 
-class LargeTitleLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
+class LargeTitleLabelPlugin(LabelPlugin, QPyDesignerCustomWidgetPlugin):
     """ Title label plugin """
 
     def createWidget(self, parent):
@@ -101,7 +101,7 @@ class LargeTitleLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
         return "LargeTitleLabel"
 
 
-class DisplayLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
+class DisplayLabelPlugin(LabelPlugin, QPyDesignerCustomWidgetPlugin):
     """ Display label plugin """
 
     def createWidget(self, parent):
@@ -114,7 +114,7 @@ class DisplayLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
         return "DisplayLabel"
 
 
-class ImageLabelPlugin(LabelPlugin, QDesignerCustomWidgetInterface):
+class ImageLabelPlugin(LabelPlugin, QPyDesignerCustomWidgetPlugin):
     """ Image label plugin """
 
     def createWidget(self, parent):

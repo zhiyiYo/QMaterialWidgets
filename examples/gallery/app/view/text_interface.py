@@ -1,6 +1,6 @@
 # coding:utf-8
-from PySide6.QtCore import Qt
-from PySide6.QtWidgets import QCompleter
+from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QCompleter
 from qmaterialwidgets import (LineEdit, FilledLineEdit, SearchLineEdit, FilledSearchLineEdit,
                               TextEdit, FilledTextEdit, SpinBox, TimeEdit, DateTimeEdit, DateEdit,
                               DoubleSpinBox)

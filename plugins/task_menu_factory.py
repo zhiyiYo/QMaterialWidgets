@@ -1,9 +1,8 @@
 # coding: utf-8
 from typing import Type
 
-from PySide6.QtWidgets import QWidget
-from PySide6.QtGui import QAction
-from PySide6.QtDesigner import QPyDesignerTaskMenuExtension, QExtensionFactory, QDesignerFormWindowInterface, QDesignerCustomWidgetInterface
+from PyQt5.QtWidgets import QAction, QWidget
+from PyQt5.QtDesigner import QPyDesignerTaskMenuExtension, QExtensionFactory, QDesignerFormWindowInterface, QPyDesignerCustomWidgetPlugin
 
 
 from qmaterialwidgets import MessageBox, LineEdit
@@ -62,16 +61,6 @@ class EditTextTaskMenuExtension(TaskMenuExtensionBase):
 
 
 
-class EditTextIconTaskMenuExtension(TaskMenuExtensionBase):
-    """ Edit text and icon task menu extension """
-
-    def taskActions(self):
-        return [self.editTextAction, self.editIconAction]
-
-    def preferredEditAction(self):
-        return self.editTextAction
-
-
 class TaskMenuFactoryBase(QExtensionFactory):
     """ Task menu factory base class """
 
@@ -89,7 +78,7 @@ class TaskMenuFactoryBase(QExtensionFactory):
         return self.Extention(object, parent)
 
     @classmethod
-    def register(cls, Plugin: Type[QDesignerCustomWidgetInterface]):
+    def register(cls, Plugin: Type[QPyDesignerCustomWidgetPlugin]):
         if Plugin.__name__ not in cls.widgets:
             cls.widgets.append(Plugin().name())
             Plugin.Factory = cls
@@ -100,5 +89,5 @@ class TaskMenuFactoryBase(QExtensionFactory):
 class EditTextTaskMenuFactory(TaskMenuFactoryBase):
     """ Edit text task menu factory """
 
+    widgets = []
     Extention = EditTextTaskMenuExtension
-

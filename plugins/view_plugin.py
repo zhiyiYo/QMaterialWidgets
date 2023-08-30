@@ -1,5 +1,5 @@
 # coding: utf-8
-from PySide6.QtDesigner import QDesignerCustomWidgetInterface
+from PyQt5.QtDesigner import QPyDesignerCustomWidgetPlugin
 
 from qmaterialwidgets import TableView, TableWidget, ListWidget, ListView
 
@@ -13,7 +13,7 @@ class ViewPlugin(PluginBase):
 
 
 
-class ListWidgetPlugin(ViewPlugin, QDesignerCustomWidgetInterface):
+class ListWidgetPlugin(ViewPlugin, QPyDesignerCustomWidgetPlugin):
     """ List widget plugin """
 
     def createWidget(self, parent):
@@ -27,7 +27,7 @@ class ListWidgetPlugin(ViewPlugin, QDesignerCustomWidgetInterface):
 
 
 
-class ListViewPlugin(ViewPlugin, QDesignerCustomWidgetInterface):
+class ListViewPlugin(ViewPlugin, QPyDesignerCustomWidgetPlugin):
     """ List view plugin """
 
     def createWidget(self, parent):
@@ -41,7 +41,7 @@ class ListViewPlugin(ViewPlugin, QDesignerCustomWidgetInterface):
 
 
 
-class TableWidgetPlugin(ViewPlugin, QDesignerCustomWidgetInterface):
+class TableWidgetPlugin(ViewPlugin, QPyDesignerCustomWidgetPlugin):
     """ Table widget plugin """
 
     def createWidget(self, parent):
@@ -54,7 +54,7 @@ class TableWidgetPlugin(ViewPlugin, QDesignerCustomWidgetInterface):
         return "TableWidget"
 
 
-class TableViewPlugin(ViewPlugin, QDesignerCustomWidgetInterface):
+class TableViewPlugin(ViewPlugin, QPyDesignerCustomWidgetPlugin):
     """ Table widget plugin """
 
     def createWidget(self, parent):

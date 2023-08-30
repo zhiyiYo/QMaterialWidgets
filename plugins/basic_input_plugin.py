@@ -1,14 +1,14 @@
 # coding: utf-8
-from PySide6.QtDesigner import QDesignerCustomWidgetInterface
+from PyQt5.QtDesigner import QPyDesignerCustomWidgetPlugin
 from qmaterialwidgets import (FilledPushButton, FluentIcon, SwitchButton, RadioButton, CheckBox, Slider,
-                              ComboBox, IconWidget, OutlinedPushButton, FilledToolButton,
-                              TransparentToolButton, TransparentToggleToolButton, OutlinedToggleToolButton,
-                              OutlinedToolButton, TextPushButton, TonalPushButton, TonalToolButton,
-                              ElevatedPushButton, FilledToggleToolButton, FilledComboBox, SurfaceFloatingActionButton,
-                              PrimaryFloatingActionButton, TertiaryFloatingActionButton, SecondaryFloatingActionButton,
-                              InputChip, FilterChip, ElevatedInputChip, ElevatedFilterChip, FilledDropDownPushButton,
-                              TextDropDownPushButton, TonalDropDownPushButton, ElevatedDropDownPushButton,
-                              OutlinedDropDownPushButton)
+                            ComboBox, IconWidget, OutlinedPushButton, FilledToolButton,
+                            TransparentToolButton, TransparentToggleToolButton, OutlinedToggleToolButton,
+                            OutlinedToolButton, TextPushButton, TonalPushButton, TonalToolButton,
+                            ElevatedPushButton, FilledToggleToolButton, FilledComboBox, SurfaceFloatingActionButton,
+                            PrimaryFloatingActionButton, TertiaryFloatingActionButton, SecondaryFloatingActionButton,
+                            InputChip, FilterChip, ElevatedInputChip, ElevatedFilterChip, FilledDropDownPushButton,
+                            TextDropDownPushButton, TonalDropDownPushButton, ElevatedDropDownPushButton,
+                            OutlinedDropDownPushButton)
 
 from plugin_base import PluginBase
 from task_menu_factory import EditTextTaskMenuFactory
@@ -32,7 +32,7 @@ class TextPlugin(BasicInputPlugin):
         """
 
 
-class CheckBoxPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class CheckBoxPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Check box plugin """
 
     def createWidget(self, parent):
@@ -45,7 +45,7 @@ class CheckBoxPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "CheckBox"
 
 
-class ComboBoxPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class ComboBoxPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Combo box plugin """
 
     def createWidget(self, parent):
@@ -58,7 +58,7 @@ class ComboBoxPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
         return "ComboBox"
 
 
-class FilledComboBoxPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class FilledComboBoxPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Filled combo box plugin """
 
     def createWidget(self, parent):
@@ -71,7 +71,7 @@ class FilledComboBoxPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
         return "FilledComboBox"
 
 
-class OutlinedPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class OutlinedPushButtonPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Push button plugin """
 
     def createWidget(self, parent):
@@ -84,7 +84,7 @@ class OutlinedPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "OutlinedPushButton"
 
 
-class TextPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class TextPushButtonPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Text push button plugin """
 
     def createWidget(self, parent):
@@ -97,7 +97,7 @@ class TextPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "TextPushButton"
 
 
-class TonalPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class TonalPushButtonPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Text push button plugin """
 
     def createWidget(self, parent):
@@ -110,7 +110,7 @@ class TonalPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "TonalPushButton"
 
 
-class ElevatedPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class ElevatedPushButtonPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Text push button plugin """
 
     def createWidget(self, parent):
@@ -123,7 +123,7 @@ class ElevatedPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "ElevatedPushButton"
 
 
-class FilledPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class FilledPushButtonPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Filled push button plugin """
 
     def createWidget(self, parent):
@@ -136,7 +136,7 @@ class FilledPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "FilledPushButton"
 
 
-class FilledDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class FilledDropDownPushButtonPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Filled drop down push button plugin """
 
     def createWidget(self, parent):
@@ -149,7 +149,7 @@ class FilledDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface)
         return "FilledDropDownPushButton"
 
 
-class ElevatedDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class ElevatedDropDownPushButtonPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Elevated drop down push button plugin """
 
     def createWidget(self, parent):
@@ -162,7 +162,7 @@ class ElevatedDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterfac
         return "ElevatedDropDownPushButton"
 
 
-class OutlinedDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class OutlinedDropDownPushButtonPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Outlined drop down push button plugin """
 
     def createWidget(self, parent):
@@ -175,7 +175,7 @@ class OutlinedDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterfac
         return "OutlinedDropDownPushButton"
 
 
-class TonalDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class TonalDropDownPushButtonPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Tonal drop down push button plugin """
 
     def createWidget(self, parent):
@@ -188,7 +188,7 @@ class TonalDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "TonalDropDownPushButton"
 
 
-class TextDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class TextDropDownPushButtonPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Text drop down push button plugin """
 
     def createWidget(self, parent):
@@ -201,7 +201,7 @@ class TextDropDownPushButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "TextDropDownPushButton"
 
 
-class FilledToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class FilledToolButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Filled tool button plugin """
 
     def createWidget(self, parent):
@@ -214,7 +214,7 @@ class FilledToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
         return "FilledToolButton"
 
 
-class OutlinedToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class OutlinedToolButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Outlined tool button plugin """
 
     def createWidget(self, parent):
@@ -227,7 +227,7 @@ class OutlinedToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface)
         return "OutlinedToolButton"
 
 
-class TonalToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class TonalToolButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Tonal tool button plugin """
 
     def createWidget(self, parent):
@@ -240,7 +240,7 @@ class TonalToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
         return "TonalToolButton"
 
 
-class TransparentToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class TransparentToolButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Transparent tool button plugin """
 
     def createWidget(self, parent):
@@ -253,7 +253,7 @@ class TransparentToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterfa
         return "TransparentToolButton"
 
 
-class SecondaryFloatingActionButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class SecondaryFloatingActionButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Secondary floating action button plugin """
 
     def createWidget(self, parent):
@@ -266,7 +266,7 @@ class SecondaryFloatingActionButtonPlugin(BasicInputPlugin, QDesignerCustomWidge
         return "SecondaryFloatingActionButton"
 
 
-class TertiaryFloatingActionButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class TertiaryFloatingActionButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Tertiary floating action button plugin """
 
     def createWidget(self, parent):
@@ -279,7 +279,7 @@ class TertiaryFloatingActionButtonPlugin(BasicInputPlugin, QDesignerCustomWidget
         return "TertiaryFloatingActionButton"
 
 
-class PrimaryFloatingActionButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class PrimaryFloatingActionButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Primary floating action button plugin """
 
     def createWidget(self, parent):
@@ -292,7 +292,7 @@ class PrimaryFloatingActionButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetI
         return "PrimaryFloatingActionButton"
 
 
-class SurfaceFloatingActionButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class SurfaceFloatingActionButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Surface floating action button plugin """
 
     def createWidget(self, parent):
@@ -306,7 +306,7 @@ class SurfaceFloatingActionButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetI
 
 
 @EditTextTaskMenuFactory.register
-class SwitchButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class SwitchButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Switch button plugin """
 
     def createWidget(self, parent):
@@ -319,7 +319,7 @@ class SwitchButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
         return "SwitchButton"
 
 
-class RadioButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class RadioButtonPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Radio button plugin """
 
     def createWidget(self, parent):
@@ -332,7 +332,7 @@ class RadioButtonPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "RadioButton"
 
 
-class OutlinedToggleToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class OutlinedToggleToolButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Transparent toggle tool button plugin """
 
     def createWidget(self, parent):
@@ -345,7 +345,7 @@ class OutlinedToggleToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInte
         return "OutlinedToggleToolButton"
 
 
-class FilledToggleToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class FilledToggleToolButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Filled toggle tool button plugin """
 
     def createWidget(self, parent):
@@ -358,7 +358,7 @@ class FilledToggleToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterf
         return "FilledToggleToolButton"
 
 
-class TransparentToggleToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class TransparentToggleToolButtonPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Transparent toggle tool button plugin """
 
     def createWidget(self, parent):
@@ -371,7 +371,7 @@ class TransparentToggleToolButtonPlugin(BasicInputPlugin, QDesignerCustomWidgetI
         return "TransparentToggleToolButton"
 
 
-class SliderPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class SliderPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """  Slider  plugin """
 
     def createWidget(self, parent):
@@ -387,7 +387,7 @@ class SliderPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
         return "Slider"
 
 
-class IconWidgetPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
+class IconWidgetPlugin(BasicInputPlugin, QPyDesignerCustomWidgetPlugin):
     """ Icon widget plugin """
 
     def createWidget(self, parent):
@@ -400,7 +400,7 @@ class IconWidgetPlugin(BasicInputPlugin, QDesignerCustomWidgetInterface):
         return "IconWidget"
 
 
-class InputChipPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class InputChipPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Input chip plugin """
 
     def createWidget(self, parent):
@@ -413,7 +413,7 @@ class InputChipPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "InputChip"
 
 
-class ElevatedInputChipPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class ElevatedInputChipPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Elevated input chip plugin """
 
     def createWidget(self, parent):
@@ -426,7 +426,7 @@ class ElevatedInputChipPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "ElevatedInputChip"
 
 
-class FilterChipPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class FilterChipPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Input chip plugin """
 
     def createWidget(self, parent):
@@ -439,7 +439,7 @@ class FilterChipPlugin(TextPlugin, QDesignerCustomWidgetInterface):
         return "FilterChip"
 
 
-class ElevatedFilterChipPlugin(TextPlugin, QDesignerCustomWidgetInterface):
+class ElevatedFilterChipPlugin(TextPlugin, QPyDesignerCustomWidgetPlugin):
     """ Elevated filter chip plugin """
 
     def createWidget(self, parent):

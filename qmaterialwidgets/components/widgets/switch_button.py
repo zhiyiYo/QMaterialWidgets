@@ -1,9 +1,9 @@
 # coding: utf-8
 from enum import Enum
 
-from PySide6.QtCore import Qt, QTimer, Property, Signal, QEvent, QPoint, QRect
-from PySide6.QtGui import QColor, QPainter, QHoverEvent, QPainterPath, QPen
-from PySide6.QtWidgets import QApplication, QHBoxLayout, QLabel, QToolButton, QWidget
+from PyQt5.QtCore import Qt, QTimer, pyqtProperty, pyqtSignal, QEvent, QPoint, QRectF
+from PyQt5.QtGui import QColor, QPainter, QHoverEvent, QPainterPath, QPen
+from PyQt5.QtWidgets import QApplication, QHBoxLayout, QLabel, QToolButton, QWidget
 
 from ...common.color import translucent
 from ...common.style_sheet import MaterialStyleSheet, palette, themeColor, isDarkTheme
@@ -14,7 +14,7 @@ from .ripple import RippleOverlayWidget
 class Indicator(QToolButton):
     """ Indicator of switch button """
 
-    checkedChanged = Signal(bool)
+    checkedChanged = pyqtSignal(bool)
 
     def __init__(self, parent):
         super().__init__(parent=parent)
@@ -89,7 +89,7 @@ class Indicator(QToolButton):
 
     def _updateClipPath(self):
         path = QPainterPath()
-        path.addRoundedRect(self.rect(), 8, 8)
+        path.addRoundedRect(QRectF(self.rect()), 8, 8)
         self.rippleWidget.setClipPath(path)
 
     def paintEvent(self, e):
@@ -155,9 +155,9 @@ class Indicator(QToolButton):
         self.__sliderDisabledColor = color
         self.update()
 
-    sliderOnColor = Property(QColor, getSliderOnColor, setSliderOnColor)
-    sliderOffColor = Property(QColor, getSliderOffColor, setSliderOffColor)
-    sliderDisabledColor = Property(
+    sliderOnColor = pyqtProperty(QColor, getSliderOnColor, setSliderOnColor)
+    sliderOffColor = pyqtProperty(QColor, getSliderOffColor, setSliderOffColor)
+    sliderDisabledColor = pyqtProperty(
         QColor, getSliderDisabledColor, setSliderDisabledColor)
 
 
@@ -170,7 +170,7 @@ class IndicatorPosition(Enum):
 class SwitchButton(QWidget):
     """ Switch button class """
 
-    checkedChanged = Signal(bool)
+    checkedChanged = pyqtSignal(bool)
 
     @singledispatchmethod
     def __init__(self, parent: QWidget = None, indicatorPos=IndicatorPosition.LEFT):
@@ -302,8 +302,8 @@ class SwitchButton(QWidget):
         self._offText = text
         self._updateText()
 
-    spacing = Property(int, getSpacing, setSpacing)
-    checked = Property(bool, isChecked, setChecked)
-    text = Property(str, getText, setText)
-    onText = Property(str, getOnText, setOnText)
-    offText = Property(str, getOffText, setOffText)
+    spacing = pyqtProperty(int, getSpacing, setSpacing)
+    checked = pyqtProperty(bool, isChecked, setChecked)
+    text = pyqtProperty(str, getText, setText)
+    onText = pyqtProperty(str, getOnText, setOnText)
+    offText = pyqtProperty(str, getOffText, setOffText)

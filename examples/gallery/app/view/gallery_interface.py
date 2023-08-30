@@ -1,7 +1,7 @@
 # coding:utf-8
-from PySide6.QtCore import Qt, Signal, QUrl, QEvent, QPoint
-from PySide6.QtGui import QDesktopServices, QPainter, QPen, QColor, QCursor
-from PySide6.QtWidgets import QWidget, QLabel, QVBoxLayout, QHBoxLayout, QFrame, QApplication
+from PyQt5.QtCore import Qt, pyqtSignal, QUrl, QEvent, QPoint
+from PyQt5.QtGui import QDesktopServices, QPainter, QPen, QColor, QCursor
+from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QHBoxLayout, QFrame, QApplication
 
 from qmaterialwidgets import (ScrollArea, OutlinedPushButton, FluentIcon, isDarkTheme, IconWidget,
                               Theme, ToolTipFilter, TitleLabel, CaptionLabel,

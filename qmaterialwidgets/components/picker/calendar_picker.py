@@ -5,10 +5,10 @@ from typing import Union
 from collections import defaultdict, Counter
 from typing import Tuple, Type
 
-from PySide6.QtCore import (Qt, QRectF, Signal, QSize, QModelIndex, QDate, QCalendar, QEasingCurve, QPropertyAnimation,
-                          QParallelAnimationGroup, QPoint, QRect, Property)
-from PySide6.QtGui import QPainter, QColor, QCursor
-from PySide6.QtWidgets import (QApplication, QFrame, QPushButton, QHBoxLayout, QVBoxLayout, QListWidget,
+from PyQt5.QtCore import (Qt, QRectF, pyqtSignal, QSize, QModelIndex, QDate, QCalendar, QEasingCurve, QPropertyAnimation,
+                          QParallelAnimationGroup, QPoint, QRect, pyqtProperty)
+from PyQt5.QtGui import QPainter, QColor, QCursor
+from PyQt5.QtWidgets import (QApplication, QFrame, QPushButton, QHBoxLayout, QVBoxLayout, QListWidget,
                              QListWidgetItem, QStyledItemDelegate, QStyle, QStyleOptionViewItem,
                              QLabel, QWidget, QStackedWidget, QGraphicsDropShadowEffect, QListView)
 
@@ -225,8 +225,8 @@ class ScrollViewBase(QListWidget):
 class CalendarViewBase(QFrame):
     """ Calendar view base class """
 
-    titleClicked = Signal()
-    itemClicked = Signal(QDate)
+    titleClicked = pyqtSignal()
+    itemClicked = pyqtSignal(QDate)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -516,7 +516,7 @@ class DayCalendarView(CalendarViewBase):
 class CalendarView(QWidget):
     """ Calendar view """
 
-    dateChanged = Signal(QDate)
+    dateChanged = pyqtSignal(QDate)
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -626,7 +626,7 @@ class CalendarView(QWidget):
 class CalendarPicker(LineEdit):
     """ Calendar picker """
 
-    dateChanged = Signal(QDate)
+    dateChanged = pyqtSignal(QDate)
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
@@ -673,5 +673,5 @@ class CalendarPicker(LineEdit):
         self.setText(date.toString(self.dateFormat))
         self.dateChanged.emit(date)
 
-    date = Property(QDate, getDate, setDate)
-    dateFormat = Property(Qt.DateFormat, getDateFormat, setDateFormat)
+    date = pyqtProperty(QDate, getDate, setDate)
+    dateFormat = pyqtProperty(Qt.DateFormat, getDateFormat, setDateFormat)

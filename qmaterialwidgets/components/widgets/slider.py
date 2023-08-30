@@ -1,7 +1,7 @@
 # coding:utf-8
-from PySide6.QtCore import QSize, Qt, Signal, QPoint, QRectF, QEvent
-from PySide6.QtGui import QColor, QMouseEvent, QPainter, QPainterPath
-from PySide6.QtWidgets import (QProxyStyle, QSlider, QStyle, QStyleOptionSlider,
+from PyQt5.QtCore import QSize, Qt, pyqtSignal, QPoint, QRectF, QEvent
+from PyQt5.QtGui import QColor, QMouseEvent, QPainter, QPainterPath
+from PyQt5.QtWidgets import (QProxyStyle, QSlider, QStyle, QStyleOptionSlider,
                                QWidget, QGraphicsDropShadowEffect)
 
 from ...common.animation import BackgroundAnimationWidget
@@ -76,7 +76,7 @@ class SliderHandle(BackgroundAnimationWidget, QWidget):
 class Slider(QSlider):
     """ A slider can be clicked """
 
-    clicked = Signal(int)
+    clicked = pyqtSignal(int)
 
     @singledispatchmethod
     def __init__(self, parent: QWidget = None):

@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Union
 
-from PySide6.QtCore import Qt, QRectF, QSize, QPoint, Property, QEvent
-from PySide6.QtGui import QPainterPath, QIcon, QPainter, QColor, QPen, QPalette
-from PySide6.QtWidgets import QPushButton, QToolButton, QApplication, QWidget
+from PyQt5.QtCore import Qt, QRectF, QSize, QPoint, pyqtProperty, QEvent
+from PyQt5.QtGui import QPainterPath, QIcon, QPainter, QColor, QPen, QPalette
+from PyQt5.QtWidgets import QPushButton, QToolButton, QApplication, QWidget
 
 
 from ...common.color import translucent, mixColor
@@ -106,7 +106,7 @@ class PushButton(BackgroundAnimationWidget, QPushButton):
 
     def _updateRippleClipPath(self):
         path = QPainterPath()
-        path.addRoundedRect(self.rect(), self.borderRadius, self.borderRadius)
+        path.addRoundedRect(QRectF(self.rect()), self.borderRadius, self.borderRadius)
         self.rippleWidget.setClipPath(path)
 
     def getBorderRadius(self):
@@ -118,7 +118,7 @@ class PushButton(BackgroundAnimationWidget, QPushButton):
         self._updateRippleClipPath()
         self.update()
 
-    borderRadius = Property(int, getBorderRadius, setBorderRadius)
+    borderRadius = pyqtProperty(int, getBorderRadius, setBorderRadius)
 
 
 
@@ -306,7 +306,7 @@ class ToolButton(BackgroundAnimationWidget, QToolButton):
 
     def _updateRippleClipPath(self):
         path = QPainterPath()
-        path.addRoundedRect(self.rect(), self.borderRadius, self.borderRadius)
+        path.addRoundedRect(QRectF(self.rect()), self.borderRadius, self.borderRadius)
         self.rippleWidget.setClipPath(path)
 
     def _drawIcon(self, icon, painter: QPainter, rect: QRectF, state=QIcon.State.Off):
@@ -346,7 +346,7 @@ class ToolButton(BackgroundAnimationWidget, QToolButton):
         self._updateRippleClipPath()
         self.update()
 
-    borderRadius = Property(int, getBorderRadius, setBorderRadius)
+    borderRadius = pyqtProperty(int, getBorderRadius, setBorderRadius)
 
 
 class TransparentToolButton(ToolButton):
@@ -498,7 +498,7 @@ class OutlinedToggleToolButton(OutlinedToolButton):
 
     def _drawBackground(self, painter: QPainter):
         if self.isEnabled():
-            painter.setPen('#938F99' if isDarkTheme() else '#79747E')
+            painter.setPen(QColor('#938F99' if isDarkTheme() else '#79747E'))
 
         ToolButton._drawBackground(self, painter)
 

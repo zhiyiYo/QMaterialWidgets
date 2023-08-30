@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Dict, Union
 
-from PySide6.QtCore import Qt, QRect
-from PySide6.QtGui import QPixmap, QPainter, QColor, QIcon
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout
+from PyQt5.QtCore import Qt, QRect
+from PyQt5.QtGui import QPixmap, QPainter, QColor, QIcon
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout
 
 from ...common.icon import drawIcon, MaterialIconBase
 from ...common.router import qrouter

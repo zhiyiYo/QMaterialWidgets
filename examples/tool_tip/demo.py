@@ -1,8 +1,8 @@
 # coding:utf-8
 import sys
-from PySide6.QtCore import QEvent, QPoint, Qt, QUrl
-from PySide6.QtGui import QDesktopServices
-from PySide6.QtWidgets import QApplication, QWidget, QHBoxLayout
+from PyQt5.QtCore import QEvent, QPoint, Qt, QUrl
+from PyQt5.QtGui import QDesktopServices
+from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout
 
 from qmaterialwidgets import ToolTip, ToolTipFilter, setTheme, Theme, OutlinedPushButton, ToolTipPosition
 
@@ -47,6 +47,11 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

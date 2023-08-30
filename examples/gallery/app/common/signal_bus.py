@@ -1,12 +1,12 @@
 # coding: utf-8
-from PySide6.QtCore import QObject, Signal
+from PyQt5.QtCore import QObject, pyqtSignal
 
 
 class SignalBus(QObject):
-    """ Signal bus """
+    """ pyqtSignal bus """
 
-    switchToSampleCard = Signal(str, int)
-    toggleThemeSignal = Signal()
+    switchToSampleCard = pyqtSignal(str, int)
+    toggleThemeSignal = pyqtSignal()
 
 
 signalBus = SignalBus()

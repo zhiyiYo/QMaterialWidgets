@@ -3,9 +3,9 @@ from typing import List
 from enum import Enum
 
 
-from PySide6.QtCore import Qt, Signal, QEvent, QParallelAnimationGroup, QPoint, QPropertyAnimation, QEasingCurve, Property
-from PySide6.QtGui import QPixmap, QPainter, QColor, QBrush, QPainterPath
-from PySide6.QtWidgets import QWidget
+from PyQt5.QtCore import Qt, pyqtSignal, QEvent, QParallelAnimationGroup, QPoint, QPropertyAnimation, QEasingCurve, pyqtProperty
+from PyQt5.QtGui import QPixmap, QPainter, QColor, QBrush, QPainterPath
+from PyQt5.QtWidgets import QWidget
 
 from ...common.style_sheet import themeColor
 from .overlay_widget import OverlayWidget
@@ -59,7 +59,7 @@ class RippleAnimation(QParallelAnimationGroup):
     def setOpacityDuration(self, duration: int):
         self.opacityAni.setDuration(duration)
 
-    @Property(float)
+    @pyqtProperty(float)
     def radius(self):
         return self._radius
 
@@ -68,7 +68,7 @@ class RippleAnimation(QParallelAnimationGroup):
         self._radius = r
         self.overlay.update()
 
-    @Property(float)
+    @pyqtProperty(float)
     def opacity(self):
         return self._opacity
 

@@ -1,9 +1,9 @@
 # coding: utf-8
 from enum import Enum
 
-from PySide6.QtCore import Qt, QPoint, QRect
-from PySide6.QtGui import QPainterPath, QPainter
-from PySide6.QtWidgets import QCheckBox, QStyle, QStyleOptionButton, QWidget
+from PyQt5.QtCore import Qt, QPoint, QRect, QRectF
+from PyQt5.QtGui import QPainterPath, QPainter
+from PyQt5.QtWidgets import QCheckBox, QStyle, QStyleOptionButton, QWidget
 
 from ...common.icon import MaterialIconBase, Theme, getIconColor
 from ...common.style_sheet import MaterialStyleSheet
@@ -33,7 +33,7 @@ class CheckBoxRippleOverlayWidget(RadioRippleOverlayWidget):
         self.rippleStartOpacity = 0.5
 
         path = QPainterPath()
-        path.addEllipse(self.overlayGeometry())
+        path.addEllipse(QRectF(self.overlayGeometry()))
         self.setClipPath(path)
         self.setRippleStyle(RippleStyle.CENTERED)
 

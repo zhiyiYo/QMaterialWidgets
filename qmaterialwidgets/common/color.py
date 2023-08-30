@@ -1,6 +1,6 @@
 # coding:utf-8
-from PySide6.QtCore import QObject
-from PySide6.QtGui import QColor, QPalette
+from PyQt5.QtCore import QObject
+from PyQt5.QtGui import QColor, QPalette
 
 
 def mixColor(c1: QColor, c2: QColor, weight: float):

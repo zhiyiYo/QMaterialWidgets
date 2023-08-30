@@ -1,7 +1,7 @@
 # coding: utf-8
-from PySide6.QtCore import QEasingCurve, QEvent, QObject, QPropertyAnimation, Property, Signal
-from PySide6.QtGui import QMouseEvent, QEnterEvent, QColor
-from PySide6.QtWidgets import QWidget, QLineEdit, QGraphicsDropShadowEffect
+from PyQt5.QtCore import QEasingCurve, QEvent, QObject, QPropertyAnimation, pyqtProperty, pyqtSignal
+from PyQt5.QtGui import QMouseEvent, QEnterEvent, QColor
+from PyQt5.QtWidgets import QWidget, QLineEdit, QGraphicsDropShadowEffect
 
 from .config import qconfig
 
@@ -42,7 +42,7 @@ class AnimationBase(QObject):
 
 class TranslateYAnimation(AnimationBase):
 
-    valueChanged = Signal(float)
+    valueChanged = pyqtSignal(float)
 
     def __init__(self, parent: QWidget, offset=2):
         super().__init__(parent)
@@ -72,7 +72,7 @@ class TranslateYAnimation(AnimationBase):
         self.ani.setEasingCurve(QEasingCurve.Type.OutElastic)
         self.ani.start()
 
-    y = Property(float, getY, setY)
+    y = pyqtProperty(float, getY, setY)
 
 
 
@@ -171,7 +171,7 @@ class BackgroundColorObject(QObject):
         super().__init__(parent)
         self._backgroundColor = parent._normalBackgroundColor()
 
-    @Property(QColor)
+    @pyqtProperty(QColor)
     def backgroundColor(self):
         return self._backgroundColor
 
@@ -255,4 +255,4 @@ class FadeInOutWidget:
 
     def _fadeOutFinished(self):
         self.hide()
-        self.opacityAni.disconnect(self)
+        self.opacityAni.disconnect()

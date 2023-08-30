@@ -2,10 +2,10 @@
 from enum import Enum
 from typing import Union, List
 
-from PySide6.QtCore import (Qt, Signal, QRect, QRectF, QPropertyAnimation, Property, QMargins,
+from PyQt5.QtCore import (Qt, pyqtSignal, QRect, QRectF, QPropertyAnimation, pyqtProperty, QMargins,
                           QEasingCurve, QPoint, QEvent)
-from PySide6.QtGui import QColor, QPainter, QPen, QIcon, QPainterPath, QFont, QBrush, QPixmap, QImage
-from PySide6.QtWidgets import QWidget, QVBoxLayout
+from PyQt5.QtGui import QColor, QPainter, QPen, QIcon, QPainterPath, QFont, QBrush, QPixmap, QImage
+from PyQt5.QtWidgets import QWidget, QVBoxLayout
 
 from ...common.config import isDarkTheme
 from ...common.style_sheet import themeColor, palette
@@ -33,7 +33,7 @@ class RouteKeyError(Exception):
 class NavigationWidget(BackgroundAnimationWidget, QWidget):
     """ Navigation widget """
 
-    clicked = Signal(bool)  # whether triggered by the user
+    clicked = pyqtSignal(bool)  # whether triggered by the user
     EXPAND_WIDTH = 312
 
     def __init__(self, isSelectable: bool, parent=None):
@@ -81,7 +81,7 @@ class NavigationPushButton(NavigationWidget):
         self.rippleWidget = RippleOverlayWidget(self)
 
         path = QPainterPath()
-        path.addEllipse(QRect(15, 8, 58, 32))
+        path.addEllipse(QRectF(15, 8, 58, 32))
         self.rippleWidget.setClipPath(path)
 
         self.setCursor(Qt.PointingHandCursor)
@@ -196,7 +196,7 @@ class NavigationSeparator(NavigationWidget):
 class NavigationTreeItem(NavigationPushButton):
     """ Navigation tree item widget """
 
-    itemClicked = Signal(bool, bool)    # triggerByUser, clickArrow
+    itemClicked = pyqtSignal(bool, bool)    # triggerByUser, clickArrow
 
     def __init__(self, icon: Union[str, QIcon, FIF], text: str, isSelectable: bool, parent=None):
         super().__init__(icon, text, isSelectable, parent)
@@ -255,7 +255,7 @@ class NavigationTreeItem(NavigationPushButton):
         self._arrowAngle = angle
         self.update()
 
-    arrowAngle = Property(float, getArrowAngle, setArrowAngle)
+    arrowAngle = pyqtProperty(float, getArrowAngle, setArrowAngle)
 
 
 class NavigationTreeWidgetBase(NavigationWidget):

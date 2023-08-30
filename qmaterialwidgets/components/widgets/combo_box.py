@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Union, List, Iterable
 
-from PySide6.QtCore import Qt, Signal, QRectF, QPoint, QObject, QEvent, Property
-from PySide6.QtGui import QPainter, QAction, QCursor, QIcon
-from PySide6.QtWidgets import QApplication
+from PyQt5.QtCore import Qt, pyqtSignal, QRectF, QPoint, QObject, QEvent, pyqtProperty
+from PyQt5.QtGui import QPainter, QCursor, QIcon
+from PyQt5.QtWidgets import QApplication, QAction
 
 from .menu import RoundMenu, MenuAnimationType, IndicatorMenuItemDelegate
 from .line_edit import LineEdit, LineEditButton, FilledLineEdit, LineEditIcon
@@ -288,7 +288,7 @@ class ComboBoxBase:
             menu.adjustSize()
 
         menu.setMaxVisibleItems(self.maxVisibleItems())
-        menu.closedSignal.connect(self._onDropMenuClosed)
+        menu.closed.connect(self._onDropMenuClosed)
         self.dropMenu = menu
 
         # set the selected item
@@ -331,8 +331,8 @@ class ComboBoxBase:
 class EditableComboBoxBase(ComboBoxBase):
     """ Editable combo box base class """
 
-    currentIndexChanged = Signal(int)
-    currentTextChanged = Signal(str)
+    currentIndexChanged = pyqtSignal(int)
+    currentTextChanged = pyqtSignal(str)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -398,8 +398,8 @@ class EditableComboBoxBase(ComboBoxBase):
 class ComboBox(EditableComboBoxBase, LineEdit):
     """ Combo box """
 
-    currentIndexChanged = Signal(int)
-    currentTextChanged = Signal(str)
+    currentIndexChanged = pyqtSignal(int)
+    currentTextChanged = pyqtSignal(str)
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
@@ -418,14 +418,14 @@ class ComboBox(EditableComboBoxBase, LineEdit):
     def isEditable(self):
         return not self.isReadOnly()
 
-    editable = Property(bool, isEditable, setEditable)
+    editable = pyqtProperty(bool, isEditable, setEditable)
 
 
 class FilledComboBox(EditableComboBoxBase, FilledLineEdit):
     """ Filled combo box """
 
-    currentIndexChanged = Signal(int)
-    currentTextChanged = Signal(str)
+    currentIndexChanged = pyqtSignal(int)
+    currentTextChanged = pyqtSignal(str)
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
@@ -441,7 +441,7 @@ class FilledComboBox(EditableComboBoxBase, FilledLineEdit):
     def isEditable(self):
         return not self.isReadOnly()
 
-    editable = Property(bool, isEditable, setEditable)
+    editable = pyqtProperty(bool, isEditable, setEditable)
 
 
 class ComboBoxMenu(RoundMenu):

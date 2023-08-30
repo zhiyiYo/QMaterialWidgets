@@ -1,8 +1,8 @@
 # coding:utf-8
 import re
 
-from PySide6.QtGui import QIcon
-from PySide6.QtDesigner import QDesignerFormEditorInterface
+from PyQt5.QtGui import QIcon
+from PyQt5.QtDesigner import QDesignerFormEditorInterface
 
 
 class PluginBase:

@@ -1,10 +1,10 @@
 # coding:utf-8
 from math import floor
 
-from PySide6.QtCore import (QEasingCurve, Qt, QPropertyAnimation, Property,
+from PyQt5.QtCore import (QEasingCurve, Qt, QPropertyAnimation, pyqtProperty,
                           QParallelAnimationGroup, QSequentialAnimationGroup, QLocale)
-from PySide6.QtGui import QPainter, QColor
-from PySide6.QtWidgets import QProgressBar
+from PyQt5.QtGui import QPainter, QColor
+from PyQt5.QtWidgets import QProgressBar
 
 from ...common.style_sheet import themeColor, isDarkTheme, palette, argbToQColor
 
@@ -138,9 +138,9 @@ class ProgressBar(QProgressBar):
         self._isRoundBorder = isEnabled
         self.update()
 
-    useAni = Property(bool, isUseAni, setUseAni)
-    useRoundBorder = Property(bool, isRoundBorder, setRoundBorderEnabled)
-    val = Property(float, getVal, setVal)
+    useAni = pyqtProperty(bool, isUseAni, setUseAni)
+    useRoundBorder = pyqtProperty(bool, isRoundBorder, setRoundBorderEnabled)
+    val = pyqtProperty(float, getVal, setVal)
 
 
 class IndeterminateProgressBar(QProgressBar):
@@ -178,7 +178,7 @@ class IndeterminateProgressBar(QProgressBar):
         if start:
             self.start()
 
-    @Property(float)
+    @pyqtProperty(float)
     def shortPos(self):
         return self._shortPos
 
@@ -187,7 +187,7 @@ class IndeterminateProgressBar(QProgressBar):
         self._shortPos = p
         self.update()
 
-    @Property(float)
+    @pyqtProperty(float)
     def longPos(self):
         return self._longPos
 
@@ -273,4 +273,4 @@ class IndeterminateProgressBar(QProgressBar):
         self._isRoundBorder = isEnabled
         self.update()
 
-    useRoundBorder = Property(bool, isRoundBorder, setRoundBorderEnabled)
+    useRoundBorder = pyqtProperty(bool, isRoundBorder, setRoundBorderEnabled)

@@ -1,8 +1,8 @@
 # coding:utf-8
-from PySide6.QtCore import (QEvent, QEasingCurve, Qt, Signal, QPropertyAnimation, Property, QRectF,
+from PyQt5.QtCore import (QEvent, QEasingCurve, Qt, pyqtSignal, QPropertyAnimation, pyqtProperty, QRectF,
                           QTimer, QPoint, QObject)
-from PySide6.QtGui import QPainter, QColor, QMouseEvent
-from PySide6.QtWidgets import (QWidget, QToolButton, QAbstractScrollArea, QGraphicsOpacityEffect,
+from PyQt5.QtGui import QPainter, QColor, QMouseEvent
+from PyQt5.QtWidgets import (QWidget, QToolButton, QAbstractScrollArea, QGraphicsOpacityEffect,
                              QHBoxLayout, QVBoxLayout, QApplication, QAbstractItemView, QListView)
 
 from ...common.icon import FluentIcon
@@ -103,11 +103,11 @@ class ScrollBarHandle(QWidget):
 class ScrollBar(QWidget):
     """ Fluent scroll bar """
 
-    rangeChanged = Signal(tuple)
-    valueChanged = Signal(int)
-    sliderPressed = Signal()
-    sliderReleased = Signal()
-    sliderMoved = Signal()
+    rangeChanged = pyqtSignal(tuple)
+    valueChanged = pyqtSignal(int)
+    sliderPressed = pyqtSignal()
+    sliderReleased = pyqtSignal()
+    sliderMoved = pyqtSignal()
 
     def __init__(self, orient: Qt.Orientation, parent: QAbstractScrollArea):
         super().__init__(parent)
@@ -166,7 +166,7 @@ class ScrollBar(QWidget):
     def value(self):
         return self._value
 
-    @Property(int, notify=valueChanged)
+    @pyqtProperty(int, notify=valueChanged)
     def val(self):
         return self._value
 

@@ -1,6 +1,6 @@
 # coding:utf-8
-from PySide6.QtCore import Qt, Signal, QEasingCurve
-from PySide6.QtWidgets import QFrame, QHBoxLayout, QAbstractScrollArea
+from PyQt5.QtCore import Qt, pyqtSignal, QEasingCurve
+from PyQt5.QtWidgets import QFrame, QHBoxLayout, QAbstractScrollArea
 
 from ..components.widgets.stacked_widget import PopUpAniStackedWidget
 
@@ -9,7 +9,7 @@ from ..components.widgets.stacked_widget import PopUpAniStackedWidget
 class StackedWidget(QFrame):
     """ Stacked widget """
 
-    currentChanged = Signal(int)
+    currentChanged = pyqtSignal(int)
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)

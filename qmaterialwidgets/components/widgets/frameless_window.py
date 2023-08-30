@@ -6,9 +6,9 @@ else:
     from ctypes.wintypes import MSG
 
     import win32con
-    from PySide6.QtCore import QPoint, QEvent, Qt
-    from PySide6.QtGui import QCursor, QMouseEvent
-    from PySide6.QtWidgets import QApplication
+    from PyQt5.QtCore import QPoint, QEvent, Qt
+    from PyQt5.QtGui import QCursor, QMouseEvent
+    from PyQt5.QtWidgets import QApplication
 
     from qframelesswindow import FramelessWindow as Window
     from qframelesswindow.titlebar.title_bar_buttons import TitleBarButtonState

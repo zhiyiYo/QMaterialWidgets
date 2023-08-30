@@ -4,9 +4,9 @@ from string import Template
 from typing import Union
 import weakref
 
-from PySide6.QtCore import QFile, QObject
-from PySide6.QtGui import QColor
-from PySide6.QtWidgets import QWidget
+from PyQt5.QtCore import QFile, QObject
+from PyQt5.QtGui import QColor
+from PyQt5.QtWidgets import QWidget
 
 from .config import qconfig, Theme, isDarkTheme
 from .color import mixColor

@@ -2,8 +2,8 @@
 import sys
 from time import time
 
-from PySide6.QtCore import Qt, QCalendar, QDate
-from PySide6.QtWidgets import QApplication, QWidget, QHBoxLayout
+from PyQt5.QtCore import Qt, QCalendar, QDate
+from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout
 
 from qmaterialwidgets import CalendarPicker, setTheme, Theme
 
@@ -32,6 +32,11 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

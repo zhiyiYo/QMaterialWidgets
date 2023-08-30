@@ -1,8 +1,8 @@
 # coding:utf-8
 from ...common.style_sheet import isDarkTheme
-from PySide6.QtCore import Qt, Signal, QRectF, Property
-from PySide6.QtGui import QPixmap, QPainter, QColor, QPainterPath
-from PySide6.QtWidgets import QWidget, QFrame, QGraphicsDropShadowEffect
+from PyQt5.QtCore import Qt, pyqtSignal, QRectF, pyqtProperty
+from PyQt5.QtGui import QPixmap, QPainter, QColor, QPainterPath
+from PyQt5.QtWidgets import QWidget, QFrame, QGraphicsDropShadowEffect
 
 from ...common.style_sheet import isDarkTheme, palette, qconfig
 from ...common.animation import BackgroundAnimationWidget, DropShadowAnimation
@@ -12,7 +12,7 @@ from ...common.animation import BackgroundAnimationWidget, DropShadowAnimation
 class CardWidget(BackgroundAnimationWidget, QFrame):
     """ Card widget """
 
-    clicked = Signal()
+    clicked = pyqtSignal()
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
@@ -91,7 +91,7 @@ class CardWidget(BackgroundAnimationWidget, QFrame):
         painter.setBrush(self.backgroundColor)
         painter.drawRoundedRect(rect, r, r)
 
-    borderRadius = Property(int, getBorderRadius, setBorderRadius)
+    borderRadius = pyqtProperty(int, getBorderRadius, setBorderRadius)
 
 
 

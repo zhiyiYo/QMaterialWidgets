@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Dict
 
-from PySide6.QtCore import Qt, Signal, QRectF, QRect, QPropertyAnimation, QSize, QEasingCurve, QEvent
-from PySide6.QtGui import QPainter, QColor, QIcon, QPainterPath
-from PySide6.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
+from PyQt5.QtCore import Qt, pyqtSignal, QRectF, QRect, QPropertyAnimation, QSize, QEasingCurve, QEvent
+from PyQt5.QtGui import QPainter, QColor, QIcon, QPainterPath
+from PyQt5.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
 
 from ...common.font import setFont
 from ...common.router import qrouter
@@ -15,7 +15,7 @@ from .navigation_widget import RouteKeyError, NavigationPushButton
 class TabItem(NavigationPushButton):
     """ Tab item """
 
-    itemClicked = Signal(bool)
+    itemClicked = pyqtSignal(bool)
 
     def __init__(self, text: str, parent=None):
         super().__init__(QIcon(), text, True, parent=parent)
@@ -47,7 +47,7 @@ class TabItem(NavigationPushButton):
 
     def _updateRipple(self):
         path = QPainterPath()
-        path.addRect(self.rect())
+        path.addRect(QRectF(self.rect()))
         self.rippleWidget.setClipPath(path)
 
     def _drawBackground(self, painter: QPainter):

@@ -1,12 +1,12 @@
 # coding: utf-8
 from enum import Enum
 from typing import List, Union
-from PySide6.QtCore import (QSize, Qt, QRectF, Signal, QPoint, QTimer, QEvent,
-                            QAbstractItemModel, QPropertyAnimation, QEasingCurve, Property,
+from PyQt5.QtCore import (QSize, Qt, QRectF, pyqtSignal, QPoint, QTimer, QEvent,
+                            QAbstractItemModel, QPropertyAnimation, QEasingCurve, pyqtProperty,
                             QParallelAnimationGroup)
-from PySide6.QtGui import QPainter, QPainterPath, QIcon, QColor, QAction, QPen
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLineEdit, QToolButton, QTextEdit,
-                               QPlainTextEdit, QCompleter, QLabel, QWidget)
+from PyQt5.QtGui import QPainter, QPainterPath, QIcon, QColor, QPen
+from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QLineEdit, QToolButton, QTextEdit,
+                               QPlainTextEdit, QCompleter, QLabel, QWidget, QAction)
 
 
 from ...common.style_sheet import MaterialStyleSheet, themeColor, palette, Theme, qconfig
@@ -257,7 +257,7 @@ class LineEditBase(BackgroundAnimationWidget, QLineEdit):
     def resizeEvent(self, e):
         self.errorIcon.move(self.width() - 36, self.height()//2 - 11)
 
-    label = Property(str, getLabel, setLabel)
+    label = pyqtProperty(str, getLabel, setLabel)
 
 
 class LineEditLabel(QLabel):
@@ -302,7 +302,7 @@ class LineEditLabel(QLabel):
     def _updateColor(self):
         self.setError(self.isError)
 
-    @Property(int)
+    @pyqtProperty(int)
     def fontSize(self):
         return self.font().pixelSize()
 
@@ -312,7 +312,7 @@ class LineEditLabel(QLabel):
         font.setPixelSize(size)
         self.setFont(font)
 
-    @Property(QColor)
+    @pyqtProperty(QColor)
     def color(self):
         return self._color
 
@@ -386,7 +386,7 @@ class FilledLineEdit(LineEditBase):
         self.bottomBorderAni.setDuration(310)
         self.bottomBorderAni.setEasingCurve(QEasingCurve.Type.OutQuad)
 
-    @Property(float)
+    @pyqtProperty(float)
     def bottomBorderSize(self):
         return self._bottomBorderSize
 
@@ -428,7 +428,7 @@ class FilledLineEdit(LineEditBase):
 
         path = QPainterPath()
         path.setFillRule(Qt.WindingFill)
-        path.addRoundedRect(self.rect(), 5, 5)
+        path.addRoundedRect(QRectF(self.rect()), 5, 5)
         path.addRect(0, self.height()-6, 6, 6)
         path.addRect(self.width()-6, self.height()-6, 6, 6)
         painter.fillPath(path.simplified(), self.backgroundColor)
@@ -491,7 +491,7 @@ class CompleterMenu(RoundMenu):
         # add items
         for i in items:
             self.addAction(
-                QAction(i, triggered=lambda x=i: self.lineEdit.setText(x)))
+                QAction(i, triggered=lambda c, x=i: self.lineEdit.setText(x)))
 
         return True
 
@@ -558,7 +558,7 @@ class OutlinedEditBase:
         self.borderColorAni = QPropertyAnimation(self, b'borderColor', self)
         self.borderColorAni.setDuration(200)
 
-    @Property(QColor)
+    @pyqtProperty(QColor)
     def borderColor(self):
         return self._borderColor
 
@@ -717,8 +717,8 @@ class SearchLineEditBase:
 class FilledSearchLineEdit(SearchLineEditBase, FilledLineEdit):
     """ Filled search line edit """
 
-    searchSignal = Signal(str)
-    clearSignal = Signal()
+    searchSignal = pyqtSignal(str)
+    clearSignal = pyqtSignal()
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -728,8 +728,8 @@ class FilledSearchLineEdit(SearchLineEditBase, FilledLineEdit):
 class SearchLineEdit(SearchLineEditBase, LineEdit):
     """ Search line edit """
 
-    searchSignal = Signal(str)
-    clearSignal = Signal()
+    searchSignal = pyqtSignal(str)
+    clearSignal = pyqtSignal()
 
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -798,7 +798,7 @@ class TextEditBase(QTextEdit):
     def getLabel(self):
         return self.labelLabel.text()
 
-    label = Property(str, getLabel, setLabel)
+    label = pyqtProperty(str, getLabel, setLabel)
 
 
 class FilledTextEdit(TextEditBase):

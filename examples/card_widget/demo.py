@@ -1,9 +1,9 @@
 # coding:utf-8
 import sys
 
-from PySide6.QtCore import Qt, QPoint
-from PySide6.QtGui import QColor
-from PySide6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
+from PyQt5.QtCore import Qt, QPoint
+from PyQt5.QtGui import QColor
+from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
 
 from qmaterialwidgets import (CardWidget, setTheme, Theme, IconWidget, BodyLabel, CaptionLabel, OutlinedPushButton,
                             TransparentToolButton, FluentIcon, RoundMenu, Action, palette, OutlinedCardWidget,
@@ -87,6 +87,11 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
+    QApplication.setHighDpiScaleFactorRoundingPolicy(
+        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
+    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

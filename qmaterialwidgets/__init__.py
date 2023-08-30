@@ -1,7 +1,7 @@
 """
-PySide6-Material-Widgets
+PyQt5-Material-Widgets
 ========================
-A material design widgets library based on PySide6.
+A material design widgets library based on PyQt5.
 
 Documentation is available in the docstrings and
 online at https://qmaterialwidgets.readthedocs.io.
@@ -9,7 +9,7 @@ online at https://qmaterialwidgets.readthedocs.io.
 Examples are available at https://github.com/zhiyiYo/QMaterialWidgets/tree/master/examples.
 
 :copyright: (c) 2023 by zhiyiYo.
-:license: PySide6-Material-Widgets adopts dual licenses. Non-commercial usage is licensed under [GPLv3](./LICENSE).
+:license: PyQt5-Material-Widgets adopts dual licenses. Non-commercial usage is licensed under [GPLv3](./LICENSE).
 For commercial purposes, please purchase on [爱发电](https://afdian.net/a/zhiyiYo?tab=shop) to support the development of this project.
 """
 

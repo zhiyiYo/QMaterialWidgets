@@ -1,9 +1,9 @@
 # coding:utf-8
 from enum import Enum
 
-from PySide6.QtCore import QEvent, QObject, QPoint, QTimer, Qt, QPropertyAnimation, QSize
-from PySide6.QtGui import QColor, QCursor
-from PySide6.QtWidgets import (QApplication, QFrame, QGraphicsDropShadowEffect,
+from PyQt5.QtCore import QEvent, QObject, QPoint, QTimer, Qt, QPropertyAnimation, QSize
+from PyQt5.QtGui import QColor, QCursor
+from PyQt5.QtWidgets import (QApplication, QFrame, QGraphicsDropShadowEffect,
                                QHBoxLayout, QLabel, QWidget)
 
 from ...common import MaterialStyleSheet

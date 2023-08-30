@@ -2,10 +2,10 @@
 
 from typing import List, Union
 
-from PySide6.QtCore import Qt, Property, QPoint, Signal, QSize
-from PySide6.QtGui import (QPainter, QPixmap, QPalette, QColor, QFont, QImage, QPainterPath,
+from PyQt5.QtCore import Qt, pyqtProperty, QPoint, pyqtSignal, QSize
+from PyQt5.QtGui import (QPainter, QPixmap, QPalette, QColor, QFont, QImage, QPainterPath,
                          QImageReader, QBrush, QMovie)
-from PySide6.QtWidgets import QLabel, QWidget
+from PyQt5.QtWidgets import QLabel, QWidget
 
 from ...common.overload import singledispatchmethod
 from ...common.font import setFont, getFont
@@ -51,7 +51,7 @@ class MaterialLabelBase(QLabel):
         palette.setColor(QPalette.ColorRole.WindowText, color)
         self.setPalette(palette)
 
-    @Property(QColor)
+    @pyqtProperty(QColor)
     def lightColor(self):
         return self._lightColor
 
@@ -59,7 +59,7 @@ class MaterialLabelBase(QLabel):
     def lightColor(self, color: QColor):
         self.setTextColor(color, self.darkColor)
 
-    @Property(QColor)
+    @pyqtProperty(QColor)
     def darkColor(self):
         return self._darkColor
 
@@ -67,7 +67,7 @@ class MaterialLabelBase(QLabel):
     def darkColor(self, color: QColor):
         self.setTextColor(self.lightColor, color)
 
-    @Property(int)
+    @pyqtProperty(int)
     def pixelFontSize(self):
         return self.font().pixelSize()
 
@@ -77,7 +77,7 @@ class MaterialLabelBase(QLabel):
         font.setPixelSize(size)
         self.setFont(font)
 
-    @Property(bool)
+    @pyqtProperty(bool)
     def strikeOut(self):
         return self.font().strikeOut()
 
@@ -87,7 +87,7 @@ class MaterialLabelBase(QLabel):
         font.setStrikeOut(isStrikeOut)
         self.setFont(font)
 
-    @Property(bool)
+    @pyqtProperty(bool)
     def underline(self):
         return self.font().underline()
 
@@ -151,7 +151,7 @@ class DisplayLabel(MaterialLabelBase):
 class ImageLabel(QLabel):
     """ Image label """
 
-    clicked = Signal()
+    clicked = pyqtSignal()
 
     @singledispatchmethod
     def __init__(self, parent: QWidget = None):
@@ -291,7 +291,7 @@ class ImageLabel(QLabel):
         painter.setClipPath(path)
         painter.drawImage(self.rect(), image)
 
-    @Property(int)
+    @pyqtProperty(int)
     def topLeftRadius(self):
         return self._topLeftRadius
 
@@ -299,7 +299,7 @@ class ImageLabel(QLabel):
     def topLeftRadius(self, radius: int):
         self.setBorderRadius(radius, self.topRightRadius, self.bottomLeftRadius, self.bottomRightRadius)
 
-    @Property(int)
+    @pyqtProperty(int)
     def topRightRadius(self):
         return self._topRightRadius
 
@@ -307,7 +307,7 @@ class ImageLabel(QLabel):
     def topRightRadius(self, radius: int):
         self.setBorderRadius(self.topLeftRadius, radius, self.bottomLeftRadius, self.bottomRightRadius)
 
-    @Property(int)
+    @pyqtProperty(int)
     def bottomLeftRadius(self):
         return self._bottomLeftRadius
 
@@ -315,7 +315,7 @@ class ImageLabel(QLabel):
     def bottomLeftRadius(self, radius: int):
         self.setBorderRadius(self.topLeftRadius, self.topRightRadius, radius, self.bottomRightRadius)
 
-    @Property(int)
+    @pyqtProperty(int)
     def bottomRightRadius(self):
         return self._bottomRightRadius
 

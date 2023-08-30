@@ -1,5 +1,5 @@
 # coding:utf-8
-from PySide6.QtCore import Qt
+from PyQt5.QtCore import Qt
 
 from qmaterialwidgets import (TextPushButton, MessageBox, TeachingTip, TeachingTipTailPosition,
                             InfoBarIcon, Flyout, FlyoutView, TeachingTipView, FlyoutAnimationType,

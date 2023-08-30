@@ -1,10 +1,11 @@
 # coding:utf-8
 from enum import Enum
 from typing import Union
-from PySide6.QtCore import Qt, Signal, QPointF, QPoint
-from PySide6.QtGui import QPixmap, QPainter, QColor
-from PySide6.QtWidgets import QWidget
+from PyQt5.QtCore import Qt, pyqtSignal, QPointF, QPoint
+from PyQt5.QtGui import QPixmap, QPainter, QColor
+from PyQt5.QtWidgets import QWidget
 
+from ...common.font import getFont
 from ...common.style_sheet import themeColor, palette
 from ...common.animation import FadeInOutWidget
 
@@ -94,6 +95,7 @@ class BubbleWidget(FadeInOutWidget, QWidget):
             ])
 
         # draw text
+        painter.setFont(getFont(11))
         painter.setPen(palette.onPrimary)
         painter.drawText(self.rect(), Qt.AlignCenter, self.text())
 

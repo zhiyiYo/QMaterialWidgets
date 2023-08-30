@@ -1,8 +1,8 @@
 # coding:utf-8
-from PySide6.QtCore import (Qt, QRectF, QEasingCurve, QPropertyAnimation, QParallelAnimationGroup,
-                            QSequentialAnimationGroup, Property)
-from PySide6.QtGui import QColor, QPen, QPainter, QFont
-from PySide6.QtWidgets import QProgressBar
+from PyQt5.QtCore import (Qt, QRectF, QEasingCurve, QPropertyAnimation, QParallelAnimationGroup,
+                            QSequentialAnimationGroup, pyqtProperty)
+from PyQt5.QtGui import QColor, QPen, QPainter, QFont
+from PyQt5.QtWidgets import QProgressBar
 
 from .progress_bar import ProgressBar
 from ...common.font import setFont
@@ -62,7 +62,7 @@ class ProgressRing(ProgressBar):
         if self.isTextVisible():
             self._drawText(painter, self.valText())
 
-    strokeWidth = Property(int, getStrokeWidth, setStrokeWidth)
+    strokeWidth = pyqtProperty(int, getStrokeWidth, setStrokeWidth)
 
 
 class IndeterminateProgressRing(QProgressBar):
@@ -102,7 +102,7 @@ class IndeterminateProgressRing(QProgressBar):
         if start:
             self.start()
 
-    @Property(int)
+    @pyqtProperty(int)
     def startAngle(self):
         return self._startAngle
 
@@ -111,7 +111,7 @@ class IndeterminateProgressRing(QProgressBar):
         self._startAngle = angle
         self.update()
 
-    @Property(int)
+    @pyqtProperty(int)
     def spanAngle(self):
         return self._spanAngle
 
@@ -172,4 +172,4 @@ class IndeterminateProgressRing(QProgressBar):
         startAngle = -self.startAngle + 180
         painter.drawArc(rc, (startAngle % 360)*16, -self.spanAngle*16)
 
-    strokeWidth = Property(int, getStrokeWidth, setStrokeWidth)
+    strokeWidth = pyqtProperty(int, getStrokeWidth, setStrokeWidth)

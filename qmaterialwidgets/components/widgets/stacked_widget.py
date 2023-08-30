@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import List
 
-from PySide6.QtCore import (QAbstractAnimation, QEasingCurve, QPoint, QPropertyAnimation,
-                          Signal)
-from PySide6.QtWidgets import QGraphicsOpacityEffect, QStackedWidget, QWidget
+from PyQt5.QtCore import (QAbstractAnimation, QEasingCurve, QPoint, QPropertyAnimation,
+                          pyqtSignal)
+from PyQt5.QtWidgets import QGraphicsOpacityEffect, QStackedWidget, QWidget
 
 
 class OpacityAniStackedWidget(QStackedWidget):
@@ -66,8 +66,8 @@ class PopUpAniInfo:
 class PopUpAniStackedWidget(QStackedWidget):
     """ Stacked widget with pop up animation """
 
-    aniFinished = Signal()
-    aniStart = Signal()
+    aniFinished = pyqtSignal()
+    aniStart = pyqtSignal()
 
     def __init__(self, parent=None):
         super().__init__(parent)

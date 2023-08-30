@@ -1,8 +1,8 @@
 # coding:utf-8
 from enum import Enum
-from PySide6.QtCore import QRectF, Qt, Signal, QSize
-from PySide6.QtGui import QIcon, QPixmap, QPainter, QColor
-from PySide6.QtWidgets import QWidget, QGraphicsDropShadowEffect
+from PyQt5.QtCore import QRectF, Qt, pyqtSignal, QSize
+from PyQt5.QtGui import QIcon, QPixmap, QPainter, QColor
+from PyQt5.QtWidgets import QWidget, QGraphicsDropShadowEffect
 
 from ...common.color import mixColor
 from ...common.icon import MaterialIconBase, drawIcon

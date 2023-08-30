@@ -1,7 +1,7 @@
 # coding: utf-8
-from PySide6.QtCore import Qt, QUrl, QSize
-from PySide6.QtGui import QIcon
-from PySide6.QtWidgets import QApplication
+from PyQt5.QtCore import Qt, QUrl, QSize
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import QApplication
 
 from qmaterialwidgets import (NavigationItemPosition, MaterialWindow, SplashScreen, Theme,
                               setTheme, isDarkTheme, OutlinedToolButton, ToolTipFilter)

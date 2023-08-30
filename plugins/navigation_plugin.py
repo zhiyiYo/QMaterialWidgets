@@ -1,6 +1,6 @@
 # coding: utf-8
-from PySide6.QtCore import Qt
-from PySide6.QtDesigner import QDesignerCustomWidgetInterface
+from PyQt5.QtCore import Qt
+from PyQt5.QtDesigner import QPyDesignerCustomWidgetPlugin
 
 from qmaterialwidgets import NavigationRail, NavigationBar, TabWidget, SegmentedWidget, NavigationBar, FluentIcon
 
@@ -13,7 +13,7 @@ class NavigationPlugin(PluginBase):
         return super().group() + ' (Navigation)'
 
 
-class NavigationRailPlugin(NavigationPlugin, QDesignerCustomWidgetInterface):
+class NavigationRailPlugin(NavigationPlugin, QPyDesignerCustomWidgetPlugin):
     """ Navigation rail plugin """
 
     def createWidget(self, parent):
@@ -26,7 +26,7 @@ class NavigationRailPlugin(NavigationPlugin, QDesignerCustomWidgetInterface):
         return "NavigationRail"
 
 
-class NavigationBarPlugin(NavigationPlugin, QDesignerCustomWidgetInterface):
+class NavigationBarPlugin(NavigationPlugin, QPyDesignerCustomWidgetPlugin):
     """ Navigation abr plugin """
 
     def createWidget(self, parent):
@@ -39,7 +39,7 @@ class NavigationBarPlugin(NavigationPlugin, QDesignerCustomWidgetInterface):
         return "NavigationBar"
 
 
-class TabWidgetPlugin(NavigationPlugin, QDesignerCustomWidgetInterface):
+class TabWidgetPlugin(NavigationPlugin, QPyDesignerCustomWidgetPlugin):
     """ Tab widget plugin """
 
     def createWidget(self, parent):

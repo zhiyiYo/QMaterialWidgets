@@ -2,10 +2,11 @@
 from enum import Enum
 from typing import Union
 
-from PySide6.QtXml import QDomDocument
-from PySide6.QtCore import QRectF, Qt, QFile, QObject, QRect
-from PySide6.QtGui import QIcon, QIconEngine, QColor, QPixmap, QImage, QPainter, QAction
-from PySide6.QtSvg import QSvgRenderer
+from PyQt5.QtXml import QDomDocument
+from PyQt5.QtCore import QRectF, Qt, QFile, QObject, QRect
+from PyQt5.QtGui import QIcon, QIconEngine, QColor, QPixmap, QImage, QPainter
+from PyQt5.QtWidgets import QAction
+from PyQt5.QtSvg import QSvgRenderer
 
 from qmaterialwidgets.common.config import Theme
 
