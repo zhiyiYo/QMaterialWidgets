@@ -12,7 +12,7 @@ Examples are available at https://github.com/zhiyiYo/QMaterialWidgets/tree/PyQt6
 :license: PyQt6-Material-Widgets is licensed under [GPLv3](./LICENSE).
 """
 
-__version__ = "0.1.3"
+__version__ = "0.9.9"
 
 from .components import *
 from .common import *
