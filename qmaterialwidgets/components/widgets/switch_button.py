@@ -1,9 +1,9 @@
 # coding: utf-8
 from enum import Enum
 
-from PyQt5.QtCore import Qt, QTimer, pyqtProperty, pyqtSignal, QEvent, QPoint, QRectF
-from PyQt5.QtGui import QColor, QPainter, QHoverEvent, QPainterPath, QPen
-from PyQt5.QtWidgets import QApplication, QHBoxLayout, QLabel, QToolButton, QWidget
+from PyQt6.QtCore import Qt, QTimer, pyqtProperty, pyqtSignal, QEvent, QPointF, QRectF
+from PyQt6.QtGui import QColor, QPainter, QHoverEvent, QPainterPath, QPen
+from PyQt6.QtWidgets import QApplication, QHBoxLayout, QLabel, QToolButton, QWidget
 
 from ...common.color import translucent
 from ...common.style_sheet import MaterialStyleSheet, palette, themeColor, isDarkTheme
@@ -247,11 +247,11 @@ class SwitchButton(QWidget):
                 self.indicator.toggle()
             elif e.type() == QEvent.Type.Enter:
                 self.indicator.setAttribute(Qt.WidgetAttribute.WA_UnderMouse, True)
-                e = QHoverEvent(QEvent.Type.HoverEnter, QPoint(), QPoint(1, 1))
+                e = QHoverEvent(QEvent.Type.HoverEnter, QPointF(), QPointF(1, 1))
                 QApplication.sendEvent(self.indicator, e)
             elif e.type() == QEvent.Type.Leave:
                 self.indicator.setAttribute(Qt.WidgetAttribute.WA_UnderMouse, False)
-                e = QHoverEvent(QEvent.Type.HoverLeave, QPoint(1, 1), QPoint())
+                e = QHoverEvent(QEvent.Type.HoverLeave, QPointF(1, 1), QPointF())
                 QApplication.sendEvent(self.indicator, e)
 
         return super().eventFilter(obj, e)

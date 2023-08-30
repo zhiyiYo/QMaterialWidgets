@@ -1,7 +1,7 @@
 # coding:utf-8
-from PyQt5.QtCore import QEasingCurve, QPropertyAnimation, Qt, QEvent
-from PyQt5.QtGui import QColor, QResizeEvent
-from PyQt5.QtWidgets import (QDialog, QGraphicsDropShadowEffect,
+from PyQt6.QtCore import QEasingCurve, QPropertyAnimation, Qt, QEvent
+from PyQt6.QtGui import QColor, QResizeEvent
+from PyQt6.QtWidgets import (QDialog, QGraphicsDropShadowEffect,
                              QGraphicsOpacityEffect, QHBoxLayout, QWidget, QFrame)
 
 
@@ -50,7 +50,7 @@ class MaskDialogBase(QDialog):
         opacityAni.setStartValue(0)
         opacityAni.setEndValue(1)
         opacityAni.setDuration(200)
-        opacityAni.setEasingCurve(QEasingCurve.InSine)
+        opacityAni.setEasingCurve(QEasingCurve.Type.InSine)
         opacityAni.finished.connect(opacityEffect.deleteLater)
         opacityAni.start()
         super().showEvent(e)
@@ -64,7 +64,7 @@ class MaskDialogBase(QDialog):
         opacityAni.setStartValue(1)
         opacityAni.setEndValue(0)
         opacityAni.setDuration(100)
-        opacityAni.setEasingCurve(QEasingCurve.OutCubic)
+        opacityAni.setEasingCurve(QEasingCurve.Type.OutCubic)
         opacityAni.finished.connect(self.deleteLater)
         opacityAni.start()
         e.ignore()
@@ -74,7 +74,7 @@ class MaskDialogBase(QDialog):
 
     def eventFilter(self, obj, e: QEvent):
         if obj is self.window():
-            if e.type() == QEvent.Resize:
+            if e.type() == QEvent.Type.Resize:
                 re = QResizeEvent(e)
                 self.resize(re.size())
 

@@ -1,8 +1,8 @@
 # coding:utf-8
 from typing import List
 
-from PyQt5.QtCore import QSize, QPoint, Qt, QRect, QPropertyAnimation, QParallelAnimationGroup, QEasingCurve
-from PyQt5.QtWidgets import QLayout, QWidgetItem, QLayoutItem
+from PyQt6.QtCore import QSize, QPoint, Qt, QRect, QPropertyAnimation, QParallelAnimationGroup, QEasingCurve
+from PyQt6.QtWidgets import QLayout, QWidgetItem, QLayoutItem
 
 
 class FlowLayout(QLayout):
@@ -45,7 +45,7 @@ class FlowLayout(QLayout):
         self._anis.append(ani)
         self._aniGroup.addAnimation(ani)
 
-    def setAnimation(self, duration, ease=QEasingCurve.Linear):
+    def setAnimation(self, duration, ease=QEasingCurve.Type.Linear):
         """ set the moving animation
 
         Parameters

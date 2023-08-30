@@ -1,9 +1,9 @@
 # coding: utf-8
 from typing import List, Optional, Union
 
-from PyQt5.QtCore import Qt, QMargins, QModelIndex, QItemSelectionModel, pyqtProperty, QRectF
-from PyQt5.QtGui import QPainter, QColor, QKeyEvent, QPalette, QBrush, QPainterPath
-from PyQt5.QtWidgets import (QStyledItemDelegate, QApplication, QStyleOptionViewItem,
+from PyQt6.QtCore import Qt, QMargins, QModelIndex, QItemSelectionModel, pyqtProperty, QRectF
+from PyQt6.QtGui import QPainter, QColor, QKeyEvent, QPalette, QBrush, QPainterPath
+from PyQt6.QtWidgets import (QStyledItemDelegate, QApplication, QStyleOptionViewItem,
                              QTableView, QTableWidget, QWidget, QTableWidgetItem, QHeaderView)
 
 from ...common.font import getFont
@@ -82,21 +82,21 @@ class TableItemDelegate(QStyledItemDelegate):
         super().initStyleOption(option, index)
 
         # font
-        option.font = index.data(Qt.FontRole) or getFont(13)
+        option.font = index.data(Qt.ItemDataRole.FontRole) or getFont(13)
 
         # text color
-        textColor = Qt.white if isDarkTheme() else Qt.black
-        textBrush = index.data(Qt.ForegroundRole)   # type: QBrush
+        textColor = Qt.GlobalColor.white if isDarkTheme() else Qt.GlobalColor.black
+        textBrush = index.data(Qt.ItemDataRole.ForegroundRole)   # type: QBrush
         if textBrush is not None:
             textColor = textBrush.color()
 
-        option.palette.setColor(QPalette.Text, textColor)
-        option.palette.setColor(QPalette.HighlightedText, textColor)
+        option.palette.setColor(QPalette.ColorRole.Text, textColor)
+        option.palette.setColor(QPalette.ColorRole.HighlightedText, textColor)
 
     def paint(self, painter, option, index):
         painter.save()
-        painter.setPen(Qt.NoPen)
-        painter.setRenderHint(QPainter.Antialiasing)
+        painter.setPen(Qt.PenStyle.NoPen)
+        painter.setRenderHint(QPainter.RenderHint.Antialiasing)
 
         # set clipping rect of painter to avoid painting outside the borders
         painter.setClipping(True)
@@ -131,7 +131,7 @@ class TableHeader(QHeaderView):
 
     def paintEvent(self, e):
         painter = QPainter(self.viewport())
-        painter.setPen(Qt.NoPen)
+        painter.setPen(Qt.PenStyle.NoPen)
         painter.setBrush(self.darkBackgroundColor if isDarkTheme() else self.lightBackgroundColor)
         painter.drawRect(self.rect())
         super().paintEvent(e)
@@ -197,7 +197,7 @@ class TableBase:
         self.updateSelectedRows()
 
     def mousePressEvent(self, e):
-        if e.button() == Qt.LeftButton or self._isSelectRightClickedRow:
+        if e.button() == Qt.MouseButton.LeftButton or self._isSelectRightClickedRow:
             QTableView.mousePressEvent(self, e)
             return self._updateRipple(e.pos())
 
@@ -211,7 +211,7 @@ class TableBase:
         QTableView.mouseReleaseEvent(self, e)
         self.updateSelectedRows()
 
-        if self.indexAt(e.pos()).row() < 0 or e.button() == Qt.RightButton:
+        if self.indexAt(e.pos()).row() < 0 or e.button() == Qt.MouseButton.RightButton:
             self._setPressedRow(-1)
 
     def _updateRipple(self, pos):
@@ -229,7 +229,7 @@ class TableBase:
         self.ripple.setClipPath(path)
 
         ripple = RippleAnimation(pos, self.ripple, self)
-        ripple.setColor(Qt.white if isDarkTheme() else Qt.black)
+        ripple.setColor(Qt.GlobalColor.white if isDarkTheme() else Qt.GlobalColor.black)
         radius = max(pos.x(), self.width() - pos.x())
         ripple.setRadiusEndValue(radius)
 
@@ -271,10 +271,10 @@ class TableWidget(TableBase, QTableWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-    def setCurrentCell(self, row: int, column: int, command: Union[QItemSelectionModel.SelectionFlag, QItemSelectionModel.SelectionFlags] = None):
+    def setCurrentCell(self, row: int, column: int, command=None):
         self.setCurrentItem(self.item(row, column), command)
 
-    def setCurrentItem(self, item: QTableWidgetItem, command: Union[QItemSelectionModel.SelectionFlag, QItemSelectionModel.SelectionFlags] = None):
+    def setCurrentItem(self, item: QTableWidgetItem, command=None):
         if not command:
             super().setCurrentItem(item)
         else:

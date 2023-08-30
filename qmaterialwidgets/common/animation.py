@@ -1,7 +1,7 @@
 # coding: utf-8
-from PyQt5.QtCore import QEasingCurve, QEvent, QObject, QPropertyAnimation, pyqtProperty, pyqtSignal
-from PyQt5.QtGui import QMouseEvent, QEnterEvent, QColor
-from PyQt5.QtWidgets import QWidget, QLineEdit, QGraphicsDropShadowEffect
+from PyQt6.QtCore import QEasingCurve, QEvent, QObject, QPropertyAnimation, pyqtProperty, pyqtSignal
+from PyQt6.QtGui import QMouseEvent, QEnterEvent, QColor
+from PyQt6.QtWidgets import QWidget, QLineEdit, QGraphicsDropShadowEffect
 
 from .config import qconfig
 

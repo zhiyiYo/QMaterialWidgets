@@ -1,10 +1,10 @@
 # coding:utf-8
 from math import floor
 
-from PyQt5.QtCore import (QEasingCurve, Qt, QPropertyAnimation, pyqtProperty,
+from PyQt6.QtCore import (QEasingCurve, Qt, QPropertyAnimation, pyqtProperty,
                           QParallelAnimationGroup, QSequentialAnimationGroup, QLocale)
-from PyQt5.QtGui import QPainter, QColor
-from PyQt5.QtWidgets import QProgressBar
+from PyQt6.QtGui import QPainter, QColor
+from PyQt6.QtWidgets import QProgressBar
 
 from ...common.style_sheet import themeColor, isDarkTheme, palette, argbToQColor
 
@@ -209,7 +209,7 @@ class IndeterminateProgressBar(QProgressBar):
         self.update()
 
     def isStarted(self):
-        return self.aniGroup.state() == QParallelAnimationGroup.Running
+        return self.aniGroup.state() == QParallelAnimationGroup.State.Running
 
     def pause(self):
         self.aniGroup.pause()
@@ -224,7 +224,7 @@ class IndeterminateProgressBar(QProgressBar):
         self.update()
 
     def isPaused(self):
-        return self.aniGroup.state() == QParallelAnimationGroup.Paused
+        return self.aniGroup.state() == QParallelAnimationGroup.State.Paused
 
     def error(self):
         self._isError = True
@@ -243,13 +243,13 @@ class IndeterminateProgressBar(QProgressBar):
 
     def paintEvent(self, e):
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
 
-        painter.setPen(Qt.NoPen)
+        painter.setPen(Qt.PenStyle.NoPen)
 
-        if self.aniGroup.state() == QPropertyAnimation.Running:
+        if self.aniGroup.state() == QPropertyAnimation.State.Running:
             painter.setBrush(themeColor())
-        elif self.aniGroup.state() == QPropertyAnimation.Paused:
+        elif self.aniGroup.state() == QPropertyAnimation.State.Paused:
             painter.setBrush(
                 QColor(252, 225, 0) if isDarkTheme() else QColor(157, 93, 0))
         elif self._isError:

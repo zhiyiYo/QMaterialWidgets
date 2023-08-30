@@ -1,7 +1,7 @@
 # coding:utf-8
-from PyQt5.QtCore import QSize, Qt, pyqtSignal, QPoint, QRectF, QEvent
-from PyQt5.QtGui import QColor, QMouseEvent, QPainter, QPainterPath
-from PyQt5.QtWidgets import (QProxyStyle, QSlider, QStyle, QStyleOptionSlider,
+from PyQt6.QtCore import QSize, Qt, pyqtSignal, QPoint, QRectF, QEvent
+from PyQt6.QtGui import QColor, QMouseEvent, QPainter, QPainterPath
+from PyQt6.QtWidgets import (QProxyStyle, QSlider, QStyle, QStyleOptionSlider,
                                QWidget, QGraphicsDropShadowEffect)
 
 from ...common.animation import BackgroundAnimationWidget

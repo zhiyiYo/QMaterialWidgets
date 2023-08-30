@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Dict, Union
 
-from PyQt5.QtCore import Qt, QRect
-from PyQt5.QtGui import QPixmap, QPainter, QColor, QIcon
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout
+from PyQt6.QtCore import Qt, QRect
+from PyQt6.QtGui import QPixmap, QPainter, QColor, QIcon
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QHBoxLayout
 
 from ...common.icon import drawIcon, MaterialIconBase
 from ...common.router import qrouter
@@ -211,8 +211,8 @@ class NavigationRail(NavigationBarBase):
         self.resize(48, self.height())
         self.window().installEventFilter(self)
 
-        self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.scrollArea.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.scrollArea.setWidget(self.scrollWidget)
         self.scrollArea.setWidgetResizable(True)
 
@@ -365,13 +365,13 @@ class NavigationRail(NavigationBarBase):
         """ insert widget to layout """
         if position == NavigationItemPosition.TOP:
             widget.setParent(self)
-            self.topLayout.insertWidget(index, widget, 0, Qt.AlignTop | Qt.AlignHCenter)
+            self.topLayout.insertWidget(index, widget, 0, Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignHCenter)
         elif position == NavigationItemPosition.SCROLL:
             widget.setParent(self.scrollWidget)
-            self.scrollLayout.insertWidget(index, widget, 0, Qt.AlignTop | Qt.AlignHCenter)
+            self.scrollLayout.insertWidget(index, widget, 0, Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignHCenter)
         else:
             widget.setParent(self)
-            self.bottomLayout.insertWidget(index, widget, 0, Qt.AlignBottom | Qt.AlignHCenter)
+            self.bottomLayout.insertWidget(index, widget, 0, Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignHCenter)
 
         widget.show()
 

@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Union, List, Iterable
 
-from PyQt5.QtCore import Qt, pyqtSignal, QRectF, QPoint, QObject, QEvent, pyqtProperty
-from PyQt5.QtGui import QPainter, QCursor, QIcon
-from PyQt5.QtWidgets import QApplication, QAction
+from PyQt6.QtCore import Qt, pyqtSignal, QRectF, QPoint, QObject, QEvent, pyqtProperty
+from PyQt6.QtGui import QPainter, QCursor, QIcon, QAction
+from PyQt6.QtWidgets import QApplication
 
 from .menu import RoundMenu, MenuAnimationType, IndicatorMenuItemDelegate
 from .line_edit import LineEdit, LineEditButton, FilledLineEdit, LineEditIcon
@@ -450,7 +450,7 @@ class ComboBoxMenu(RoundMenu):
     def __init__(self, parent=None):
         super().__init__(title="", parent=parent)
 
-        self.view.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.view.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.view.setItemDelegate(IndicatorMenuItemDelegate())
         self.view.setObjectName('comboListWidget')
 

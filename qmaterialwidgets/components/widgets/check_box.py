@@ -1,9 +1,9 @@
 # coding: utf-8
 from enum import Enum
 
-from PyQt5.QtCore import Qt, QPoint, QRect, QRectF
-from PyQt5.QtGui import QPainterPath, QPainter
-from PyQt5.QtWidgets import QCheckBox, QStyle, QStyleOptionButton, QWidget
+from PyQt6.QtCore import Qt, QPoint, QRect, QRectF
+from PyQt6.QtGui import QPainterPath, QPainter
+from PyQt6.QtWidgets import QCheckBox, QStyle, QStyleOptionButton, QWidget
 
 from ...common.icon import MaterialIconBase, Theme, getIconColor
 from ...common.style_sheet import MaterialStyleSheet

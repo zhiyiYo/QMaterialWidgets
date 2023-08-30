@@ -3,10 +3,10 @@ from enum import Enum
 from typing import Union
 import weakref
 
-from PyQt5.QtCore import (Qt, QEvent, QSize, QRectF, QObject, QPropertyAnimation,
+from PyQt6.QtCore import (Qt, QEvent, QSize, QRectF, QObject, QPropertyAnimation,
                           QEasingCurve, QTimer, pyqtSignal, QParallelAnimationGroup, QPoint)
-from PyQt5.QtGui import QPainter, QIcon, QColor
-from PyQt5.QtWidgets import (QWidget, QFrame, QLabel, QHBoxLayout, QVBoxLayout, QGraphicsOpacityEffect,
+from PyQt6.QtGui import QPainter, QIcon, QColor
+from PyQt6.QtWidgets import (QWidget, QFrame, QLabel, QHBoxLayout, QVBoxLayout, QGraphicsOpacityEffect,
                                QGraphicsDropShadowEffect)
 
 from ...common.auto_wrap import TextWrap
@@ -37,7 +37,7 @@ class InfoBarCloseButton(TransparentToolButton):
 
         return translucent(argbToQColor(palette.reverseScheme.onSurfaceVariant), 30)
 
-    def _drawIcon(self, icon, painter: QPainter, rect: QRectF, state=QIcon.Off):
+    def _drawIcon(self, icon, painter: QPainter, rect: QRectF, state=QIcon.State.Off):
         if self._reverseColor():
             icon = FIF.CLOSE.icon(Theme.LIGHT if isDarkTheme() else Theme.DARK)
 
@@ -427,7 +427,7 @@ class InfoBarManager(QObject):
 
     def _createSlideAni(self, infoBar: InfoBar):
         slideAni = QPropertyAnimation(infoBar, b'pos')
-        slideAni.setEasingCurve(QEasingCurve.OutQuad)
+        slideAni.setEasingCurve(QEasingCurve.Type.OutQuad)
         slideAni.setDuration(200)
 
         slideAni.setStartValue(self._slideStartPos(infoBar))
@@ -456,8 +456,8 @@ class InfoBarManager(QObject):
         if obj not in self.infoBars:
             return False
 
-        if e.type() in [QEvent.Resize, QEvent.WindowStateChange]:
-            size = e.size() if e.type() == QEvent.Resize else None
+        if e.type() in [QEvent.Type.Resize, QEvent.Type.WindowStateChange]:
+            size = e.size() if e.type() == QEvent.Type.Resize else None
             for bar in self.infoBars[obj]:
                 bar.move(self._pos(bar, size))
 

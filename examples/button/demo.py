@@ -2,9 +2,9 @@
 import sys
 from typing import List
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QIcon
+from PyQt6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
 
 from qmaterialwidgets import (OutlinedPushButton, FluentIcon, setTheme, Theme, TextPushButton,
                               StrongBodyLabel, FilledPushButton, ElevatedPushButton, TonalPushButton,
@@ -30,7 +30,7 @@ class ButtonView(QWidget):
         layout = QHBoxLayout()
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(20)
-        layout.setAlignment(Qt.AlignLeft)
+        layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
 
         for button in buttons:
             layout.addWidget(button)
@@ -48,7 +48,7 @@ class Widget(QWidget):
 
         self.vBoxLayout = QVBoxLayout(self)
         self.vBoxLayout.setSpacing(15)
-        self.vBoxLayout.setAlignment(Qt.AlignTop)
+        self.vBoxLayout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.vBoxLayout.setContentsMargins(0, 30, 0, 30)
 
     def addButtons(self, title: list, buttons: list):
@@ -199,11 +199,6 @@ class Demo2(Widget):
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w1 = Demo1()
     w1.show()

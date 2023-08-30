@@ -1,8 +1,8 @@
 # coding:utf-8
 import sys
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
 
 from qmaterialwidgets import (TeachingTip, TeachingTipTailPosition, InfoBarIcon, setTheme, Theme,
                             TeachingTipView, FlyoutViewBase, BodyLabel, OutlinedPushButton,
@@ -44,9 +44,9 @@ class Demo(QWidget):
         self.button1.setFixedWidth(150)
         self.button2.setFixedWidth(150)
         self.button3.setFixedWidth(150)
-        self.hBoxLayout.addWidget(self.button2, 0, Qt.AlignHCenter)
-        self.hBoxLayout.addWidget(self.button1, 0, Qt.AlignHCenter)
-        self.hBoxLayout.addWidget(self.button3, 0, Qt.AlignHCenter)
+        self.hBoxLayout.addWidget(self.button2, 0, Qt.AlignmentFlag.AlignHCenter)
+        self.hBoxLayout.addWidget(self.button1, 0, Qt.AlignmentFlag.AlignHCenter)
+        self.hBoxLayout.addWidget(self.button3, 0, Qt.AlignmentFlag.AlignHCenter)
         self.button1.clicked.connect(self.showTopTip)
         self.button2.clicked.connect(self.showBottomTip)
         self.button3.clicked.connect(self.showCustomTip)
@@ -66,7 +66,7 @@ class Demo(QWidget):
         # add widget to view
         button = FilledPushButton('Action')
         button.setFixedWidth(120)
-        view.addWidget(button, align=Qt.AlignRight)
+        view.addWidget(button, align=Qt.AlignmentFlag.AlignRight)
 
         w = TeachingTip.make(
             target=self.button1,
@@ -101,11 +101,6 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

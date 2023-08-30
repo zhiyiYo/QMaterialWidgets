@@ -2,9 +2,9 @@
 from enum import Enum
 from typing import Union
 
-from PyQt5.QtCore import Qt, QEvent, QRectF, QPoint, QObject, QSize
-from PyQt5.QtGui import QPixmap, QPainter, QColor, QIcon
-from PyQt5.QtWidgets import QLabel, QWidget, QSizePolicy
+from PyQt6.QtCore import Qt, QEvent, QRectF, QPoint, QObject, QSize
+from PyQt6.QtGui import QPixmap, QPainter, QColor, QIcon
+from PyQt6.QtWidgets import QLabel, QWidget, QSizePolicy
 
 from ...common.font import setFont
 from ...common.icon import drawIcon, MaterialIconBase, toQIcon

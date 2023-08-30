@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Union
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QIcon, QPainter, QColor
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QLabel
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QIcon, QPainter, QColor
+from PyQt6.QtWidgets import QWidget, QHBoxLayout, QVBoxLayout, QLabel
 
 from ..common.icon import MaterialIconBase
 from ..common.router import qrouter
@@ -87,7 +87,7 @@ class MaterialWindowBase(FramelessWindow):
     def paintEvent(self, e):
         super().paintEvent(e)
         painter = QPainter(self)
-        painter.setPen(Qt.NoPen)
+        painter.setPen(Qt.PenStyle.NoPen)
 
         if isDarkTheme():
             painter.setBrush(QColor(32, 32, 32))
@@ -127,10 +127,10 @@ class SplitMaterialTitleBar(MaterialTitleBarBase):
         super().__init__(parent)
         # add window icon
         self.hBoxLayout.insertSpacing(0, 60)
-        self.hBoxLayout.insertWidget(1, self.iconLabel, 0, Qt.AlignLeft | Qt.AlignBottom)
+        self.hBoxLayout.insertWidget(1, self.iconLabel, 0, Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignBottom)
 
         # add title label
-        self.hBoxLayout.insertWidget(2, self.titleLabel, 0, Qt.AlignLeft | Qt.AlignBottom)
+        self.hBoxLayout.insertWidget(2, self.titleLabel, 0, Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignBottom)
 
 
 class SplitMaterialWindow(MaterialWindowBase):
@@ -169,16 +169,16 @@ class MaterialTitleBar(MaterialTitleBarBase):
         self.hBoxLayout.removeWidget(self.closeBtn)
 
         # add window icon
-        self.hBoxLayout.insertWidget(0, self.iconLabel, 0, Qt.AlignLeft | Qt.AlignVCenter)
+        self.hBoxLayout.insertWidget(0, self.iconLabel, 0, Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         # add title label
-        self.hBoxLayout.insertWidget(1, self.titleLabel, 0, Qt.AlignLeft | Qt.AlignVCenter)
+        self.hBoxLayout.insertWidget(1, self.titleLabel, 0, Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
         self.vBoxLayout = QVBoxLayout()
         self.buttonLayout = QHBoxLayout()
         self.buttonLayout.setSpacing(0)
         self.buttonLayout.setContentsMargins(0, 0, 0, 0)
-        self.buttonLayout.setAlignment(Qt.AlignTop)
+        self.buttonLayout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.buttonLayout.addWidget(self.minBtn)
         self.buttonLayout.addWidget(self.maxBtn)
         self.buttonLayout.addWidget(self.closeBtn)

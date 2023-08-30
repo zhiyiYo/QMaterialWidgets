@@ -2,9 +2,9 @@
 import sys
 from typing import List
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QIcon
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QHBoxLayout
 
 from qmaterialwidgets import (FilledLineEdit, StrongBodyLabel, FilledSearchLineEdit, Action,
                               FluentIcon, setTheme, Theme, palette, LineEdit, SearchLineEdit)
@@ -21,13 +21,13 @@ class LineEditView(QWidget):
         self.vBoxLayout.addWidget(self.titleLabel)
         self.vBoxLayout.setContentsMargins(0, 0, 0, 10)
         self.vBoxLayout.addWidget(self.titleLabel)
-        self.vBoxLayout.setAlignment(Qt.AlignTop)
+        self.vBoxLayout.setAlignment(Qt.AlignmentFlag.AlignTop)
 
     def addLineEdits(self, lineEdits: list):
         layout = QHBoxLayout()
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(20)
-        layout.setAlignment(Qt.AlignLeft)
+        layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
         self.vBoxLayout.addLayout(layout)
 
         for lineEdit in lineEdits:
@@ -43,7 +43,7 @@ class Demo(QWidget):
 
         self.vBoxLayout = QVBoxLayout(self)
         self.vBoxLayout.setSpacing(30)
-        self.vBoxLayout.setAlignment(Qt.AlignTop)
+        self.vBoxLayout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.vBoxLayout.setContentsMargins(30, 30, 30, 30)
 
         # filled line edit
@@ -102,11 +102,6 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

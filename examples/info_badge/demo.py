@@ -1,8 +1,8 @@
 # coding:utf-8
 import sys
 
-from PyQt5.QtCore import Qt, QSize, QPoint
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
+from PyQt6.QtCore import Qt, QSize, QPoint
+from PyQt6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
 
 from qmaterialwidgets import (InfoBadge, IconInfoBadge, setTheme, Theme, DotInfoBadge, PrimaryFloatingActionButton,
                             InfoBadgePosition, InfoBadgeManager)
@@ -31,7 +31,7 @@ class Demo(QWidget):
         # info badge
         self.hBoxLayout1 = QHBoxLayout()
         self.hBoxLayout1.setSpacing(20)
-        self.hBoxLayout1.setSizeConstraint(QHBoxLayout.SetMinimumSize)
+        self.hBoxLayout1.setSizeConstraint(QHBoxLayout.SizeConstraint.SetMinimumSize)
 
         self.hBoxLayout1.addStretch(1)
         self.hBoxLayout1.addWidget(InfoBadge.info(1))
@@ -46,7 +46,7 @@ class Demo(QWidget):
         # dot info badge
         self.hBoxLayout2 = QHBoxLayout()
         self.hBoxLayout2.setSpacing(20)
-        self.hBoxLayout2.setSizeConstraint(QHBoxLayout.SetMinimumSize)
+        self.hBoxLayout2.setSizeConstraint(QHBoxLayout.SizeConstraint.SetMinimumSize)
 
         self.hBoxLayout2.addStretch(1)
         self.hBoxLayout2.addWidget(DotInfoBadge.info())
@@ -61,7 +61,7 @@ class Demo(QWidget):
         # icon info badge
         self.hBoxLayout3 = QHBoxLayout()
         self.hBoxLayout3.setSpacing(20)
-        self.hBoxLayout3.setSizeConstraint(QHBoxLayout.SetMinimumSize)
+        self.hBoxLayout3.setSizeConstraint(QHBoxLayout.SizeConstraint.SetMinimumSize)
 
         self.hBoxLayout3.addStretch(1)
         self.hBoxLayout3.addWidget(IconInfoBadge.info(MIC.ACCEPT_MEDIUM))
@@ -80,7 +80,7 @@ class Demo(QWidget):
 
         # Using an InfoBadge in another control
         self.button = PrimaryFloatingActionButton(MIC.BASKETBALL, self)
-        self.vBoxLayout.addWidget(self.button, 0, Qt.AlignHCenter)
+        self.vBoxLayout.addWidget(self.button, 0, Qt.AlignmentFlag.AlignHCenter)
         InfoBadge.success(1, self, target=self.button, position=InfoBadgePosition.TOP_RIGHT)
 
         # NOTE: Use custom info badge manager
@@ -90,11 +90,6 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

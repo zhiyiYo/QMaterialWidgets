@@ -1,7 +1,7 @@
 # coding:utf-8
 from enum import Enum
 
-from PyQt5.QtCore import QLocale
+from PyQt6.QtCore import QLocale
 from qmaterialwidgets import (qconfig, QConfig, ConfigItem, OptionsConfigItem, BoolValidator,
                             OptionsValidator, RangeConfigItem, RangeValidator,
                             FolderListValidator, EnumSerializer, FolderValidator, ConfigSerializer, __version__)
@@ -10,9 +10,9 @@ from qmaterialwidgets import (qconfig, QConfig, ConfigItem, OptionsConfigItem, B
 class Language(Enum):
     """ Language enumeration """
 
-    CHINESE_SIMPLIFIED = QLocale(QLocale.Chinese, QLocale.China)
-    CHINESE_TRADITIONAL = QLocale(QLocale.Chinese, QLocale.HongKong)
-    ENGLISH = QLocale(QLocale.English)
+    CHINESE_SIMPLIFIED = QLocale(QLocale.Language.Chinese, QLocale.Country.China)
+    CHINESE_TRADITIONAL = QLocale(QLocale.Language.Chinese, QLocale.Country.HongKong)
+    ENGLISH = QLocale(QLocale.Language.English)
     AUTO = QLocale()
 
 
@@ -44,7 +44,7 @@ AUTHOR = "zhiyiYo"
 VERSION = __version__
 HELP_URL = "https://qmaterialwidgets.readthedocs.io/zh_CN/latest"
 REPO_URL = "https://github.com/zhiyiYo/QMaterialWidgets"
-EXAMPLE_URL = "https://github.com/zhiyiYo/QMaterialWidgets/tree/master/examples"
+EXAMPLE_URL = "https://github.com/zhiyiYo/QMaterialWidgets/tree/PyQt6/examples"
 FEEDBACK_URL = "https://github.com/zhiyiYo/QMaterialWidgets/issues"
 RELEASE_URL = "https://github.com/zhiyiYo/QMaterialWidgets/releases/latest"
 SUPPORT_URL = "https://afdian.net/a/zhiyiYo"

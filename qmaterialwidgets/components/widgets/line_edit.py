@@ -1,12 +1,12 @@
 # coding: utf-8
 from enum import Enum
 from typing import List, Union
-from PyQt5.QtCore import (QSize, Qt, QRectF, pyqtSignal, QPoint, QTimer, QEvent,
+from PyQt6.QtCore import (QSize, Qt, QRectF, pyqtSignal, QPoint, QTimer, QEvent,
                             QAbstractItemModel, QPropertyAnimation, QEasingCurve, pyqtProperty,
                             QParallelAnimationGroup)
-from PyQt5.QtGui import QPainter, QPainterPath, QIcon, QColor, QPen
-from PyQt5.QtWidgets import (QApplication, QHBoxLayout, QLineEdit, QToolButton, QTextEdit,
-                               QPlainTextEdit, QCompleter, QLabel, QWidget, QAction)
+from PyQt6.QtGui import QPainter, QPainterPath, QIcon, QColor, QPen, QAction
+from PyQt6.QtWidgets import (QApplication, QHBoxLayout, QLineEdit, QToolButton, QTextEdit,
+                               QPlainTextEdit, QCompleter, QLabel, QWidget)
 
 
 from ...common.style_sheet import MaterialStyleSheet, themeColor, palette, Theme, qconfig
@@ -369,9 +369,9 @@ class LineEditLabel(QLabel):
 
     def paintEvent(self, e):
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.TextAntialiasing | QPainter.Antialiasing)
+        painter.setRenderHints(QPainter.RenderHint.TextAntialiasing | QPainter.RenderHint.Antialiasing)
         painter.setPen(self.color)
-        painter.drawText(self.rect(), Qt.AlignLeft, self.text())
+        painter.drawText(self.rect(), Qt.AlignmentFlag.AlignLeft, self.text())
 
 
 class FilledLineEdit(LineEditBase):
@@ -427,7 +427,7 @@ class FilledLineEdit(LineEditBase):
         painter.setRenderHints(QPainter.RenderHint.Antialiasing)
 
         path = QPainterPath()
-        path.setFillRule(Qt.WindingFill)
+        path.setFillRule(Qt.FillRule.WindingFill)
         path.addRoundedRect(QRectF(self.rect()), 5, 5)
         path.addRect(0, self.height()-6, 6, 6)
         path.addRect(self.width()-6, self.height()-6, 6, 6)
@@ -470,7 +470,7 @@ class CompleterMenu(RoundMenu):
 
         self.view.setObjectName('completerListWidget')
         self.view.setItemDelegate(IndicatorMenuItemDelegate())
-        self.view.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        self.view.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
 
         self.installEventFilter(self)
         self.setItemHeight(33)
@@ -496,16 +496,16 @@ class CompleterMenu(RoundMenu):
         return True
 
     def eventFilter(self, obj, e: QEvent):
-        if e.type() != QEvent.KeyPress:
+        if e.type() != QEvent.Type.KeyPress:
             return super().eventFilter(obj, e)
 
         # redirect input to line edit
         self.lineEdit.event(e)
         self.view.event(e)
 
-        if e.key() == Qt.Key_Escape:
+        if e.key() == Qt.Key.Key_Escape:
             self.close()
-        if e.key() in [Qt.Key_Enter, Qt.Key_Return] and self.view.currentRow() >= 0:
+        if e.key() in [Qt.Key.Key_Enter, Qt.Key.Key_Return] and self.view.currentRow() >= 0:
             self.lineEdit.setText(self.view.currentItem().text())
             self.close()
 
@@ -544,8 +544,8 @@ class CompleterMenu(RoundMenu):
         self.exec(pos, aniType=aniType)
 
         # remove the focus of menu
-        self.view.setFocusPolicy(Qt.NoFocus)
-        self.setFocusPolicy(Qt.NoFocus)
+        self.view.setFocusPolicy(Qt.FocusPolicy.NoFocus)
+        self.setFocusPolicy(Qt.FocusPolicy.NoFocus)
         p.setFocus()
 
 
@@ -600,7 +600,7 @@ class OutlinedEditBase:
         super().paintEvent(e)
 
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
 
         painter.setPen(self.borderColor)
 

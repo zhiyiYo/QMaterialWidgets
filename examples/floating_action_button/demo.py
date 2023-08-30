@@ -1,7 +1,7 @@
 # coding:utf-8
 import sys
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
 
 from qmaterialwidgets import (SurfaceFloatingActionButton, StrongBodyLabel, FluentIcon,
                               PrimaryFloatingActionButton, FloatingActionButtonSize,
@@ -25,10 +25,10 @@ class ButtonView(QWidget):
         layout = QHBoxLayout()
         layout.setContentsMargins(0, 0, 0, 0)
         layout.setSpacing(30)
-        layout.setAlignment(Qt.AlignLeft)
+        layout.setAlignment(Qt.AlignmentFlag.AlignLeft)
 
         for button in buttons:
-            layout.addWidget(button, 0, Qt.AlignLeft)
+            layout.addWidget(button, 0, Qt.AlignmentFlag.AlignLeft)
 
         self.vBoxLayout.addLayout(layout)
 
@@ -66,11 +66,6 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

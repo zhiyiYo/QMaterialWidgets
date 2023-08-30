@@ -1,9 +1,9 @@
 # coding: utf-8
 import sys
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QListWidgetItem, QListWidget, QWidget, QHBoxLayout
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QIcon
+from PyQt6.QtWidgets import QApplication, QListWidgetItem, QListWidget, QWidget, QHBoxLayout
 
 from qmaterialwidgets import ListView, setTheme, Theme, ListWidget, ElevatedCardWidget
 
@@ -39,7 +39,7 @@ class Demo(QWidget):
         for stand in stands:
             item = QListWidgetItem(stand)
             # item.setIcon(QIcon(':/qmaterialwidgets/images/logo.png'))
-            item.setCheckState(Qt.Unchecked)
+            item.setCheckState(Qt.CheckState.Unchecked)
             self.listWidget.addItem(item)
 
         self.hBoxLayout.setContentsMargins(50, 50, 50, 50)
@@ -50,11 +50,6 @@ class Demo(QWidget):
 
 
 if __name__ == "__main__":
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

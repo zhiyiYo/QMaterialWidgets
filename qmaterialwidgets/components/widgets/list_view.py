@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import List, Union
 
-from PyQt5.QtCore import Qt, QModelIndex, QItemSelectionModel, pyqtProperty, QRectF
-from PyQt5.QtGui import QPainterPath
-from PyQt5.QtWidgets import QListView, QListWidgetItem, QListView, QListWidget, QStyleOptionViewItem, QWidget
+from PyQt6.QtCore import Qt, QModelIndex, QItemSelectionModel, pyqtProperty, QRectF
+from PyQt6.QtGui import QPainterPath
+from PyQt6.QtWidgets import QListView, QListWidgetItem, QListView, QListWidget, QStyleOptionViewItem, QWidget
 
 from .scroll_bar import SmoothScrollDelegate
 from .table_view import TableItemDelegate
@@ -20,7 +20,7 @@ class ListItemDelegate(TableItemDelegate):
 
     def initStyleOption(self, option: QStyleOptionViewItem, index: QModelIndex):
         super().initStyleOption(option, index)
-        option.font = index.data(Qt.FontRole) or getFont(14)
+        option.font = index.data(Qt.ItemDataRole.FontRole) or getFont(14)
 
 
 class ListBase:
@@ -69,7 +69,7 @@ class ListBase:
         self.updateSelectedRows()
 
     def mousePressEvent(self, e):
-        if e.button() == Qt.LeftButton or self._isSelectRightClickedRow:
+        if e.button() == Qt.MouseButton.LeftButton or self._isSelectRightClickedRow:
             QListView.mousePressEvent(self, e)
             return self._updateRipple(e.pos())
 
@@ -83,7 +83,7 @@ class ListBase:
         QListView.mouseReleaseEvent(self, e)
         self.updateSelectedRows()
 
-        if self.indexAt(e.pos()).row() < 0 or e.button() == Qt.RightButton:
+        if self.indexAt(e.pos()).row() < 0 or e.button() == Qt.MouseButton.RightButton:
             self._setPressedRow(-1)
 
     def setItemDelegate(self, delegate: ListItemDelegate):
@@ -111,7 +111,7 @@ class ListBase:
         self.ripple.setClipPath(path)
 
         ripple = RippleAnimation(pos, self.ripple, self)
-        ripple.setColor(Qt.white if isDarkTheme() else Qt.black)
+        ripple.setColor(Qt.GlobalColor.white if isDarkTheme() else Qt.GlobalColor.black)
         radius = max(pos.x(), self.width() - pos.x())
         ripple.setRadiusEndValue(radius)
         ripple.setOpacityStartValue(0.15)
@@ -126,10 +126,10 @@ class ListWidget(ListBase, QListWidget):
     def __init__(self, parent=None):
         super().__init__(parent)
 
-    def setCurrentItem(self, item: QListWidgetItem, command: Union[QItemSelectionModel.SelectionFlag, QItemSelectionModel.SelectionFlags] = None):
+    def setCurrentItem(self, item: QListWidgetItem, command=None):
         self.setCurrentRow(self.row(item), command)
 
-    def setCurrentRow(self, row: int, command: Union[QItemSelectionModel.SelectionFlag, QItemSelectionModel.SelectionFlags] = None):
+    def setCurrentRow(self, row: int, command=None):
         if not command:
             super().setCurrentRow(row)
         else:

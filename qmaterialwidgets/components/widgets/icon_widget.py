@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Union
 
-from PyQt5.QtCore import pyqtProperty
-from PyQt5.QtGui import QIcon, QPainter
-from PyQt5.QtWidgets import QWidget
+from PyQt6.QtCore import pyqtProperty
+from PyQt6.QtGui import QIcon, QPainter
+from PyQt6.QtWidgets import QWidget
 
 from ...common.icon import MaterialIconBase, drawIcon, toQIcon
 from ...common.overload import singledispatchmethod

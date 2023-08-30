@@ -1,6 +1,6 @@
 # coding: utf-8
-from PyQt5.QtWidgets import QWidget
-from PyQt5.QtDesigner import (QPyDesignerCustomWidgetPlugin, QDesignerFormWindowInterface, QExtensionFactory,
+from PyQt6.QtWidgets import QWidget
+from PyQt6.QtDesigner import (QPyDesignerCustomWidgetPlugin, QDesignerFormWindowInterface, QExtensionFactory,
                               QPyDesignerContainerExtension)
 
 from qmaterialwidgets import (ScrollArea, SmoothScrollArea, SingleDirectionScrollArea, OpacityAniStackedWidget,

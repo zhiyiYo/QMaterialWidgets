@@ -1,8 +1,8 @@
 # coding:utf-8
 import sys
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget, QStackedWidget, QVBoxLayout, QLabel
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication, QWidget, QStackedWidget, QVBoxLayout, QLabel
 
 from qmaterialwidgets import TabWidget, setTheme, Theme, FluentIcon, palette
 
@@ -46,7 +46,7 @@ class Demo(QWidget):
 
     def addSubInterface(self, widget: QLabel, objectName, text, icon):
         widget.setObjectName(objectName)
-        widget.setAlignment(Qt.AlignCenter)
+        widget.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.stackedWidget.addWidget(widget)
         self.tabWidget.addItem(
             routeKey=objectName,
@@ -61,11 +61,6 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

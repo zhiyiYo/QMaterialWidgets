@@ -1,8 +1,8 @@
 # coding:utf-8
 from typing import Union
-from PyQt5.QtCore import Qt, pyqtSignal, QObject, QEvent, QSize
-from PyQt5.QtGui import QColor, QIcon
-from PyQt5.QtWidgets import QLabel, QFrame, QVBoxLayout, QHBoxLayout, QPushButton, QDialogButtonBox
+from PyQt6.QtCore import Qt, pyqtSignal, QObject, QEvent, QSize
+from PyQt6.QtGui import QColor, QIcon
+from PyQt6.QtWidgets import QLabel, QFrame, QVBoxLayout, QHBoxLayout, QPushButton, QDialogButtonBox
 
 from ...common.auto_wrap import TextWrap
 from ...common.icon import MaterialIconBase
@@ -19,7 +19,7 @@ class DialogButtonBox(QDialogButtonBox):
 
     def __init__(self, parent=None):
         super().__init__(parent=parent)
-        self.setOrientation(Qt.Horizontal)
+        self.setOrientation(Qt.Orientation.Horizontal)
         self.setContentsMargins(24, 6, 24, 20)
         self.layout().setSpacing(10)
 
@@ -61,26 +61,26 @@ class MessageBox(MaskDialogBase):
     def __initLayout(self):
         self.vBoxLayout.setSpacing(12)
         self.vBoxLayout.setContentsMargins(0, 24, 0, 0)
-        self.vBoxLayout.addWidget(self.iconWidget, 0, Qt.AlignHCenter)
+        self.vBoxLayout.addWidget(self.iconWidget, 0, Qt.AlignmentFlag.AlignHCenter)
         self.vBoxLayout.addLayout(self.textLayout)
         self.vBoxLayout.addLayout(self.buttonLayout)
-        self.vBoxLayout.setSizeConstraint(QVBoxLayout.SetMinimumSize)
+        self.vBoxLayout.setSizeConstraint(QVBoxLayout.SizeConstraint.SetMinimumSize)
 
         self.textLayout.setSpacing(12)
         self.textLayout.setContentsMargins(24, 0, 24, 0)
-        self.textLayout.addWidget(self.titleLabel, 0, Qt.AlignTop)
-        self.textLayout.addWidget(self.contentLabel, 0, Qt.AlignTop)
+        self.textLayout.addWidget(self.titleLabel, 0, Qt.AlignmentFlag.AlignTop)
+        self.textLayout.addWidget(self.contentLabel, 0, Qt.AlignmentFlag.AlignTop)
 
         self.buttonLayout.setSpacing(0)
         self.buttonLayout.setContentsMargins(0, 0, 0, 0)
-        self.buttonLayout.addWidget(self.buttonGroup, 0, Qt.AlignRight)
-        self.buttonLayout.setAlignment(Qt.AlignRight)
-        self.buttonGroup.addButton(self.cancelButton, QDialogButtonBox.RejectRole)
-        self.buttonGroup.addButton(self.yesButton, QDialogButtonBox.AcceptRole)
+        self.buttonLayout.addWidget(self.buttonGroup, 0, Qt.AlignmentFlag.AlignRight)
+        self.buttonLayout.setAlignment(Qt.AlignmentFlag.AlignRight)
+        self.buttonGroup.addButton(self.cancelButton, QDialogButtonBox.ButtonRole.RejectRole)
+        self.buttonGroup.addButton(self.yesButton, QDialogButtonBox.ButtonRole.AcceptRole)
 
     def eventFilter(self, obj, e: QEvent):
         if obj is self.window():
-            if e.type() == QEvent.Resize:
+            if e.type() == QEvent.Type.Resize:
                 self._adjustText()
 
         return super().eventFilter(obj, e)
@@ -114,9 +114,9 @@ class MessageBox(MaskDialogBase):
         self.iconWidget.setVisible(hasIcon)
 
         if hasIcon:
-            self.titleLabel.setAlignment(Qt.AlignCenter)
+            self.titleLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
         else:
-            self.titleLabel.setAlignment(Qt.AlignLeft)
+            self.titleLabel.setAlignment(Qt.AlignmentFlag.AlignLeft)
 
     def setIconSize(self, size: QSize):
         self.iconWidget.setFixedSize(size)

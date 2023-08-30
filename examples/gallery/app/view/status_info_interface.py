@@ -1,7 +1,7 @@
 # coding:utf-8
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPixmap, QColor
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QLabel, QVBoxLayout
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QPixmap, QColor
+from PyQt6.QtWidgets import QWidget, QHBoxLayout, QLabel, QVBoxLayout
 from qmaterialwidgets import (InfoBadge, ToolTipFilter, TextPushButton, ImageLabel,
                             InfoBar, InfoBarIcon, FluentIcon, InfoBarPosition, ProgressBar,
                             IndeterminateProgressBar, ProgressRing, IndeterminateProgressRing,
@@ -30,7 +30,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A button with a simple ToolTip'),
             button,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/tool_tip/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/tool_tip/demo.py'
         )
 
         label = ImageLabel(':/gallery/images/kunkun.png')
@@ -41,7 +41,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A label with a ToolTip'),
             label,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/tool_tip/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/tool_tip/demo.py'
         )
 
         # info badge
@@ -58,7 +58,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('InfoBadge in different styles'),
             w,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/info_bar/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/info_bar/demo.py'
         )
 
         # short info bar
@@ -66,7 +66,7 @@ class StatusInfoInterface(GalleryInterface):
             icon=InfoBarIcon.SUCCESS,
             title=self.tr('Success'),
             content=self.tr("The Anthem of man is the Anthem of courage."),
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=True,
             duration=-1,
             position=InfoBarPosition.NONE,
@@ -75,7 +75,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A closable InfoBar'),
             infoBar,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/info_bar/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/info_bar/demo.py'
         )
 
         # long info bar
@@ -84,7 +84,7 @@ class StatusInfoInterface(GalleryInterface):
             icon=InfoBarIcon.WARNING,
             title=self.tr('Warning'),
             content=content,
-            orient=Qt.Vertical,
+            orient=Qt.Orientation.Vertical,
             isClosable=True,
             duration=-1,
             position=InfoBarPosition.NONE,
@@ -93,7 +93,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A closable InfoBar with long message'),
             infoBar,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/info_bar/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/info_bar/demo.py',
         )
 
         # add custom widget to info bar
@@ -101,7 +101,7 @@ class StatusInfoInterface(GalleryInterface):
             icon=FluentIcon.GITHUB,
             title=self.tr('GitHub'),
             content=self.tr("When you look long into an abyss, the abyss looks into you."),
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=True,
             duration=-1,
             position=InfoBarPosition.NONE,
@@ -112,7 +112,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('An InfoBar with custom icon, background color and widget.'),
             infoBar,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/info_bar/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/info_bar/demo.py',
         )
 
         # different type info bar
@@ -143,7 +143,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('InfoBar with different pop-up locations'),
             w,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/info_bar/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/info_bar/demo.py',
         )
 
         # indeterminate progress bar
@@ -152,7 +152,7 @@ class StatusInfoInterface(GalleryInterface):
         card = self.addExampleCard(
             self.tr('An indeterminate progress bar'),
             bar,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/progress_bar/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/progress_bar/demo.py',
         )
         card.topLayout.setContentsMargins(12, 24, 12, 24)
 
@@ -162,7 +162,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('An determinate progress bar'),
             ProgressWidget(bar, self),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/progress_bar/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/progress_bar/demo.py',
         )
 
         # Indeterminate progress ring
@@ -171,7 +171,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('An indeterminate progress ring'),
             ring,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/progress_ring/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/progress_ring/demo.py',
         )
 
         # progress ring
@@ -181,14 +181,14 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('An determinate progress ring'),
             ProgressWidget(ring, self),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/progress_ring/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/progress_ring/demo.py',
         )
 
     def createTopRightInfoBar(self):
         InfoBar.info(
             title=self.tr('Lesson 3'),
             content=self.tr("Believe in the spin, just keep believing!"),
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=True,
             position=InfoBarPosition.TOP_RIGHT,
             duration=2000,
@@ -200,7 +200,7 @@ class StatusInfoInterface(GalleryInterface):
         InfoBar.success(
             title=self.tr('Lesson 4'),
             content=self.tr("With respect, let's advance towards a new stage of the spin."),
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=True,
             position=InfoBarPosition.TOP,
             duration=2000,
@@ -211,7 +211,7 @@ class StatusInfoInterface(GalleryInterface):
         InfoBar.warning(
             title=self.tr('Lesson 5'),
             content=self.tr("The shortest shortcut is to take a detour."),
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=False,   # disable close button
             position=InfoBarPosition.TOP_LEFT,
             duration=2000,
@@ -222,7 +222,7 @@ class StatusInfoInterface(GalleryInterface):
         InfoBar.error(
             title=self.tr('No Internet'),
             content=self.tr("An error message which won't disappear automatically."),
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=True,
             position=InfoBarPosition.BOTTOM_RIGHT,
             duration=-1,    # won't disappear automatically
@@ -233,7 +233,7 @@ class StatusInfoInterface(GalleryInterface):
         InfoBar.snack(
             title=self.tr('Lesson 1'),
             content=self.tr("Don't have any strange expectations of me."),
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=True,
             position=InfoBarPosition.BOTTOM,
             duration=2000,    # won't disappear automatically
@@ -244,7 +244,7 @@ class StatusInfoInterface(GalleryInterface):
         InfoBar.warning(
             title=self.tr('Lesson 2'),
             content=self.tr("Don't let your muscles notice."),
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=True,
             position=InfoBarPosition.BOTTOM_LEFT,
             duration=1500,    # won't disappear automatically

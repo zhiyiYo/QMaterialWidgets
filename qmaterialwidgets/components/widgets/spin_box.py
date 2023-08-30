@@ -1,6 +1,6 @@
 # coding:utf-8
-from PyQt5.QtCore import Qt, pyqtSignal, QEvent
-from PyQt5.QtWidgets import (QSpinBox, QDoubleSpinBox, QToolButton, QHBoxLayout,
+from PyQt6.QtCore import Qt, pyqtSignal, QEvent
+from PyQt6.QtWidgets import (QSpinBox, QDoubleSpinBox, QToolButton, QHBoxLayout,
                                QDateEdit, QDateTimeEdit, QTimeEdit, QLineEdit, QAbstractSpinBox)
 
 from ...common.style_sheet import MaterialStyleSheet

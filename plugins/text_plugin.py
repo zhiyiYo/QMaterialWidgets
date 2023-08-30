@@ -1,6 +1,6 @@
 # coding: utf-8
-from PyQt5.QtCore import Qt
-from PyQt5.QtDesigner import QPyDesignerCustomWidgetPlugin
+from PyQt6.QtCore import Qt
+from PyQt6.QtDesigner import QPyDesignerCustomWidgetPlugin
 
 from qmaterialwidgets import (SpinBox, DoubleSpinBox, TextEdit, TimeEdit, DateTimeEdit, LineEdit,
                               DateEdit, SearchLineEdit, FilledSearchLineEdit, FilledLineEdit, FilledTextEdit)

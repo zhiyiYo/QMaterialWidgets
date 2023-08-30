@@ -1,8 +1,8 @@
 # coding:utf-8
 from ...common.style_sheet import isDarkTheme
-from PyQt5.QtCore import Qt, pyqtSignal, QRectF, pyqtProperty
-from PyQt5.QtGui import QPixmap, QPainter, QColor, QPainterPath
-from PyQt5.QtWidgets import QWidget, QFrame, QGraphicsDropShadowEffect
+from PyQt6.QtCore import Qt, pyqtSignal, QRectF, pyqtProperty
+from PyQt6.QtGui import QPixmap, QPainter, QColor, QPainterPath
+from PyQt6.QtWidgets import QWidget, QFrame, QGraphicsDropShadowEffect
 
 from ...common.style_sheet import isDarkTheme, palette, qconfig
 from ...common.animation import BackgroundAnimationWidget, DropShadowAnimation
@@ -41,7 +41,7 @@ class CardWidget(BackgroundAnimationWidget, QFrame):
 
     def paintEvent(self, e):
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
 
         w, h = self.width(), self.height()
         r = self.borderRadius
@@ -86,7 +86,7 @@ class CardWidget(BackgroundAnimationWidget, QFrame):
         painter.strokePath(path, bottomBorderColor)
 
         # draw background
-        painter.setPen(Qt.NoPen)
+        painter.setPen(Qt.PenStyle.NoPen)
         rect = self.rect().adjusted(1, 1, -1, -1)
         painter.setBrush(self.backgroundColor)
         painter.drawRoundedRect(rect, r, r)
@@ -115,7 +115,7 @@ class OutlinedCardWidget(CardWidget):
 
     def paintEvent(self, e):
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
         painter.setPen(self.borderColor())
         painter.setBrush(self.backgroundColor)
 
@@ -147,7 +147,7 @@ class ElevatedCardWidget(OutlinedCardWidget):
 
     def paintEvent(self, e):
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
         painter.setPen(self.borderColor())
         painter.setBrush(self.backgroundColor)
 

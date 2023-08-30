@@ -2,10 +2,10 @@
 from enum import Enum
 from typing import Union, List
 
-from PyQt5.QtCore import (Qt, pyqtSignal, QRect, QRectF, QPropertyAnimation, pyqtProperty, QMargins,
+from PyQt6.QtCore import (Qt, pyqtSignal, QRect, QRectF, QPropertyAnimation, pyqtProperty, QMargins,
                           QEasingCurve, QPoint, QEvent)
-from PyQt5.QtGui import QColor, QPainter, QPen, QIcon, QPainterPath, QFont, QBrush, QPixmap, QImage
-from PyQt5.QtWidgets import QWidget, QVBoxLayout
+from PyQt6.QtGui import QColor, QPainter, QPen, QIcon, QPainterPath, QFont, QBrush, QPixmap, QImage
+from PyQt6.QtWidgets import QWidget, QVBoxLayout
 
 from ...common.config import isDarkTheme
 from ...common.style_sheet import themeColor, palette
@@ -84,7 +84,7 @@ class NavigationPushButton(NavigationWidget):
         path.addEllipse(QRectF(15, 8, 58, 32))
         self.rippleWidget.setClipPath(path)
 
-        self.setCursor(Qt.PointingHandCursor)
+        self.setCursor(Qt.CursorShape.PointingHandCursor)
         self.setFixedSize(88, 64)
         setFont(self, 12)
 
@@ -129,9 +129,9 @@ class NavigationPushButton(NavigationWidget):
 
     def paintEvent(self, e):
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing |
-                               QPainter.TextAntialiasing | QPainter.SmoothPixmapTransform)
-        painter.setPen(Qt.NoPen)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing |
+                               QPainter.RenderHint.TextAntialiasing | QPainter.RenderHint.SmoothPixmapTransform)
+        painter.setPen(Qt.PenStyle.NoPen)
 
         if not self.isEnabled():
             painter.setOpacity(0.4)
@@ -149,14 +149,14 @@ class NavigationPushButton(NavigationWidget):
         selectedIcon = self._selectedIcon or self._icon
 
         if self.isSelected:
-            drawIcon(selectedIcon, painter, rect, QIcon.On)
+            drawIcon(selectedIcon, painter, rect, QIcon.State.On)
         else:
             drawIcon(self._icon, painter, rect)
 
     def _drawText(self, painter: QPainter):
         painter.setFont(self.font())
         painter.setPen(palette.onSurface)
-        painter.drawText(QRect(0, 39, self.width(), self.height()-39), Qt.AlignCenter, self.text())
+        painter.drawText(QRect(0, 39, self.width(), self.height()-39), Qt.AlignmentFlag.AlignCenter, self.text())
 
 
 class NavigationToolButton(NavigationPushButton):
@@ -236,8 +236,8 @@ class NavigationTreeItem(NavigationPushButton):
             return
 
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing)
-        painter.setPen(Qt.NoPen)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
+        painter.setPen(Qt.PenStyle.NoPen)
 
         if self.isPressed:
             painter.setOpacity(0.7)
@@ -371,7 +371,7 @@ class NavigationTreeWidget(NavigationTreeWidgetBase):
 
         index += 1  # item widget should always be the first
         self.treeChildren.insert(index, child)
-        self.vBoxLayout.insertWidget(index, child, 0, Qt.AlignTop)
+        self.vBoxLayout.insertWidget(index, child, 0, Qt.AlignmentFlag.AlignTop)
 
     def removeChild(self, child):
         self.treeChildren.remove(child)
@@ -397,7 +397,7 @@ class NavigationTreeWidget(NavigationTreeWidgetBase):
             self.expandAni.setStartValue(self.geometry())
             self.expandAni.setEndValue(QRect(self.pos(), self.sizeHint()))
             self.expandAni.setDuration(120)
-            self.expandAni.setEasingCurve(QEasingCurve.OutQuad)
+            self.expandAni.setEasingCurve(QEasingCurve.Type.OutQuad)
             self.expandAni.start()
         else:
             self.setFixedSize(self.sizeHint())

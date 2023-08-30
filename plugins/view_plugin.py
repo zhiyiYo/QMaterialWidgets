@@ -1,5 +1,5 @@
 # coding: utf-8
-from PyQt5.QtDesigner import QPyDesignerCustomWidgetPlugin
+from PyQt6.QtDesigner import QPyDesignerCustomWidgetPlugin
 
 from qmaterialwidgets import TableView, TableWidget, ListWidget, ListView
 

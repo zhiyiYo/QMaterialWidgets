@@ -1,7 +1,7 @@
 # coding:utf-8
-from PyQt5.QtCore import Qt, pyqtSignal, QEvent
-from PyQt5.QtGui import QPixmap, QPainter, QColor
-from PyQt5.QtWidgets import QWidget
+from PyQt6.QtCore import Qt, pyqtSignal, QEvent
+from PyQt6.QtGui import QPixmap, QPainter, QColor
+from PyQt6.QtWidgets import QWidget
 
 
 class OverlayWidget(QWidget):

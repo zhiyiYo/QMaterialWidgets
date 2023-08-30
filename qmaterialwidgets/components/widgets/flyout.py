@@ -2,10 +2,10 @@
 from enum import Enum
 from typing import Union
 
-from PyQt5.QtCore import (Qt, QPropertyAnimation, QPoint, QParallelAnimationGroup, QEasingCurve, QMargins,
+from PyQt6.QtCore import (Qt, QPropertyAnimation, QPoint, QParallelAnimationGroup, QEasingCurve, QMargins,
                           QRectF, QObject, QSize, pyqtSignal)
-from PyQt5.QtGui import QPixmap, QPainter, QColor, QCursor, QIcon, QImage
-from PyQt5.QtWidgets import QWidget, QGraphicsDropShadowEffect, QLabel, QHBoxLayout, QVBoxLayout, QApplication
+from PyQt6.QtGui import QPixmap, QPainter, QColor, QCursor, QIcon, QImage
+from PyQt6.QtWidgets import QWidget, QGraphicsDropShadowEffect, QLabel, QHBoxLayout, QVBoxLayout, QApplication
 
 from ...common.auto_wrap import TextWrap
 from ...common.style_sheet import isDarkTheme, MaterialStyleSheet, palette

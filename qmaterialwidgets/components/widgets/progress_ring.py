@@ -1,8 +1,8 @@
 # coding:utf-8
-from PyQt5.QtCore import (Qt, QRectF, QEasingCurve, QPropertyAnimation, QParallelAnimationGroup,
+from PyQt6.QtCore import (Qt, QRectF, QEasingCurve, QPropertyAnimation, QParallelAnimationGroup,
                             QSequentialAnimationGroup, pyqtProperty)
-from PyQt5.QtGui import QColor, QPen, QPainter, QFont
-from PyQt5.QtWidgets import QProgressBar
+from PyQt6.QtGui import QColor, QPen, QPainter, QFont
+from PyQt6.QtWidgets import QProgressBar
 
 from .progress_bar import ProgressBar
 from ...common.font import setFont
@@ -32,12 +32,12 @@ class ProgressRing(ProgressBar):
     def _drawText(self, painter: QPainter, text: str):
         """ draw text """
         painter.setFont(self.font())
-        painter.setPen(Qt.white if isDarkTheme() else Qt.black)
-        painter.drawText(self.rect(), Qt.AlignCenter, text)
+        painter.setPen(Qt.GlobalColor.white if isDarkTheme() else Qt.GlobalColor.black)
+        painter.drawText(self.rect(), Qt.AlignmentFlag.AlignCenter, text)
 
     def paintEvent(self, e):
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
 
         cw = self._strokeWidth    # circle thickness
         w = min(self.height(), self.width()) - cw
@@ -45,7 +45,7 @@ class ProgressRing(ProgressBar):
 
         # draw background
         bc = self.darkBackgroundColor if isDarkTheme() else self.lightBackgroundColor
-        pen = QPen(bc, cw, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin)
+        pen = QPen(bc, cw, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin)
         painter.setPen(pen)
         painter.drawArc(rc, 0, 360*16)
 
@@ -153,7 +153,7 @@ class IndeterminateProgressRing(QProgressBar):
 
     def paintEvent(self, e):
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
 
         cw = self._strokeWidth
         w = min(self.height(), self.width()) - cw
@@ -161,7 +161,7 @@ class IndeterminateProgressRing(QProgressBar):
 
         # draw background
         bc = self.darkBackgroundColor if isDarkTheme() else self.lightBackgroundColor
-        pen = QPen(bc, cw, Qt.SolidLine, Qt.RoundCap, Qt.RoundJoin)
+        pen = QPen(bc, cw, Qt.PenStyle.SolidLine, Qt.PenCapStyle.RoundCap, Qt.PenJoinStyle.RoundJoin)
         painter.setPen(pen)
         painter.drawArc(rc, 0, 360*16)
 

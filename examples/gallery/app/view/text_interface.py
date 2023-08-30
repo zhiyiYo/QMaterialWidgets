@@ -1,6 +1,6 @@
 # coding:utf-8
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QCompleter
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QCompleter
 from qmaterialwidgets import (LineEdit, FilledLineEdit, SearchLineEdit, FilledSearchLineEdit,
                               TextEdit, FilledTextEdit, SpinBox, TimeEdit, DateTimeEdit, DateEdit,
                               DoubleSpinBox)
@@ -30,7 +30,7 @@ class TextInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr("A outlined line edit"),
             widget=lineEdit,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/line_edit/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/line_edit/demo.py'
         )
 
         # line edit with completer
@@ -56,12 +56,12 @@ class TextInterface(GalleryInterface):
             "Smooth Operators", "The Matte Kudasai"
         ]
         completer = QCompleter(stands, lineEdit)
-        completer.setCaseSensitivity(Qt.CaseInsensitive)
+        completer.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
         lineEdit.setCompleter(completer)
         self.addExampleCard(
             title=self.tr("A autosuggest line edit"),
             widget=lineEdit,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/line_edit/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/line_edit/demo.py'
         )
 
         # line edit in error state
@@ -70,14 +70,14 @@ class TextInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr("A line edit in the error state"),
             widget=lineEdit,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/line_edit/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/line_edit/demo.py'
         )
 
         # filled line edit
         self.addExampleCard(
             title=self.tr("A filled line edit"),
             widget=self.createFilledLineEdit(False),
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/line_edit/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/line_edit/demo.py'
         )
 
         lineEdit = self.createFilledLineEdit()
@@ -85,7 +85,7 @@ class TextInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr("A filled line edit in the error state"),
             widget=lineEdit,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/line_edit/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/line_edit/demo.py'
         )
 
         # spin box
@@ -94,7 +94,7 @@ class TextInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr("A spin box"),
             widget=spinBox,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/spin_box/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/spin_box/demo.py'
         )
 
         # double spin box
@@ -103,7 +103,7 @@ class TextInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr("A double spin box"),
             widget=spinBox,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/spin_box/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/spin_box/demo.py'
         )
 
         # date edit
@@ -112,7 +112,7 @@ class TextInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr("A date edit"),
             widget=spinBox,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/spin_box/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/spin_box/demo.py'
         )
 
         # time edit
@@ -121,7 +121,7 @@ class TextInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr("A time edit"),
             widget=spinBox,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/spin_box/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/spin_box/demo.py'
         )
 
         # date time edit
@@ -130,7 +130,7 @@ class TextInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr("A date time edit"),
             widget=spinBox,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/spin_box/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/spin_box/demo.py'
         )
 
         # text edit
@@ -139,7 +139,7 @@ class TextInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr("A multiline text edit"),
             widget=textEdit,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/text_edit/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/text_edit/demo.py'
         )
 
         # filled text edit
@@ -148,7 +148,7 @@ class TextInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr("A filled multiline text edit"),
             widget=textEdit,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/text_edit/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PyQt6/examples/text_edit/demo.py'
         )
 
     def createSearchLineEdit(self, placeholder=True):

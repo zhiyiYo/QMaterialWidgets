@@ -2,9 +2,9 @@
 from typing import List, Union
 from math import sin, cos, radians, atan, degrees
 
-from PyQt5.QtCore import Qt, pyqtSignal, QTime, QRectF, QPoint, QRect, pyqtProperty, QRegularExpression
-from PyQt5.QtGui import QIntValidator, QPainter, QPen, QPainterPath, QFont, QRegularExpressionValidator
-from PyQt5.QtWidgets import (QWidget, QLineEdit, QApplication, QLabel, QHBoxLayout, QVBoxLayout,
+from PyQt6.QtCore import Qt, pyqtSignal, QTime, QRectF, QPoint, QRect, pyqtProperty, QRegularExpression
+from PyQt6.QtGui import QIntValidator, QPainter, QPen, QPainterPath, QFont, QRegularExpressionValidator
+from PyQt6.QtWidgets import (QWidget, QLineEdit, QApplication, QLabel, QHBoxLayout, QVBoxLayout,
                              QPushButton, QFrame)
 
 from ...common.style_sheet import MaterialStyleSheet, themeColor, palette
@@ -25,7 +25,7 @@ class TimeLineEdit(QLineEdit):
         super().__init__('00', parent)
         self.setSelected(False)
         self.setFixedSize(76, 64)
-        self.setAlignment(Qt.AlignCenter)
+        self.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.textEdited.connect(self._onTextEdited)
 
     def focusInEvent(self, e):
@@ -45,7 +45,7 @@ class TimeLineEdit(QLineEdit):
         self.setText(str(value).zfill(2))
 
     def _onTextEdited(self, text):
-        if self.validator().validate(text, 0)[0] == QIntValidator.Acceptable:
+        if self.validator().validate(text, 0)[0] == QIntValidator.State.Acceptable:
             self.valueChanged.emit(self.value())
 
     def contextMenuEvent(self, e):
@@ -58,7 +58,7 @@ class TimeLineEdit(QLineEdit):
 
         painter = QPainter(self)
         painter.setRenderHints(QPainter.RenderHint.Antialiasing)
-        painter.setBrush(Qt.NoBrush)
+        painter.setBrush(Qt.BrushStyle.NoBrush)
         path = QPainterPath()
         path.addRoundedRect(QRectF(self.rect().adjusted(2, 2, -2, -2)), 8, 8)
         painter.strokePath(path, QPen(themeColor(), 2))
@@ -103,15 +103,15 @@ class PeriodSelector(QWidget):
         self.AMPushButton.setObjectName('AMPushButton')
         self.PMPushButton.setObjectName('PMPushButton')
         self.AMPushButton.setProperty(
-            'horizontal', orientation == Qt.Horizontal)
+            'horizontal', orientation == Qt.Orientation.Horizontal)
         self.PMPushButton.setProperty(
-            'horizontal', orientation == Qt.Horizontal)
+            'horizontal', orientation == Qt.Orientation.Horizontal)
 
         self.setPeriod(True)
         self.layout().setSpacing(1)
         self.layout().setContentsMargins(1, 1, 1, 1)
         self.layout().addWidget(self.AMPushButton)
-        self.layout().setAlignment(Qt.AlignCenter)
+        self.layout().setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.layout().addWidget(self.PMPushButton)
         self.layout().setSizeConstraint(QHBoxLayout.SizeConstraint.SetFixedSize)
         self.AMPushButton.clicked.connect(self._onButtonClicked)
@@ -134,8 +134,8 @@ class PeriodSelector(QWidget):
     def paintEvent(self, e):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
-        painter.setPen(Qt.NoPen)
-        painter.setBrush(Qt.NoBrush)
+        painter.setPen(Qt.PenStyle.NoPen)
+        painter.setBrush(Qt.BrushStyle.NoBrush)
 
         if self.orientation == Qt.Orientation.Horizontal:
             self._drawHorizon(painter)
@@ -146,7 +146,7 @@ class PeriodSelector(QWidget):
 
     def _drawHorizon(self, painter: QPainter):
         path = QPainterPath()
-        path.setFillRule(Qt.WindingFill)
+        path.setFillRule(Qt.FillRule.WindingFill)
 
         w, h = self.width(), self.height()
         rw, rh = (w-3)/2, h-2
@@ -170,7 +170,7 @@ class PeriodSelector(QWidget):
 
     def _drawVertical(self, painter: QPainter):
         path = QPainterPath()
-        path.setFillRule(Qt.WindingFill)
+        path.setFillRule(Qt.FillRule.WindingFill)
 
         w, h = self.width(), self.height()
         rw, rh = w-2, (h-3)/2
@@ -240,7 +240,7 @@ class TimeEditWidget(QWidget):
             self.layout().setSpacing(16)
 
         self.hBoxLayout.setSpacing(0)
-        self.hBoxLayout.setAlignment(Qt.AlignCenter)
+        self.hBoxLayout.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.hBoxLayout.setContentsMargins(0, 0, 0, 0)
         self.layout().setSizeConstraint(QHBoxLayout.SizeConstraint.SetFixedSize)
 
@@ -370,7 +370,7 @@ class TimeDial(QWidget):
     def paintEvent(self, e):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
-        painter.setPen(Qt.NoPen)
+        painter.setPen(Qt.PenStyle.NoPen)
 
         # draw background
         painter.setBrush(palette.surfaceContainerHighest)
@@ -386,11 +386,11 @@ class TimeDial(QWidget):
             angle = self._labelToAngle(label)
             if self.value != self._angleToValue(angle):
                 painter.drawText(self._angleToRect(
-                    angle), Qt.AlignCenter, label)
+                    angle), Qt.AlignmentFlag.AlignCenter, label)
 
     def _drawHandle(self, painter: QPainter):
         painter.save()
-        painter.setPen(Qt.NoPen)
+        painter.setPen(Qt.PenStyle.NoPen)
         painter.setBrush(themeColor())
 
         # draw center dot
@@ -406,13 +406,13 @@ class TimeDial(QWidget):
 
         # draw selector container
         painter.setBrush(themeColor())
-        painter.setPen(Qt.NoPen)
+        painter.setPen(Qt.PenStyle.NoPen)
         painter.drawEllipse(rect)
 
         # draw dial label
         if self.format(self.value) in self.labels:
             painter.setPen(palette.onPrimary)
-            painter.drawText(rect, Qt.AlignCenter, self.format(self.value))
+            painter.drawText(rect, Qt.AlignmentFlag.AlignCenter, self.format(self.value))
         else:
             painter.setBrush(palette.onPrimary)
             painter.drawEllipse(rect.center(), 3, 3)
@@ -554,14 +554,14 @@ class TimePickerView(QFrame):
         self.vBoxLayout.addLayout(self.timeLayout)
         self.vBoxLayout.addLayout(self.buttonLayout)
 
-        self.buttonLayout.setAlignment(Qt.AlignRight)
-        self.buttonLayout.addWidget(self.cancelButton, 0, Qt.AlignRight)
-        self.buttonLayout.addWidget(self.yesButton, 0, Qt.AlignRight)
+        self.buttonLayout.setAlignment(Qt.AlignmentFlag.AlignRight)
+        self.buttonLayout.addWidget(self.cancelButton, 0, Qt.AlignmentFlag.AlignRight)
+        self.buttonLayout.addWidget(self.yesButton, 0, Qt.AlignmentFlag.AlignRight)
         self.buttonLayout.setContentsMargins(0, 16, 20, 16)
 
         self.timeLayout.setContentsMargins(20, 0, 20, 8)
         self.timeLayout.addWidget(self.timeEdit, 0)
-        self.timeLayout.addWidget(self.timeDial, 0, Qt.AlignCenter)
+        self.timeLayout.addWidget(self.timeDial, 0, Qt.AlignmentFlag.AlignCenter)
 
         if self.orientation == Qt.Orientation.Horizontal:
             self.timeLayout.setSpacing(40)

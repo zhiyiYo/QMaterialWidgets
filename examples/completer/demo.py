@@ -1,8 +1,8 @@
 # coding:utf-8
 import sys
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QCompleter
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import QApplication, QWidget, QHBoxLayout, QCompleter
 from qmaterialwidgets import FilledPushButton, FilledSearchLineEdit, setTheme, Theme
 
 
@@ -41,13 +41,13 @@ class Demo(QWidget):
             "Smooth Operators", "The Matte Kudasai"
         ]
         self.completer = QCompleter(stands, self.lineEdit)
-        self.completer.setCaseSensitivity(Qt.CaseInsensitive)
+        self.completer.setCaseSensitivity(Qt.CaseSensitivity.CaseInsensitive)
         self.lineEdit.setCompleter(self.completer)
 
         self.resize(400, 400)
-        self.hBoxLayout.setAlignment(Qt.AlignCenter)
-        self.hBoxLayout.addWidget(self.lineEdit, 0, Qt.AlignCenter)
-        self.hBoxLayout.addWidget(self.button, 0, Qt.AlignCenter)
+        self.hBoxLayout.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        self.hBoxLayout.addWidget(self.lineEdit, 0, Qt.AlignmentFlag.AlignCenter)
+        self.hBoxLayout.addWidget(self.button, 0, Qt.AlignmentFlag.AlignCenter)
 
         self.lineEdit.setFixedWidth(250)
         self.lineEdit.setClearButtonEnabled(True)
@@ -55,11 +55,6 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

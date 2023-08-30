@@ -2,13 +2,12 @@
 from enum import Enum
 from typing import List, Union
 
-from PyQt5.QtCore import (QEasingCurve, QEvent, QPropertyAnimation, QObject, QModelIndex,
+from PyQt6.QtCore import (QEasingCurve, QEvent, QPropertyAnimation, QObject, QModelIndex, QPointF,
                           Qt, QSize, QRectF, pyqtSignal, QPoint, QTimer, QObject, QParallelAnimationGroup)
-from PyQt5.QtGui import (QIcon, QColor, QPainter, QPen, QPixmap, QRegion, QCursor, QTextCursor, QHoverEvent,
-                         QFontMetrics, QKeySequence)
-from PyQt5.QtWidgets import (QApplication, QStyle, QGraphicsDropShadowEffect, QListWidget, QWidget, QHBoxLayout,
-                             QListWidgetItem, QLineEdit, QTextEdit, QStyledItemDelegate, QStyleOptionViewItem,
-                             QAction)
+from PyQt6.QtGui import (QIcon, QColor, QPainter, QPen, QPixmap, QRegion, QCursor, QTextCursor, QHoverEvent,
+                         QFontMetrics, QKeySequence, QAction)
+from PyQt6.QtWidgets import (QApplication, QStyle, QGraphicsDropShadowEffect, QListWidget, QWidget, QHBoxLayout,
+                             QListWidgetItem, QLineEdit, QTextEdit, QStyledItemDelegate, QStyleOptionViewItem)
 
 from qmaterialwidgets.common.config import Theme
 
@@ -60,7 +59,7 @@ class SubMenuItemWidget(QWidget):
 
     def paintEvent(self, e):
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
 
         # draw right arrow
         rect = QRectF(self.width()-20, self.height()/2-24/2, 24, 24)
@@ -72,7 +71,7 @@ class MenuItemDelegate(QStyledItemDelegate):
     """ Menu item delegate """
 
     def _isSeparator(self, index: QModelIndex):
-        return index.model().data(index, Qt.DecorationRole) == "seperator"
+        return index.model().data(index, Qt.ItemDataRole.DecorationRole) == "seperator"
 
     def paint(self, painter, option, index):
         if not self._isSeparator(index):
@@ -100,13 +99,13 @@ class ShortcutMenuItemDelegate(MenuItemDelegate):
             return
 
         # draw shortcut key
-        action = index.data(Qt.UserRole)  # type: QAction
+        action = index.data(Qt.ItemDataRole.UserRole)  # type: QAction
         if not isinstance(action, QAction) or action.shortcut().isEmpty():
             return
 
         painter.save()
 
-        if not option.state & QStyle.State_Enabled:
+        if not option.state & QStyle.StateFlag.State_Enabled:
             painter.setOpacity(0.5 if isDarkTheme() else 0.6)
 
         font = getFont(12)
@@ -114,13 +113,13 @@ class ShortcutMenuItemDelegate(MenuItemDelegate):
         painter.setPen(QColor(255, 255, 255, 200) if isDarkTheme() else QColor(0, 0, 0, 153))
 
         fm = QFontMetrics(font)
-        shortcut = action.shortcut().toString(QKeySequence.NativeText)
+        shortcut = action.shortcut().toString(QKeySequence.SequenceFormat.NativeText)
 
         sw = fm.boundingRect(shortcut).width()
         painter.translate(option.rect.width()-sw-20, 0)
 
         rect = QRectF(0, option.rect.y(), sw, option.rect.height())
-        painter.drawText(rect, Qt.AlignLeft | Qt.AlignVCenter, shortcut)
+        painter.drawText(rect, Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter, shortcut)
 
         painter.restore()
 
@@ -134,7 +133,7 @@ class MenuActionListWidget(QListWidget):
         self._maxVisibleItems = -1  # adjust visible items according to the size of screen
 
         self.setViewportMargins(0, 4, 0, 4)
-        self.setTextElideMode(Qt.ElideNone)
+        self.setTextElideMode(Qt.TextElideMode.ElideNone)
         self.setDragEnabled(False)
         self.setMouseTracking(True)
         self.setVerticalScrollMode(self.ScrollMode.ScrollPerPixel)
@@ -145,8 +144,8 @@ class MenuActionListWidget(QListWidget):
         self.setStyleSheet(
             'MenuActionListWidget{font: 14px "Segoe UI", "Microsoft YaHei", "PingFang SC"}')
 
-        self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
 
     def insertItem(self, row, item):
         """ inserts menu item at the position in the list given by row """
@@ -335,7 +334,7 @@ class RoundMenu(QWidget):
         if not action.isEnabled():
             item.setFlags(Qt.NoItemFlags)
 
-        item.setData(Qt.UserRole, action)
+        item.setData(Qt.ItemDataRole.UserRole, action)
         action.setProperty('item', item)
         action.changed.connect(self._onActionChanged)
         return item
@@ -377,7 +376,7 @@ class RoundMenu(QWidget):
 
         if hasIcon and w.icon().isNull():
             pixmap = QPixmap(self.view.iconSize())
-            pixmap.fill(Qt.transparent)
+            pixmap.fill(Qt.GlobalColor.transparent)
             icon = QIcon(pixmap)
         elif not hasIcon:
             icon = QIcon()
@@ -423,7 +422,7 @@ class RoundMenu(QWidget):
         self._actions.remove(action)
         action.setProperty('item', None)
         item = self.view.takeItem(index)
-        item.setData(Qt.UserRole, None)
+        item.setData(Qt.ItemDataRole.UserRole, None)
 
         # delete widget
         widget = self.view.itemWidget(item)
@@ -481,7 +480,7 @@ class RoundMenu(QWidget):
         # add submenu item
         menu._setParentMenu(self, item)
         item.setSizeHint(QSize(w, self.itemHeight))
-        item.setData(Qt.UserRole, menu)
+        item.setData(Qt.ItemDataRole.UserRole, menu)
         w = SubMenuItemWidget(menu, item, self)
         w.showMenuSig.connect(self._showSubMenu)
         w.resize(item.sizeHint())
@@ -522,7 +521,7 @@ class RoundMenu(QWidget):
         self.adjustSize()
 
     def _onItemClicked(self, item):
-        action = item.data(Qt.UserRole)
+        action = item.data(Qt.ItemDataRole.UserRole)
         if action not in self._actions or not action.isEnabled():
             return
 
@@ -544,7 +543,7 @@ class RoundMenu(QWidget):
 
     def _onItemEntered(self, item):
         self.lastHoverItem = item
-        if not isinstance(item.data(Qt.UserRole), RoundMenu):
+        if not isinstance(item.data(Qt.ItemDataRole.UserRole), RoundMenu):
             return
 
         self._showSubMenu(item)
@@ -663,7 +662,7 @@ class MenuAnimationManager(QObject):
         self.ani = QPropertyAnimation(menu, b'pos', menu)
 
         self.ani.setDuration(250)
-        self.ani.setEasingCurve(QEasingCurve.OutQuad)
+        self.ani.setEasingCurve(QEasingCurve.Type.OutQuad)
         self.ani.valueChanged.connect(self._onValueChanged)
         self.ani.valueChanged.connect(self._updateMenuViewport)
 
@@ -679,7 +678,7 @@ class MenuAnimationManager(QObject):
     def _updateMenuViewport(self):
         self.menu.view.viewport().update()
         self.menu.view.setAttribute(Qt.WidgetAttribute.WA_UnderMouse, True)
-        e = QHoverEvent(QEvent.HoverEnter, QPoint(), QPoint(1, 1))
+        e = QHoverEvent(QEvent.Type.HoverEnter, QPointF(), QPointF(1, 1))
         QApplication.sendEvent(self.menu.view, e)
 
     def _endPosition(self, pos):
@@ -802,12 +801,12 @@ class FadeInDropDownMenuAnimationManager(MenuAnimationManager):
         self.opacityAni.setStartValue(0)
         self.opacityAni.setEndValue(1)
         self.opacityAni.setDuration(150)
-        self.opacityAni.setEasingCurve(QEasingCurve.OutQuad)
+        self.opacityAni.setEasingCurve(QEasingCurve.Type.OutQuad)
 
         self.ani.setStartValue(pos-QPoint(0, 8))
         self.ani.setEndValue(pos)
         self.ani.setDuration(150)
-        self.ani.setEasingCurve(QEasingCurve.OutQuad)
+        self.ani.setEasingCurve(QEasingCurve.Type.OutQuad)
 
         self.aniGroup.start()
 
@@ -841,12 +840,12 @@ class FadeInPullUpMenuAnimationManager(MenuAnimationManager):
         self.opacityAni.setStartValue(0)
         self.opacityAni.setEndValue(1)
         self.opacityAni.setDuration(150)
-        self.opacityAni.setEasingCurve(QEasingCurve.OutQuad)
+        self.opacityAni.setEasingCurve(QEasingCurve.Type.OutQuad)
 
         self.ani.setStartValue(pos+QPoint(0, 8))
         self.ani.setEndValue(pos)
         self.ani.setDuration(200)
-        self.ani.setEasingCurve(QEasingCurve.OutQuad)
+        self.ani.setEasingCurve(QEasingCurve.Type.OutQuad)
         self.aniGroup.start()
 
     def availableViewSize(self, pos: QPoint):
@@ -983,7 +982,7 @@ class TextEditMenu(EditMenu):
             cursor = self.parent().textCursor()
             cursor.setPosition(self.selectionStart)
             cursor.movePosition(
-                QTextCursor.Right, QTextCursor.KeepAnchor, self.selectionLength)
+                QTextCursor.MoveOperation.Right, QTextCursor.MoveMode.KeepAnchor, self.selectionLength)
 
         super()._onItemClicked(item)
 
@@ -993,14 +992,14 @@ class IndicatorMenuItemDelegate(MenuItemDelegate):
 
     def paint(self, painter: QPainter, option, index):
         super().paint(painter, option, index)
-        if not option.state & QStyle.State_Selected:
+        if not option.state & QStyle.StateFlag.State_Selected:
             return
 
         painter.save()
         painter.setRenderHints(
-            QPainter.Antialiasing | QPainter.SmoothPixmapTransform | QPainter.TextAntialiasing)
+            QPainter.RenderHint.Antialiasing | QPainter.RenderHint.SmoothPixmapTransform | QPainter.RenderHint.TextAntialiasing)
 
-        painter.setPen(Qt.NoPen)
+        painter.setPen(Qt.PenStyle.NoPen)
         painter.setBrush(themeColor())
         painter.drawRoundedRect(-3, option.rect.y(), 6, option.rect.height(), 3, 3)
 
@@ -1017,7 +1016,7 @@ class CheckableMenuItemDelegate(ShortcutMenuItemDelegate):
         super().paint(painter, option, index)
 
         # draw indicator
-        action = index.data(Qt.UserRole)  # type: QAction
+        action = index.data(Qt.ItemDataRole.UserRole)  # type: QAction
         if not (isinstance(action, QAction) and action.isChecked()):
             return
 
@@ -1035,12 +1034,12 @@ class RadioIndicatorMenuItemDelegate(CheckableMenuItemDelegate):
         x = rect.x() + 19
         y = rect.center().y() - r / 2
 
-        painter.setRenderHints(QPainter.Antialiasing)
-        if not option.state & QStyle.State_MouseOver:
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
+        if not option.state & QStyle.StateFlag.State_MouseOver:
             painter.setOpacity(0.75 if isDarkTheme() else 0.65)
 
-        painter.setPen(Qt.NoPen)
-        painter.setBrush(Qt.white if isDarkTheme() else Qt.black)
+        painter.setPen(Qt.PenStyle.NoPen)
+        painter.setBrush(Qt.GlobalColor.white if isDarkTheme() else Qt.GlobalColor.black)
         painter.drawEllipse(QRectF(x, y, r, r))
 
 
@@ -1061,8 +1060,8 @@ class CheckIndicatorMenuItemDelegate(CheckableMenuItemDelegate):
         x = rect.x() + 9
         y = rect.center().y() - s / 2
 
-        painter.setRenderHints(QPainter.Antialiasing)
-        if not option.state & QStyle.State_MouseOver:
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
+        if not option.state & QStyle.StateFlag.State_MouseOver:
             painter.setOpacity(0.75)
 
         CheckableMenuIcon.ACCEPT.render(painter, QRectF(x, y, s, s))

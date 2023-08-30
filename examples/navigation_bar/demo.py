@@ -1,9 +1,9 @@
 # coding:utf-8
 import sys
 
-from PyQt5.QtCore import Qt, pyqtSignal, QEasingCurve, QUrl
-from PyQt5.QtGui import QIcon, QDesktopServices
-from PyQt5.QtWidgets import QLabel, QHBoxLayout, QVBoxLayout, QApplication, QFrame, QWidget
+from PyQt6.QtCore import Qt, pyqtSignal, QEasingCurve, QUrl
+from PyQt6.QtGui import QIcon, QDesktopServices
+from PyQt6.QtWidgets import QLabel, QHBoxLayout, QVBoxLayout, QApplication, QFrame, QWidget
 
 from qmaterialwidgets import (NavigationBar, MessageBox, isDarkTheme, setTheme, Theme, setThemeColor,
                               SearchLineEdit, PopUpAniStackedWidget, setStyleSheet, FramelessWindow)
@@ -16,9 +16,9 @@ class Widget(QWidget):
     def __init__(self, text: str, parent=None):
         super().__init__(parent=parent)
         self.label = QLabel(text, self)
-        self.label.setAlignment(Qt.AlignCenter)
+        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.vBoxLayout = QHBoxLayout(self)
-        self.vBoxLayout.addWidget(self.label, 1, Qt.AlignCenter)
+        self.vBoxLayout.addWidget(self.label, 1, Qt.AlignmentFlag.AlignCenter)
         self.setObjectName(text.replace(' ', '-'))
 
 
@@ -49,7 +49,7 @@ class StackedWidget(QFrame):
             self.view.setCurrentWidget(widget, duration=300)
         else:
             self.view.setCurrentWidget(
-                widget, True, False, 200, QEasingCurve.InQuad)
+                widget, True, False, 200, QEasingCurve.Type.InQuad)
 
     def setCurrentIndex(self, index, popOut=False):
         self.setCurrentWidget(self.view.widget(index), popOut)
@@ -113,7 +113,7 @@ class Window(FramelessWindow):
         self.resize(400, 600)
         self.setWindowIcon(QIcon(':/qmaterialwidgets/images/logo.png'))
         self.setWindowTitle('PySide-Material-Widgets')
-        self.titleBar.setAttribute(Qt.WA_StyledBackground)
+        self.titleBar.setAttribute(Qt.WidgetAttribute.WA_StyledBackground)
 
         desktop = QApplication.screens()[0].availableGeometry()
         w, h = desktop.width(), desktop.height()
@@ -159,11 +159,6 @@ class Window(FramelessWindow):
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Window()
     w.show()

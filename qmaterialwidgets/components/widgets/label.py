@@ -2,10 +2,10 @@
 
 from typing import List, Union
 
-from PyQt5.QtCore import Qt, pyqtProperty, QPoint, pyqtSignal, QSize
-from PyQt5.QtGui import (QPainter, QPixmap, QPalette, QColor, QFont, QImage, QPainterPath,
+from PyQt6.QtCore import Qt, pyqtProperty, QPoint, pyqtSignal, QSize
+from PyQt6.QtGui import (QPainter, QPixmap, QPalette, QColor, QFont, QImage, QPainterPath,
                          QImageReader, QBrush, QMovie)
-from PyQt5.QtWidgets import QLabel, QWidget
+from PyQt6.QtWidgets import QLabel, QWidget
 
 from ...common.overload import singledispatchmethod
 from ...common.font import setFont, getFont

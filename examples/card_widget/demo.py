@@ -1,9 +1,9 @@
 # coding:utf-8
 import sys
 
-from PyQt5.QtCore import Qt, QPoint
-from PyQt5.QtGui import QColor
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
+from PyQt6.QtCore import Qt, QPoint
+from PyQt6.QtGui import QColor
+from PyQt6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
 
 from qmaterialwidgets import (CardWidget, setTheme, Theme, IconWidget, BodyLabel, CaptionLabel, OutlinedPushButton,
                             TransparentToolButton, FluentIcon, RoundMenu, Action, palette, OutlinedCardWidget,
@@ -35,14 +35,14 @@ class AppCard(OutlinedCardWidget):
 
         self.vBoxLayout.setContentsMargins(0, 0, 0, 0)
         self.vBoxLayout.setSpacing(0)
-        self.vBoxLayout.addWidget(self.titleLabel, 0, Qt.AlignVCenter)
-        self.vBoxLayout.addWidget(self.contentLabel, 0, Qt.AlignVCenter)
-        self.vBoxLayout.setAlignment(Qt.AlignVCenter)
+        self.vBoxLayout.addWidget(self.titleLabel, 0, Qt.AlignmentFlag.AlignVCenter)
+        self.vBoxLayout.addWidget(self.contentLabel, 0, Qt.AlignmentFlag.AlignVCenter)
+        self.vBoxLayout.setAlignment(Qt.AlignmentFlag.AlignVCenter)
         self.hBoxLayout.addLayout(self.vBoxLayout)
 
         self.hBoxLayout.addStretch(1)
-        self.hBoxLayout.addWidget(self.openButton, 0, Qt.AlignRight)
-        self.hBoxLayout.addWidget(self.moreButton, 0, Qt.AlignRight)
+        self.hBoxLayout.addWidget(self.openButton, 0, Qt.AlignmentFlag.AlignRight)
+        self.hBoxLayout.addWidget(self.moreButton, 0, Qt.AlignmentFlag.AlignRight)
 
         self.moreButton.setFixedSize(32, 32)
         self.moreButton.clicked.connect(self.onMoreButtonClicked)
@@ -70,7 +70,7 @@ class Demo(QWidget):
 
         self.vBoxLayout.setSpacing(10)
         self.vBoxLayout.setContentsMargins(30, 30, 30, 30)
-        self.vBoxLayout.setAlignment(Qt.AlignTop)
+        self.vBoxLayout.setAlignment(Qt.AlignmentFlag.AlignTop)
 
         suffix = ":/qmaterialwidgets/images/controls"
         self.addCard(f":/qmaterialwidgets/images/logo.png", "PySide-Material-Widgets", 'Shokokawaii Inc.')
@@ -83,15 +83,10 @@ class Demo(QWidget):
 
     def addCard(self, icon, title, content):
         card = AppCard(icon, title, content, self)
-        self.vBoxLayout.addWidget(card, alignment=Qt.AlignTop)
+        self.vBoxLayout.addWidget(card, alignment=Qt.AlignmentFlag.AlignTop)
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

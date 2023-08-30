@@ -1,8 +1,8 @@
 # coding:utf-8
-from PyQt5.QtCore import (QEvent, QEasingCurve, Qt, pyqtSignal, QPropertyAnimation, pyqtProperty, QRectF,
+from PyQt6.QtCore import (QEvent, QEasingCurve, Qt, pyqtSignal, QPropertyAnimation, pyqtProperty, QRectF,
                           QTimer, QPoint, QObject)
-from PyQt5.QtGui import QPainter, QColor, QMouseEvent
-from PyQt5.QtWidgets import (QWidget, QToolButton, QAbstractScrollArea, QGraphicsOpacityEffect,
+from PyQt6.QtGui import QPainter, QColor, QMouseEvent
+from PyQt6.QtWidgets import (QWidget, QToolButton, QAbstractScrollArea, QGraphicsOpacityEffect,
                              QHBoxLayout, QVBoxLayout, QApplication, QAbstractItemView, QListView)
 
 from ...common.icon import FluentIcon

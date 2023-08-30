@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Union
 
-from PyQt5.QtCore import Qt, QRectF, QSize, QPoint, pyqtProperty, QEvent
-from PyQt5.QtGui import QPainterPath, QIcon, QPainter, QColor, QPen, QPalette
-from PyQt5.QtWidgets import QPushButton, QToolButton, QApplication, QWidget
+from PyQt6.QtCore import Qt, QRectF, QSize, QPoint, pyqtProperty, QEvent
+from PyQt6.QtGui import QPainterPath, QIcon, QPainter, QColor, QPen, QPalette
+from PyQt6.QtWidgets import QPushButton, QToolButton, QApplication, QWidget
 
 
 from ...common.color import translucent, mixColor
@@ -547,14 +547,14 @@ class DropDownButtonBase:
             self.menu().hide()
 
     def _drawDropDownIcon(self, painter, rect):
-        color = self.palette().color(QPalette.WindowText).name()
+        color = self.palette().color(QPalette.ColorRole.WindowText).name()
         self.dropDownIcon.render(painter, rect, fill=color)
 
     def paintEvent(self, e):
         super().paintEvent(e)
 
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
         rect = QRectF(self.width()-36, self.height() / 2 - 12, 24, 24)
         self._drawDropDownIcon(painter, rect)
 

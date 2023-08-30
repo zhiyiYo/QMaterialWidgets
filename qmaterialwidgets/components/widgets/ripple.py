@@ -3,9 +3,9 @@ from typing import List
 from enum import Enum
 
 
-from PyQt5.QtCore import Qt, pyqtSignal, QEvent, QParallelAnimationGroup, QPoint, QPropertyAnimation, QEasingCurve, pyqtProperty
-from PyQt5.QtGui import QPixmap, QPainter, QColor, QBrush, QPainterPath
-from PyQt5.QtWidgets import QWidget
+from PyQt6.QtCore import Qt, pyqtSignal, QEvent, QParallelAnimationGroup, QPoint, QPropertyAnimation, QEasingCurve, pyqtProperty
+from PyQt6.QtGui import QPixmap, QPainter, QColor, QBrush, QPainterPath
+from PyQt6.QtWidgets import QWidget
 
 from ...common.style_sheet import themeColor
 from .overlay_widget import OverlayWidget

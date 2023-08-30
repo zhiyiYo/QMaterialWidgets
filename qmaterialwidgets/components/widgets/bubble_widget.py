@@ -1,9 +1,9 @@
 # coding:utf-8
 from enum import Enum
 from typing import Union
-from PyQt5.QtCore import Qt, pyqtSignal, QPointF, QPoint
-from PyQt5.QtGui import QPixmap, QPainter, QColor
-from PyQt5.QtWidgets import QWidget
+from PyQt6.QtCore import Qt, pyqtSignal, QPointF, QPoint
+from PyQt6.QtGui import QPixmap, QPainter, QColor
+from PyQt6.QtWidgets import QWidget
 
 from ...common.font import getFont
 from ...common.style_sheet import themeColor, palette
@@ -57,9 +57,9 @@ class BubbleWidget(FadeInOutWidget, QWidget):
 
     def paintEvent(self, e):
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing |
-                               QPainter.TextAntialiasing)
-        painter.setPen(Qt.NoPen)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing |
+                               QPainter.RenderHint.TextAntialiasing)
+        painter.setPen(Qt.PenStyle.NoPen)
         painter.setBrush(themeColor())
 
         # draw circle
@@ -97,7 +97,7 @@ class BubbleWidget(FadeInOutWidget, QWidget):
         # draw text
         painter.setFont(getFont(11))
         painter.setPen(palette.onPrimary)
-        painter.drawText(self.rect(), Qt.AlignCenter, self.text())
+        painter.drawText(self.rect(), Qt.AlignmentFlag.AlignCenter, self.text())
 
     def exec(self, target: Union[QPoint, QWidget]):
         if isinstance(target, QWidget):

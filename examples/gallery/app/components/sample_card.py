@@ -1,7 +1,7 @@
 # coding:utf-8
-from PyQt5.QtCore import Qt, pyqtSignal
-from PyQt5.QtGui import QPixmap
-from PyQt5.QtWidgets import QWidget, QFrame, QLabel, QVBoxLayout, QHBoxLayout
+from PyQt6.QtCore import Qt, pyqtSignal
+from PyQt6.QtGui import QPixmap
+from PyQt6.QtWidgets import QWidget, QFrame, QLabel, QVBoxLayout, QHBoxLayout
 
 from qmaterialwidgets import IconWidget, TextWrap, FlowLayout, CardWidget
 from ..common.signal_bus import signalBus
@@ -30,9 +30,9 @@ class SampleCard(QFrame):
         self.hBoxLayout.setContentsMargins(20, 0, 0, 0)
         self.vBoxLayout.setSpacing(2)
         self.vBoxLayout.setContentsMargins(0, 0, 0, 0)
-        self.vBoxLayout.setAlignment(Qt.AlignVCenter)
+        self.vBoxLayout.setAlignment(Qt.AlignmentFlag.AlignVCenter)
 
-        self.hBoxLayout.setAlignment(Qt.AlignVCenter)
+        self.hBoxLayout.setAlignment(Qt.AlignmentFlag.AlignVCenter)
         self.hBoxLayout.addWidget(self.iconWidget)
         self.hBoxLayout.addLayout(self.vBoxLayout)
         self.vBoxLayout.addStretch(1)

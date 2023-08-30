@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Dict
 
-from PyQt5.QtCore import Qt, pyqtSignal, QRectF, QRect, QPropertyAnimation, QSize, QEasingCurve, QEvent
-from PyQt5.QtGui import QPainter, QColor, QIcon, QPainterPath
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
+from PyQt6.QtCore import Qt, pyqtSignal, QRectF, QRect, QPropertyAnimation, QSize, QEasingCurve, QEvent
+from PyQt6.QtGui import QPainter, QColor, QIcon, QPainterPath
+from PyQt6.QtWidgets import QWidget, QHBoxLayout, QSizePolicy
 
 from ...common.font import setFont
 from ...common.router import qrouter
@@ -69,10 +69,10 @@ class TabItem(NavigationPushButton):
         painter.setFont(self.font())
         painter.setPen(themeColor() if self.isSelected else palette.onSurface)
         if self.icon().isNull():
-            painter.drawText(self.rect(), Qt.AlignCenter, self.text())
+            painter.drawText(self.rect(), Qt.AlignmentFlag.AlignCenter, self.text())
         else:
             painter.drawText(
-                QRect(0, 20, self.width(), self.height()-20), Qt.AlignCenter, self.text())
+                QRect(0, 20, self.width(), self.height()-20), Qt.AlignmentFlag.AlignCenter, self.text())
 
 
 class TabIndicator(QWidget):
@@ -110,7 +110,7 @@ class TabIndicator(QWidget):
     def paintEvent(self, e):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
-        painter.setPen(Qt.NoPen)
+        painter.setPen(Qt.PenStyle.NoPen)
 
         path = QPainterPath()
         path.addRoundedRect(0, 3, self.width(), 6, 3, 3)
@@ -129,7 +129,7 @@ class TabWidget(QWidget):
 
         # self.setWidget(self.view)
         # self.setWidgetResizable(True)
-        # self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        # self.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         # self.setViewportMargins(0, 0, 0, 0)
 
         MaterialStyleSheet.TAB_WIDGET.apply(self)

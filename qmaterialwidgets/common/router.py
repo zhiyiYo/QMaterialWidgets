@@ -2,8 +2,8 @@
 from typing import Dict, List
 from itertools import groupby
 
-from PyQt5.QtCore import Qt, QObject, pyqtSignal
-from PyQt5.QtWidgets import QWidget, QStackedWidget
+from PyQt6.QtCore import Qt, QObject, pyqtSignal
+from PyQt6.QtWidgets import QWidget, QStackedWidget
 
 
 class RouteItem:

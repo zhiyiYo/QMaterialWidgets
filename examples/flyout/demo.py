@@ -1,9 +1,9 @@
 # coding:utf-8
 import sys
 
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFont
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QFont
+from PyQt6.QtWidgets import QApplication, QWidget, QHBoxLayout, QVBoxLayout
 
 from qmaterialwidgets import (OutlinedPushButton, Flyout, InfoBarIcon, setTheme, Theme, FlyoutView, FlyoutViewBase,
                             BodyLabel, setFont, FlyoutAnimationType, FilledPushButton, palette)
@@ -41,9 +41,9 @@ class Demo(QWidget):
         self.button1.setFixedWidth(150)
         self.button2.setFixedWidth(150)
         self.button3.setFixedWidth(150)
-        self.vBoxLayout.addWidget(self.button1, 0, Qt.AlignBottom)
-        self.vBoxLayout.addWidget(self.button2, 0, Qt.AlignBottom)
-        self.vBoxLayout.addWidget(self.button3, 0, Qt.AlignBottom)
+        self.vBoxLayout.addWidget(self.button1, 0, Qt.AlignmentFlag.AlignBottom)
+        self.vBoxLayout.addWidget(self.button2, 0, Qt.AlignmentFlag.AlignBottom)
+        self.vBoxLayout.addWidget(self.button3, 0, Qt.AlignmentFlag.AlignBottom)
         self.vBoxLayout.setContentsMargins(30, 50, 30, 50)
 
         self.button1.clicked.connect(self.showFlyout1)
@@ -72,7 +72,7 @@ class Demo(QWidget):
         # add button to view
         button = FilledPushButton('Action')
         button.setFixedWidth(120)
-        view.addWidget(button, align=Qt.AlignRight)
+        view.addWidget(button, align=Qt.AlignmentFlag.AlignRight)
 
         # adjust layout (optional)
         view.widgetLayout.insertSpacing(1, 5)
@@ -87,11 +87,6 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

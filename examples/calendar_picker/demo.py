@@ -2,8 +2,8 @@
 import sys
 from time import time
 
-from PyQt5.QtCore import Qt, QCalendar, QDate
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout
+from PyQt6.QtCore import Qt, QCalendar, QDate
+from PyQt6.QtWidgets import QApplication, QWidget, QHBoxLayout
 
 from qmaterialwidgets import CalendarPicker, setTheme, Theme
 
@@ -27,16 +27,11 @@ class Demo(QWidget):
         # self.picker.setDateFormat('yyyy-M-d')
 
         self.hBoxLayout = QHBoxLayout(self)
-        self.hBoxLayout.addWidget(self.picker, 0, Qt.AlignCenter)
+        self.hBoxLayout.addWidget(self.picker, 0, Qt.AlignmentFlag.AlignCenter)
         self.resize(400, 400)
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

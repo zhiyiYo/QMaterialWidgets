@@ -5,10 +5,10 @@ from typing import Union
 from collections import defaultdict, Counter
 from typing import Tuple, Type
 
-from PyQt5.QtCore import (Qt, QRectF, pyqtSignal, QSize, QModelIndex, QDate, QCalendar, QEasingCurve, QPropertyAnimation,
+from PyQt6.QtCore import (Qt, QRectF, pyqtSignal, QSize, QModelIndex, QDate, QCalendar, QEasingCurve, QPropertyAnimation,
                           QParallelAnimationGroup, QPoint, QRect, pyqtProperty)
-from PyQt5.QtGui import QPainter, QColor, QCursor
-from PyQt5.QtWidgets import (QApplication, QFrame, QPushButton, QHBoxLayout, QVBoxLayout, QListWidget,
+from PyQt6.QtGui import QPainter, QColor, QCursor
+from PyQt6.QtWidgets import (QApplication, QFrame, QPushButton, QHBoxLayout, QVBoxLayout, QListWidget,
                              QListWidgetItem, QStyledItemDelegate, QStyle, QStyleOptionViewItem,
                              QLabel, QWidget, QStackedWidget, QGraphicsDropShadowEffect, QListView)
 
@@ -78,7 +78,7 @@ class ScrollItemDelegate(QStyledItemDelegate):
 
         # outer ring
         if index != self.selectedIndex:
-            painter.setPen(Qt.NoPen)
+            painter.setPen(Qt.PenStyle.NoPen)
         else:
             painter.setPen(themeColor())
 

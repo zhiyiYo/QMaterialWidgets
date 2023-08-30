@@ -1,8 +1,8 @@
 # coding:utf-8
 import sys
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QAction
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QLabel
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QAction
+from PyQt6.QtWidgets import QApplication, QWidget, QHBoxLayout, QLabel
 from qmaterialwidgets import RoundMenu, setTheme, Theme, Action, MenuAnimationType, MenuItemDelegate, CheckableMenu, MenuIndicatorType
 from qmaterialwidgets import FluentIcon as FIF
 
@@ -13,7 +13,7 @@ class Demo(QWidget):
         super().__init__()
         self.setLayout(QHBoxLayout())
         self.label = QLabel('Right-click your mouse', self)
-        self.label.setAlignment(Qt.AlignCenter)
+        self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.layout().addWidget(self.label)
         self.resize(400, 400)
 
@@ -69,11 +69,6 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

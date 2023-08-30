@@ -1,10 +1,10 @@
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+# https://www.sphinx-doc.org/en/PyQt6/usage/configuration.html
 
 # -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+# https://www.sphinx-doc.org/en/PyQt6/usage/configuration.html#project-information
 import os
 import sys
 
@@ -25,7 +25,7 @@ gettext_compact = False  # optional.
 gettext_uuid = True  # optional
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+# https://www.sphinx-doc.org/en/PyQt6/usage/configuration.html#general-configuration
 
 source_parsers = {
     '.md': 'recommonmark.parser.CommonMarkParser',
@@ -43,7 +43,7 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = []
 
-autodoc_mock_imports = ['PyQt5']
+autodoc_mock_imports = ['PyQt6']
 
 
 # extlinks alias
@@ -51,7 +51,7 @@ extlinks = {"issue": ("https://github.com/zhiyiYo/QMaterialWidgets/issues/%s", "
 
 
 # -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+# https://www.sphinx-doc.org/en/PyQt6/usage/configuration.html#options-for-html-output
 
 html_theme = 'furo'
 html_static_path = ['_static']

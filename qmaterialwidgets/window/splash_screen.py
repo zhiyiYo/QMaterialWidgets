@@ -1,9 +1,9 @@
 # coding:utf-8
 from typing import Union
 
-from PyQt5.QtCore import Qt, QSize, QRectF, QEvent
-from PyQt5.QtGui import QPixmap, QPainter, QColor, QIcon
-from PyQt5.QtWidgets import QWidget, QVBoxLayout, QGraphicsDropShadowEffect
+from PyQt6.QtCore import Qt, QSize, QRectF, QEvent
+from PyQt6.QtGui import QPixmap, QPainter, QColor, QIcon
+from PyQt6.QtWidgets import QWidget, QVBoxLayout, QGraphicsDropShadowEffect
 
 from ..common.icon import MaterialIconBase, drawIcon, toQIcon
 from ..common.style_sheet import isDarkTheme, MaterialStyleSheet
@@ -62,9 +62,9 @@ class SplashScreen(QWidget):
 
     def eventFilter(self, obj, e: QEvent):
         if obj is self.parent():
-            if e.type() == QEvent.Resize:
+            if e.type() == QEvent.Type.Resize:
                 self.resize(e.size())
-            elif e.type() == QEvent.ChildAdded:
+            elif e.type() == QEvent.Type.ChildAdded:
                 self.raise_()
 
         return super().eventFilter(obj, e)
@@ -80,7 +80,7 @@ class SplashScreen(QWidget):
 
     def paintEvent(self, e):
         painter = QPainter(self)
-        painter.setPen(Qt.NoPen)
+        painter.setPen(Qt.PenStyle.NoPen)
 
         # draw background
         c = 32 if isDarkTheme() else 255

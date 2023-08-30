@@ -1,8 +1,8 @@
 # coding:utf-8
 import sys
-from PyQt5.QtCore import QPoint, Qt
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout
+from PyQt6.QtCore import QPoint, Qt
+from PyQt6.QtGui import QIcon
+from PyQt6.QtWidgets import QApplication, QWidget, QHBoxLayout
 
 from qmaterialwidgets import (InfoBarIcon, InfoBar, OutlinedPushButton, setTheme, Theme, FluentIcon,
                               InfoBarPosition, InfoBarManager, palette, TextPushButton)
@@ -70,7 +70,7 @@ class Demo(QWidget):
             icon=InfoBarIcon.SNACK,
             title='',
             content='这是一场「试炼」，我认为这就是一场为了战胜过去的「试炼」，\n只有战胜了那些幼稚的过去，人才能有所成长。',
-            orient=Qt.Vertical,    # vertical layout
+            orient=Qt.Orientation.Vertical,    # vertical layout
             isClosable=True,
             position=InfoBarPosition.BOTTOM,
             duration=2000,
@@ -84,7 +84,7 @@ class Demo(QWidget):
             icon=InfoBarIcon.INFORMATION,
             title='Title',
             content=content,
-            orient=Qt.Vertical,    # vertical layout
+            orient=Qt.Orientation.Vertical,    # vertical layout
             isClosable=True,
             position=InfoBarPosition.TOP_RIGHT,
             duration=2000,
@@ -98,7 +98,7 @@ class Demo(QWidget):
         InfoBar.success(
             title='Lesson 4',
             content="With respect, let's advance towards a new stage of the spin.",
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=True,
             position=InfoBarPosition.TOP,
             # position='Custom',   # NOTE: use custom info bar manager
@@ -110,7 +110,7 @@ class Demo(QWidget):
         InfoBar.warning(
             title='Lesson 3',
             content="Believe in the spin, just keep believing!",
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=False,   # disable close button
             position=InfoBarPosition.TOP_LEFT,
             duration=2000,
@@ -121,7 +121,7 @@ class Demo(QWidget):
         InfoBar.error(
             title='Lesson 5',
             content="迂回路を行けば最短ルート。",
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=True,
             position=InfoBarPosition.BOTTOM_RIGHT,
             duration=-1,    # won't disappear automatically
@@ -133,7 +133,7 @@ class Demo(QWidget):
             icon=FluentIcon.GITHUB,
             title='Zeppeli',
             content="人間讃歌は「勇気」の讃歌ッ！！ 人間のすばらしさは勇気のすばらしさ！！",
-            orient=Qt.Horizontal,
+            orient=Qt.Orientation.Horizontal,
             isClosable=True,
             position=InfoBarPosition.BOTTOM,
             duration=2000,
@@ -143,11 +143,6 @@ class Demo(QWidget):
 
 
 if __name__ == '__main__':
-    QApplication.setHighDpiScaleFactorRoundingPolicy(
-        Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
-    QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
-    QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

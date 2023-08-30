@@ -1,6 +1,6 @@
 # coding:utf-8
 import sys
-from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout
+from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout
 
 from qmaterialwidgets import TimePickerDialog, setTheme, Theme, FilledSearchLineEdit, palette, TimePicker
 

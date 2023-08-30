@@ -1,6 +1,6 @@
 # coding:utf-8
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (QListWidgetItem, QFrame, QTreeWidgetItem, QHBoxLayout,
+from PyQt6.QtCore import Qt
+from PyQt6.QtWidgets import (QListWidgetItem, QFrame, QTreeWidgetItem, QHBoxLayout,
                              QTreeWidgetItemIterator, QTableWidgetItem)
 from qmaterialwidgets import TableWidget, ListWidget
 
@@ -25,14 +25,14 @@ class ViewInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr('A simple table view'),
             widget=TableFrame(self),
-            sourcePath='https://github.com/zhiyiYo/QMaterilWidgets/blob/master/examples/table_view/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterilWidgets/blob/PyQt6/examples/table_view/demo.py'
         )
 
         # list view
         self.addExampleCard(
             title=self.tr('A simple list view'),
             widget=ListFrame(self),
-            sourcePath='https://github.com/zhiyiYo/QMaterilWidgets/blob/master/examples/list_view/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterilWidgets/blob/PyQt6/examples/list_view/demo.py'
         )
 
 

@@ -1,6 +1,6 @@
 # coding:utf-8
-from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QPainter
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QPainter
 
 from ...common.font import setFont
 from ...common.style_sheet import themeColor
@@ -23,8 +23,8 @@ class SegmentedItem(TabItem):
             return
 
         painter = QPainter(self)
-        painter.setRenderHints(QPainter.Antialiasing)
-        painter.setPen(Qt.NoPen)
+        painter.setRenderHints(QPainter.RenderHint.Antialiasing)
+        painter.setPen(Qt.PenStyle.NoPen)
         painter.setBrush(themeColor())
 
         w = 16 if not self.isPressed else 10

@@ -1,8 +1,8 @@
 # coding: utf-8
 from typing import Type
 
-from PyQt5.QtWidgets import QAction, QWidget
-from PyQt5.QtDesigner import QPyDesignerTaskMenuExtension, QExtensionFactory, QDesignerFormWindowInterface, QPyDesignerCustomWidgetPlugin
+from PyQt6.QtWidgets import QAction, QWidget
+from PyQt6.QtDesigner import QPyDesignerTaskMenuExtension, QExtensionFactory, QDesignerFormWindowInterface, QPyDesignerCustomWidgetPlugin
 
 
 from qmaterialwidgets import MessageBox, LineEdit

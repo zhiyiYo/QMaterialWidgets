@@ -1,6 +1,6 @@
 # coding: utf-8
-from PyQt5.QtCore import Qt
-from PyQt5.QtDesigner import QPyDesignerCustomWidgetPlugin
+from PyQt6.QtCore import Qt
+from PyQt6.QtDesigner import QPyDesignerCustomWidgetPlugin
 
 from qmaterialwidgets import (BodyLabel, CaptionLabel, StrongBodyLabel, SubtitleLabel, TitleLabel, LargeTitleLabel,
                             DisplayLabel, ImageLabel)

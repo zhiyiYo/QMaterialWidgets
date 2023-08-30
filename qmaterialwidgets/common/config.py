@@ -5,8 +5,8 @@ from pathlib import Path
 from typing import List
 
 import darkdetect
-from PyQt5.QtCore import QObject, pyqtSignal
-from PyQt5.QtGui import QColor
+from PyQt6.QtCore import QObject, pyqtSignal
+from PyQt6.QtGui import QColor
 
 from .exception_handler import exceptionHandler
 
@@ -145,7 +145,7 @@ class ColorSerializer(ConfigSerializer):
     """ QColor serializer """
 
     def serialize(self, value: QColor):
-        return value.name(QColor.HexArgb)
+        return value.name(QColor.NameFormat.HexArgb)
 
     def deserialize(self, value):
         if isinstance(value, list):

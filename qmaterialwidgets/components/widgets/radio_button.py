@@ -1,7 +1,7 @@
 # coding:utf-8
-from PyQt5.QtCore import QRectF, QRect, QPoint
-from PyQt5.QtGui import QPainterPath
-from PyQt5.QtWidgets import QWidget, QRadioButton
+from PyQt6.QtCore import QRectF, QRect, QPoint
+from PyQt6.QtGui import QPainterPath
+from PyQt6.QtWidgets import QWidget, QRadioButton
 
 from .ripple import RippleOverlayWidget, RippleStyle
 from ...common.style_sheet import MaterialStyleSheet

@@ -2,10 +2,10 @@
   <img width="18%" align="center" src="https://raw.githubusercontent.com/zhiyiYo/QMaterialWidgets/master/docs/source/_static/logo.png" alt="logo">
 </p>
   <h1 align="center">
-  PyQt-Material-Widgets
+  PyQt6-Material-Widgets
 </h1>
 <p align="center">
-  A material design widgets library based on PyQt5
+  A material design widgets library based on PyQt6
 </p>
 
 <p align="center">
@@ -35,12 +35,12 @@ English | <a href="./docs/README_zh.md">简体中文</a>
 ## Install
 To install using pip:
 ```shell
-pip install PySide6-Material-Widgets -i https://pypi.org/simple/
+pip install PyQt6-Material-Widgets -i https://pypi.org/simple/
 ```
 
 
 > **Warning**
-> Don't install PySide6-Material-Widgets and PySide2-Material-Widgets at the same time, because their package names are all `qmaterialwidgets`.
+> Don't install PyQt-Material-Widgets, PyQt6-Material-Widgets, PySide6-Material-Widgets and PySide2-Material-Widgets at the same time, because their package names are all `qmaterialwidgets`.
 
 
 ## Run Example
@@ -69,6 +69,6 @@ If this project helps you a lot and you want to support the development and main
 
 
 ## License
-PyQt-Material-Widgets is licensed under [GPLv3](./LICENSE).
+PyQt6-Material-Widgets is licensed under [GPLv3](./LICENSE).
 
 Copyright © 2023 by zhiyiYo.

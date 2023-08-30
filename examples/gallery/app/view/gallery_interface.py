@@ -1,7 +1,7 @@
 # coding:utf-8
-from PyQt5.QtCore import Qt, pyqtSignal, QUrl, QEvent, QPoint
-from PyQt5.QtGui import QDesktopServices, QPainter, QPen, QColor, QCursor
-from PyQt5.QtWidgets import QWidget, QLabel, QVBoxLayout, QHBoxLayout, QFrame, QApplication
+from PyQt6.QtCore import Qt, pyqtSignal, QUrl, QEvent, QPoint
+from PyQt6.QtGui import QDesktopServices, QPainter, QPen, QColor, QCursor
+from PyQt6.QtWidgets import QWidget, QLabel, QVBoxLayout, QHBoxLayout, QFrame, QApplication
 
 from qmaterialwidgets import (ScrollArea, OutlinedPushButton, FluentIcon, isDarkTheme, IconWidget,
                               Theme, ToolTipFilter, TitleLabel, CaptionLabel,
@@ -57,12 +57,12 @@ class ToolBar(QWidget):
         self.vBoxLayout.addWidget(self.subtitleLabel)
         self.vBoxLayout.addSpacing(4)
         self.vBoxLayout.addLayout(self.buttonLayout, 1)
-        self.vBoxLayout.setAlignment(Qt.AlignTop)
+        self.vBoxLayout.setAlignment(Qt.AlignmentFlag.AlignTop)
 
         self.buttonLayout.setSpacing(4)
         self.buttonLayout.setContentsMargins(0, 0, 0, 0)
-        self.buttonLayout.addWidget(self.documentButton, 0, Qt.AlignLeft)
-        self.buttonLayout.addWidget(self.sourceButton, 0, Qt.AlignLeft)
+        self.buttonLayout.addWidget(self.documentButton, 0, Qt.AlignmentFlag.AlignLeft)
+        self.buttonLayout.addWidget(self.sourceButton, 0, Qt.AlignmentFlag.AlignLeft)
         self.buttonLayout.addStretch(1)
 
         self.documentButton.clicked.connect(
@@ -99,16 +99,16 @@ class ExampleCard(QWidget):
         self.linkIcon.setFixedSize(16, 16)
         self.__initLayout()
 
-        self.sourceWidget.setCursor(Qt.PointingHandCursor)
+        self.sourceWidget.setCursor(Qt.CursorShape.PointingHandCursor)
         self.sourceWidget.installEventFilter(self)
 
         self.card.setObjectName('card')
         self.sourceWidget.setObjectName('sourceWidget')
 
     def __initLayout(self):
-        self.vBoxLayout.setSizeConstraint(QVBoxLayout.SetMinimumSize)
-        self.cardLayout.setSizeConstraint(QVBoxLayout.SetMinimumSize)
-        self.topLayout.setSizeConstraint(QHBoxLayout.SetMinimumSize)
+        self.vBoxLayout.setSizeConstraint(QVBoxLayout.SizeConstraint.SetMinimumSize)
+        self.cardLayout.setSizeConstraint(QVBoxLayout.SizeConstraint.SetMinimumSize)
+        self.topLayout.setSizeConstraint(QHBoxLayout.SizeConstraint.SetMinimumSize)
 
         self.vBoxLayout.setSpacing(12)
         self.vBoxLayout.setContentsMargins(0, 0, 0, 0)
@@ -116,14 +116,14 @@ class ExampleCard(QWidget):
         self.bottomLayout.setContentsMargins(18, 18, 18, 18)
         self.cardLayout.setContentsMargins(0, 0, 0, 0)
 
-        self.vBoxLayout.addWidget(self.titleLabel, 0, Qt.AlignTop)
-        self.vBoxLayout.addWidget(self.card, 0, Qt.AlignTop)
-        self.vBoxLayout.setAlignment(Qt.AlignTop)
+        self.vBoxLayout.addWidget(self.titleLabel, 0, Qt.AlignmentFlag.AlignTop)
+        self.vBoxLayout.addWidget(self.card, 0, Qt.AlignmentFlag.AlignTop)
+        self.vBoxLayout.setAlignment(Qt.AlignmentFlag.AlignTop)
 
         self.cardLayout.setSpacing(0)
-        self.cardLayout.setAlignment(Qt.AlignTop)
+        self.cardLayout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.cardLayout.addLayout(self.topLayout, 0)
-        self.cardLayout.addWidget(self.sourceWidget, 0, Qt.AlignBottom)
+        self.cardLayout.addWidget(self.sourceWidget, 0, Qt.AlignmentFlag.AlignBottom)
 
         self.widget.setParent(self.card)
         self.topLayout.addWidget(self.widget)
@@ -132,14 +132,14 @@ class ExampleCard(QWidget):
 
         self.widget.show()
 
-        self.bottomLayout.addWidget(self.sourcePathLabel, 0, Qt.AlignLeft)
+        self.bottomLayout.addWidget(self.sourcePathLabel, 0, Qt.AlignmentFlag.AlignLeft)
         self.bottomLayout.addStretch(1)
-        self.bottomLayout.addWidget(self.linkIcon, 0, Qt.AlignRight)
-        self.bottomLayout.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.bottomLayout.addWidget(self.linkIcon, 0, Qt.AlignmentFlag.AlignRight)
+        self.bottomLayout.setAlignment(Qt.AlignmentFlag.AlignLeft | Qt.AlignmentFlag.AlignVCenter)
 
     def eventFilter(self, obj, e):
         if obj is self.sourceWidget:
-            if e.type() == QEvent.MouseButtonRelease:
+            if e.type() == QEvent.Type.MouseButtonRelease:
                 QDesktopServices.openUrl(QUrl(self.sourcePath))
 
         return super().eventFilter(obj, e)
@@ -166,13 +166,13 @@ class GalleryInterface(ScrollArea):
         self.toolBar = ToolBar(title, subtitle, self)
         self.vBoxLayout = QVBoxLayout(self.view)
 
-        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         self.setViewportMargins(0, self.toolBar.height(), 0, 0)
         self.setWidget(self.view)
         self.setWidgetResizable(True)
 
         self.vBoxLayout.setSpacing(30)
-        self.vBoxLayout.setAlignment(Qt.AlignTop)
+        self.vBoxLayout.setAlignment(Qt.AlignmentFlag.AlignTop)
         self.vBoxLayout.setContentsMargins(36, 20, 36, 36)
 
         self.view.setObjectName('view')
@@ -181,7 +181,7 @@ class GalleryInterface(ScrollArea):
 
     def addExampleCard(self, title, widget, sourcePath: str, stretch=0):
         card = ExampleCard(title, widget, sourcePath, stretch, self.view)
-        self.vBoxLayout.addWidget(card, 0, Qt.AlignTop)
+        self.vBoxLayout.addWidget(card, 0, Qt.AlignmentFlag.AlignTop)
         return card
 
     def scrollToCard(self, index: int):
