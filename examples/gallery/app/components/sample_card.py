@@ -8,7 +8,7 @@ from ..common.signal_bus import signalBus
 from ..common.style_sheet import StyleSheet
 
 
-class SampleCard(QFrame):
+class SampleCard(CardWidget):
     """ Sample card """
 
     def __init__(self, icon, title, content, routeKey, index, parent=None):
@@ -24,6 +24,7 @@ class SampleCard(QFrame):
         self.vBoxLayout = QVBoxLayout()
 
         self.setFixedSize(360, 90)
+        self.setBorderRadius(6)
         self.iconWidget.setFixedSize(48, 48)
 
         self.hBoxLayout.setSpacing(28)

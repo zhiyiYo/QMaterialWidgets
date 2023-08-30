@@ -218,6 +218,7 @@ class NavigationRail(NavigationBarBase):
 
         self.scrollWidget.setObjectName('scrollWidget')
         MaterialStyleSheet.NAVIGATION_INTERFACE.apply(self)
+        MaterialStyleSheet.NAVIGATION_INTERFACE.apply(self.scrollWidget)
         self.__initLayout()
 
     def __initLayout(self):

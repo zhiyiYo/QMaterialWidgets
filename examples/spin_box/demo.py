@@ -1,5 +1,6 @@
 # coding:utf-8
 import sys
+from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout
 
 from qmaterialwidgets import SpinBox, DoubleSpinBox, DateTimeEdit, DateEdit, TimeEdit, setTheme, Theme, palette
@@ -41,7 +42,7 @@ if __name__ == '__main__':
         Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
     QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
     QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
+
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

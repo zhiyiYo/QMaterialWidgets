@@ -1,6 +1,6 @@
 # coding:utf-8
 import sys
-from PyQt5.QtCore import QEasingCurve
+from PyQt5.QtCore import QEasingCurve, Qt
 from PyQt5.QtWidgets import QApplication, QWidget, QPushButton
 
 from qmaterialwidgets import FlowLayout
@@ -34,7 +34,7 @@ if __name__ == '__main__':
         Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
     QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
     QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
+
     app = QApplication(sys.argv)
     w = Demo()
     w.show()

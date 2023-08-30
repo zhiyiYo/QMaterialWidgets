@@ -35,29 +35,29 @@ English | <a href="./docs/README_zh.md">简体中文</a>
 ## Install
 To install using pip:
 ```shell
-pip install PySide6-Material-Widgets -i https://pypi.org/simple/
+pip install PyQt-Material-Widgets -i https://pypi.org/simple/
 ```
 
 
 > **Warning**
-> Don't install PySide6-Material-Widgets and PySide2-Material-Widgets at the same time, because their package names are all `qmaterialwidgets`.
+> Don't install PyQt-Material-Widgets, PyQt6-Material-Widgets, PySide6-Material-Widgets and PySide2-Material-Widgets at the same time, because their package names are all `qmaterialwidgets`.
 
 
 ## Run Example
-After installing PySide6-Material-Widgets package using pip, you can run the demo in examples directory, for example:
+After installing PyQt-Material-Widgets package using pip, you can run the demo in examples directory, for example:
 ```python
 cd examples/gallery
 python demo.py
 ```
 
 ## Documentation
-Want to know more about PySide6-Material-Widgets? Please read the [help document](https://qmaterialwidgets.readthedocs.io/) 👈
+Want to know more about PyQt-Material-Widgets? Please read the [help document](https://qmaterialwidgets.readthedocs.io/) 👈
 
 ## Video Demonstration
-Check out this [▶ example video](https://www.bilibili.com/video/BV1k14y1z74o) that shows off what PySide6-Material-Widgets are capable of 🎉
+Check out this [▶ example video](https://www.bilibili.com/video/BV1k14y1z74o) that shows off what PyQt-Material-Widgets are capable of 🎉
 
 ## Work with QtDesigner
-You can use PySide6-Material-Widgets in QtDesigner directly by running `python ./tools/designer.py`. If the operation is successful, you should be able to see the PySide6-Material-Widgets in the sidebar of QtDesigner.
+You can use PyQt-Material-Widgets in QtDesigner directly by running `python ./tools/designer.py`. If the operation is successful, you should be able to see the PyQt-Material-Widgets in the sidebar of QtDesigner.
 
 
 ## Support

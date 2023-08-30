@@ -5,20 +5,20 @@ with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
 
 setuptools.setup(
-    name="PySide6-Material-Widgets",
-    version="0.1.5",
-    keywords="pyside6 material widgets",
+    name="PyQt-Material-Widgets",
+    version="0.9.9",
+    keywords="pyqt5 material widgets",
     author="zhiyiYo",
     author_email="shokokawaii@outlook.com",
-    description="A material design widgets library based on PySide6",
+    description="A material design widgets library based on PyQt5",
     long_description=long_description,
     long_description_content_type='text/markdown',
     license="GPLv3",
     url="https://github.com/zhiyiYo/QMaterialWidgets/tree/master",
     packages=setuptools.find_packages(),
     install_requires=[
-        "PySide6<=6.4.2",
-        "PySideSix-Frameless-Window",
+        "PyQt5>=5.15.0",
+        "PyQt5-Frameless-Window>=0.2.7",
         "darkdetect",
     ],
     classifiers=[
