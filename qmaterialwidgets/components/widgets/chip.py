@@ -4,12 +4,11 @@ from PySide2.QtCore import QRectF, Qt, Signal, Property, QSize
 from PySide2.QtGui import QPixmap, QPainter, QColor, QIcon
 from PySide2.QtWidgets import QWidget, QApplication, QGraphicsDropShadowEffect
 
-from qmaterialwidgets.common.config import Theme
-from qmaterialwidgets.components.widgets.menu import RoundMenu
 
 from ...common.icon import MaterialIconBase, drawIcon, FluentIcon
 from ...common.color import translucent, mixColor
-from ...common.style_sheet import themeColor, isDarkTheme, palette
+from ...common.style_sheet import themeColor, isDarkTheme, palette, Theme
+from .menu import RoundMenu
 from .button import PushButton, TransparentToolButton, OutlinedPushButton, DropDownButtonBase
 
 

@@ -1,0 +1,12 @@
+QScrollArea, #scrollWidget {
+    border: none;
+    background-color: transparent;
+}
+
+NavigationBar {
+    background-color: --surfaceContainerLow;
+}
+
+/* NavigationInterface {
+    background-color: rgb(243, 243, 243);
+} */

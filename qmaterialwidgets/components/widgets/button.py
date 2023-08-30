@@ -5,6 +5,8 @@ from PySide2.QtCore import Qt, QRectF, QSize, QPoint, Property, QEvent
 from PySide2.QtGui import QPainterPath, QIcon, QPainter, QColor, QPen, QPalette
 from PySide2.QtWidgets import QPushButton, QToolButton, QApplication, QWidget
 
+from qmaterialwidgets.common.config import Theme
+
 from ...common.color import translucent, mixColor
 from ...common.icon import MaterialIconBase, drawIcon, isDarkTheme, Theme, toQIcon, Icon
 from ...common.font import setFont

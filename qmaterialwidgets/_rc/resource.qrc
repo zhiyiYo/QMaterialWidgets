@@ -2,8 +2,6 @@
     <qresource prefix="/qmaterialwidgets">
         <file>images/logo.png</file>
 
-        <file>images/button/ArrowDropDown.svg</file>
-
         <file>images/icons/Cancel_black.svg</file>
         <file>images/icons/Cancel_white.svg</file>
         <file>images/icons/ChevronRight_black.svg</file>
@@ -325,9 +323,20 @@
         <file>images/icons/Airplane_white.svg</file>
         <file>images/icons/Airplane_black.svg</file>
 
+        <file>images/chip/Accept.svg</file>
+        <file>images/chip/Close.svg</file>
+        <file>images/chip/ArrowDropDown.svg</file>
         <file>images/menu/ArrowRight.svg</file>
         <file>images/menu/Accept_white.svg</file>
         <file>images/menu/Accept_black.svg</file>
+        <file>images/line_edit/Search.svg</file>
+        <file>images/line_edit/Clear.svg</file>
+        <file>images/line_edit/Schedule.svg</file>
+        <file>images/line_edit/Error.svg</file>
+        <file>images/line_edit/Calendar.svg</file>
+        <file>images/line_edit/ArrowDropDown.svg</file>
+        <file>images/line_edit/Add.svg</file>
+        <file>images/line_edit/Minus.svg</file>
         <file>images/check_box/Accept_black.svg</file>
         <file>images/check_box/Accept_white.svg</file>
         <file>images/check_box/PartialAccept_black.svg</file>
@@ -342,24 +351,71 @@
         <file>images/info_bar/Warning_dark.svg</file>
         <file>images/info_bar/Info_light.svg</file>
         <file>images/info_bar/Info_dark.svg</file>
+        <file>images/spin_box/Up_white.svg</file>
+        <file>images/spin_box/Up_black.svg</file>
+        <file>images/spin_box/Down_white.svg</file>
+        <file>images/spin_box/Down_black.svg</file>
+        <file>images/tree_view/TreeViewClose_black.svg</file>
+        <file>images/tree_view/TreeViewOpen_black.svg</file>
+        <file>images/tree_view/TreeViewClose_white.svg</file>
+        <file>images/tree_view/TreeViewOpen_white.svg</file>
+        <file>images/table_view/Up_black.svg</file>
+        <file>images/table_view/Up_white.svg</file>
+        <file>images/table_view/Down_black.svg</file>
+        <file>images/table_view/Down_white.svg</file>
+        <file>images/button/ArrowDropDown.svg</file>
 
+        <file>qss/dark/color_dialog.qss</file>
+        <file>qss/dark/expand_setting_card.qss</file>
         <file>qss/dark/menu.qss</file>
         <file>qss/dark/message_box.qss</file>
+        <file>qss/dark/setting_card.qss</file>
+        <file>qss/dark/setting_card_group.qss</file>
+        <file>qss/dark/state_tool_tip.qss</file>
         <file>qss/dark/switch_button.qss</file>
         <file>qss/dark/tool_tip.qss</file>
+        <file>qss/dark/folder_list_dialog.qss</file>
+        <file>qss/dark/combo_box.qss</file>
+        <file>qss/dark/navigation_interface.qss</file>
         <file>qss/dark/button.qss</file>
+        <file>qss/dark/slider.qss</file>
+        <file>qss/dark/line_edit.qss</file>
         <file>qss/dark/check_box.qss</file>
         <file>qss/dark/info_bar.qss</file>
+        <file>qss/dark/list_view.qss</file>
+        <file>qss/dark/tree_view.qss</file>
+        <file>qss/dark/table_view.qss</file>
+        <file>qss/dark/time_picker.qss</file>
+        <file>qss/dark/tab_widget.qss</file>
+        <file>qss/dark/calendar_picker.qss</file>
+        <file>qss/dark/material_window.qss</file>
         <file>qss/dark/teaching_tip.qss</file>
         <file>qss/dark/info_badge.qss</file>
 
+        <file>qss/light/color_dialog.qss</file>
+        <file>qss/light/expand_setting_card.qss</file>
         <file>qss/light/menu.qss</file>
         <file>qss/light/message_box.qss</file>
+        <file>qss/light/setting_card.qss</file>
+        <file>qss/light/setting_card_group.qss</file>
+        <file>qss/light/state_tool_tip.qss</file>
         <file>qss/light/switch_button.qss</file>
         <file>qss/light/tool_tip.qss</file>
+        <file>qss/light/folder_list_dialog.qss</file>
+        <file>qss/light/combo_box.qss</file>
+        <file>qss/light/navigation_interface.qss</file>
         <file>qss/light/button.qss</file>
+        <file>qss/light/slider.qss</file>
+        <file>qss/light/line_edit.qss</file>
         <file>qss/light/check_box.qss</file>
         <file>qss/light/info_bar.qss</file>
+        <file>qss/light/list_view.qss</file>
+        <file>qss/light/table_view.qss</file>
+        <file>qss/light/tree_view.qss</file>
+        <file>qss/light/time_picker.qss</file>
+        <file>qss/light/tab_widget.qss</file>
+        <file>qss/light/calendar_picker.qss</file>
+        <file>qss/light/material_window.qss</file>
         <file>qss/light/teaching_tip.qss</file>
         <file>qss/light/info_badge.qss</file>
 
@@ -438,6 +494,5 @@
         <file>images/controls/VariableSizedWrapGrid.png</file>
         <file>images/controls/Viewbox.png</file>
         <file>images/controls/TitleBar.png</file>
-
     </qresource>
 </RCC>

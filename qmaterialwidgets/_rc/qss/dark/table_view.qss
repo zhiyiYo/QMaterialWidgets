@@ -1,0 +1,117 @@
+QTableView {
+    background: transparent;
+    outline: none;
+    border: none;
+    /* font: 13px 'Segoe UI', 'Microsoft YaHei'; */
+    selection-background-color: transparent;
+    alternate-background-color: transparent;
+}
+
+QTableView::item {
+    background: transparent;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 46px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    margin: 0px;
+}
+
+QTableView::indicator {
+    width: 14px;
+    height: 14px;
+    border-radius: 3px;
+    border: 2px solid #CAC4D0;
+    background-color: transparent;
+    margin-right: 8px;
+}
+
+QTableView::indicator:hover {
+    border: 2px solid #E6E0E9;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+QTableView::indicator:pressed {
+    border: 2px solid #E6E0E9;
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+QTableView::indicator:checked,
+QTableView::indicator:indeterminate {
+    border: 1px solid --ThemeColorPrimary;
+    background-color: --ThemeColorPrimary;
+}
+
+QTableView::indicator:checked {
+    image: url(:/qmaterialwidgets/images/check_box/Accept_white.svg);
+}
+
+QTableView::indicator:indeterminate {
+    image: url(:/qmaterialwidgets/images/check_box/PartialAccept_white.svg);
+}
+
+QTableView::indicator:checked:hover,
+QTableView::indicator:indeterminate:hover {
+    border: 1px solid --ThemeColorLight1;
+    background-color: --ThemeColorLight1;
+}
+
+QTableView::indicator:checked:pressed,
+QTableView::indicator:indeterminate:pressed {
+    border: 1px solid --ThemeColorLight3;
+    background-color: --ThemeColorLight3;
+}
+
+QTableView::indicator:disabled {
+    border: 2px solid rgb(82, 82, 82);
+    background-color: transparent;
+}
+
+QTableView::indicator:checked:disabled,
+QTableView::indicator:indeterminate:disabled {
+    border: 2px solid rgb(82, 82, 82);
+    background-color: rgb(82, 82, 82);
+}
+
+
+QHeaderView {
+    background-color: transparent;
+}
+
+QHeaderView::section {
+    background-color: transparent;
+    color: white;
+    padding-left: 19px;
+    padding-right: 19px;
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    font: 13px 'Segoe UI', 'Microsoft YaHei', 'PingFang SC';
+    font-weight: bold;
+}
+
+QHeaderView::section:horizontal {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: none;
+    height: 50px;
+}
+
+QHeaderView::section:horizontal:last {
+    border-right: none;
+}
+
+QHeaderView::section:vertical {
+    border-top: none;
+}
+
+QHeaderView::section:checked {
+    background-color: transparent;
+}
+
+QTableCornerButton::section {
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 19);
+}
+
+QTableCornerButton::section:pressed {
+    background-color: rgba(255, 255, 255, 12);
+}

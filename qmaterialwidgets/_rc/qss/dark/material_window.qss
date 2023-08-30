@@ -1,0 +1,68 @@
+MaterialWindowBase {
+    background-color: --surfaceContainer;
+}
+
+MaterialTitleBarBase {
+    background-color: transparent;
+}
+
+MaterialTitleBarBase>QLabel#titleLabel {
+    background: transparent;
+    font: 13px 'Segoe UI';
+    padding: 0 4px;
+    color: white;
+}
+
+MaterialTitleBar>QLabel#titleLabel {
+    padding: 0 10px
+}
+
+BottomNavMaterialTitleBar>QLabel#titleLabel {
+    padding: 0 6px
+}
+
+MinimizeButton {
+    qproperty-normalColor: white;
+    qproperty-normalBackgroundColor: transparent;
+    qproperty-hoverColor: white;
+    qproperty-hoverBackgroundColor: rgba(255, 255, 255, 26);
+    qproperty-pressedColor: white;
+    qproperty-pressedBackgroundColor: rgba(255, 255, 255, 51)
+}
+
+
+MaximizeButton {
+    qproperty-normalColor: white;
+    qproperty-normalBackgroundColor: transparent;
+    qproperty-hoverColor: white;
+    qproperty-hoverBackgroundColor: rgba(255, 255, 255, 26);
+    qproperty-pressedColor: white;
+    qproperty-pressedBackgroundColor: rgba(255, 255, 255, 51)
+}
+
+CloseButton {
+    qproperty-normalColor: white;
+    qproperty-normalBackgroundColor: transparent;
+}
+
+StackedWidget {
+    border: 1px solid rgb(29, 29, 29);
+    border-right: none;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    /* background-color: --surface; */
+    background-color: rgb(39, 39, 39);
+}
+
+/* StackedWidget QLabel {
+    color: white;
+} */
+
+SplitMaterialWindow>StackedWidget {
+    border-top-left-radius: 0px;
+}
+
+BottomNavMaterialWindow>StackedWidget {
+    border-top-left-radius: 0px;
+    border: none;
+}
