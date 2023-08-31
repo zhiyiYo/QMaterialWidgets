@@ -25,7 +25,7 @@ class DialogInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A message box with mask'),
             button,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/message_dialog/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/message_dialog/demo.py'
         )
 
         self.simpleFlyoutButton = TextPushButton(self.tr('Show flyout'))
@@ -33,7 +33,7 @@ class DialogInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A simple flyout'),
             self.simpleFlyoutButton,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/flyout/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/flyout/demo.py'
         )
 
         self.complexFlyoutButton = TextPushButton(self.tr('Show flyout'))
@@ -41,7 +41,7 @@ class DialogInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A flyout with image and button'),
             self.complexFlyoutButton,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/flyout/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/flyout/demo.py'
         )
 
         self.teachingButton = TextPushButton(self.tr('Show teaching tip'))
@@ -49,7 +49,7 @@ class DialogInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A teaching tip'),
             self.teachingButton,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/teaching_tip/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/teaching_tip/demo.py'
         )
 
         self.teachingRightButton = TextPushButton(self.tr('Show teaching tip'))
@@ -57,7 +57,7 @@ class DialogInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A teaching tip with image and button'),
             self.teachingRightButton,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/teaching_tip/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/teaching_tip/demo.py'
         )
 
     def showMessageDialog(self):

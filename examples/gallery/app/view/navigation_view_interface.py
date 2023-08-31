@@ -22,14 +22,14 @@ class NavigationViewInterface(GalleryInterface):
         self.addExampleCard(
             title='Navigation bar',
             widget=self.createNavigationBar(),
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/navigation_bar/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/navigation_bar/demo.py'
         )
 
         # tab widget
         self.addExampleCard(
             title='Tab widget',
             widget=self.createTabWidget(),
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/tab_widget/demo.py',
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/tab_widget/demo.py',
         )
 
     def createNavigationBar(self):

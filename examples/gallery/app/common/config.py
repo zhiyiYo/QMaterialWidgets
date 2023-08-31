@@ -3,8 +3,7 @@ from enum import Enum
 
 from PySide6.QtCore import QLocale
 from qmaterialwidgets import (qconfig, QConfig, ConfigItem, OptionsConfigItem, BoolValidator,
-                            OptionsValidator, RangeConfigItem, RangeValidator,
-                            FolderListValidator, EnumSerializer, FolderValidator, ConfigSerializer, __version__)
+                            OptionsValidator, Theme, ConfigSerializer, __version__)
 
 
 class Language(Enum):
@@ -44,11 +43,12 @@ AUTHOR = "zhiyiYo"
 VERSION = __version__
 HELP_URL = "https://qmaterialwidgets.readthedocs.io/zh_CN/latest"
 REPO_URL = "https://github.com/zhiyiYo/QMaterialWidgets"
-EXAMPLE_URL = "https://github.com/zhiyiYo/QMaterialWidgets/tree/master/examples"
+EXAMPLE_URL = "https://github.com/zhiyiYo/QMaterialWidgets/tree/PySide6/examples"
 FEEDBACK_URL = "https://github.com/zhiyiYo/QMaterialWidgets/issues"
 RELEASE_URL = "https://github.com/zhiyiYo/QMaterialWidgets/releases/latest"
 SUPPORT_URL = "https://afdian.net/a/zhiyiYo"
 
 
 cfg = Config()
+cfg.themeMode.value = Theme.AUTO
 qconfig.load('app/config/config.json', cfg)

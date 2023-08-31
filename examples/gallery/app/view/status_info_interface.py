@@ -30,7 +30,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A button with a simple ToolTip'),
             button,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/tool_tip/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/tool_tip/demo.py'
         )
 
         label = ImageLabel(':/gallery/images/kunkun.png')
@@ -41,7 +41,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A label with a ToolTip'),
             label,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/tool_tip/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/tool_tip/demo.py'
         )
 
         # info badge
@@ -58,7 +58,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('InfoBadge in different styles'),
             w,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/info_bar/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/info_bar/demo.py'
         )
 
         # short info bar
@@ -75,7 +75,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A closable InfoBar'),
             infoBar,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/info_bar/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/info_bar/demo.py'
         )
 
         # long info bar
@@ -93,7 +93,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A closable InfoBar with long message'),
             infoBar,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/info_bar/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/info_bar/demo.py',
         )
 
         # add custom widget to info bar
@@ -112,7 +112,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('An InfoBar with custom icon, background color and widget.'),
             infoBar,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/info_bar/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/info_bar/demo.py',
         )
 
         # different type info bar
@@ -143,7 +143,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('InfoBar with different pop-up locations'),
             w,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/info_bar/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/info_bar/demo.py',
         )
 
         # indeterminate progress bar
@@ -152,7 +152,7 @@ class StatusInfoInterface(GalleryInterface):
         card = self.addExampleCard(
             self.tr('An indeterminate progress bar'),
             bar,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/progress_bar/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/progress_bar/demo.py',
         )
         card.topLayout.setContentsMargins(12, 24, 12, 24)
 
@@ -162,7 +162,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('An determinate progress bar'),
             ProgressWidget(bar, self),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/progress_bar/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/progress_bar/demo.py',
         )
 
         # Indeterminate progress ring
@@ -171,7 +171,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('An indeterminate progress ring'),
             ring,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/progress_ring/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/progress_ring/demo.py',
         )
 
         # progress ring
@@ -181,7 +181,7 @@ class StatusInfoInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('An determinate progress ring'),
             ProgressWidget(ring, self),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/progress_ring/demo.py',
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide6/examples/progress_ring/demo.py',
         )
 
     def createTopRightInfoBar(self):

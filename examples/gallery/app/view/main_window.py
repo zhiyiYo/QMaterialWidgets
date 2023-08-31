@@ -4,7 +4,7 @@ from PySide6.QtGui import QIcon
 from PySide6.QtWidgets import QApplication
 
 from qmaterialwidgets import (NavigationItemPosition, MaterialWindow, SplashScreen, Theme,
-                              setTheme, isDarkTheme, OutlinedToolButton, ToolTipFilter)
+                              setTheme, isDarkTheme, OutlinedToolButton, ToolTipFilter, toggleTheme)
 from qmaterialwidgets import FluentIcon as FIF
 
 from .gallery_interface import GalleryInterface
@@ -63,13 +63,15 @@ class MainWindow(MaterialWindow):
         self.addSubInterface(self.textInterface, Icon.TEXT, t.text, position=pos)
         self.addSubInterface(self.viewInterface, Icon.GRID, t.view, position=pos)
 
-        self.themeButton = OutlinedToolButton(FIF.QUIET_HOURS, self)
+        self.themeButton = OutlinedToolButton(self)
         self.themeButton.setFixedSize(50, 50)
         self.themeButton.setIconSize(QSize(20, 20))
         self.themeButton.installEventFilter(ToolTipFilter(self.themeButton, 500))
         self.themeButton.setToolTip(self.tr('Toggle theme'))
         self.navigationInterface.addWidget(
             'themeButton', self.themeButton, self.toggleTheme, NavigationItemPosition.BOTTOM)
+
+        self._updateThemeButtonIcon()
 
     def initWindow(self):
         self.resize(990, 780)
@@ -89,10 +91,11 @@ class MainWindow(MaterialWindow):
         QApplication.processEvents()
 
     def toggleTheme(self):
-        theme = Theme.LIGHT if isDarkTheme() else Theme.DARK
-        setTheme(theme, save=True)
+        toggleTheme(save=True)
+        self._updateThemeButtonIcon()
 
-        if theme == Theme.LIGHT:
+    def _updateThemeButtonIcon(self):
+        if not isDarkTheme():
             self.themeButton.setIcon(FIF.QUIET_HOURS)
         else:
             self.themeButton.setIcon(FIF.BRIGHTNESS)

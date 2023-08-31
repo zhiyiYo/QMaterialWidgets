@@ -50,7 +50,7 @@ python demo.py
 ```
 
 ## Documentation
-Want to know more about PySide6-Material-Widgets? Please read the [help document](https://qmaterialwidgets.readthedocs.io/) 👈
+Want to know more about PySide6-Material-Widgets? Please read the [help document](https://qmaterialwidgets.vercel.app) 👈
 
 ## Video Demonstration
 Check out this [▶ example video](https://www.bilibili.com/video/BV1k14y1z74o) that shows off what PySide6-Material-Widgets are capable of 🎉
