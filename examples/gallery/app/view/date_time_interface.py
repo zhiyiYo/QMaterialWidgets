@@ -22,7 +22,7 @@ class DateTimeInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr('A simple CalendarPicker'),
             widget=CalendarPicker(self),
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/calendar_picker/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/calendar_picker/demo.py'
         )
 
         w = CalendarPicker(self)
@@ -30,13 +30,13 @@ class DateTimeInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr('A CalendarPicker in another format'),
             widget=w,
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/calendar_picker/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/calendar_picker/demo.py'
         )
 
         # AM/PM time picker
         self.addExampleCard(
             title=self.tr('A simple TimePicker'),
             widget=TimePicker(self),
-            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/date_time/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/date_time/demo.py'
         )
 

@@ -32,42 +32,42 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('Outlined push button'),
             ElevatedPushButton(self.tr('Elevated push button'), self, FluentIcon.BUS),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # Floating action push button
         self.addExampleCard(
             self.tr('Floating action push button'),
             self.createPushFAB(),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # Floating action tool button
         self.addExampleCard(
             self.tr('Floating action tool button'),
             self.createToolFAB(),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # Filled push button
         self.addExampleCard(
             self.tr('Filled push button'),
             FilledPushButton(self.tr('Accent style button')),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # Filled tool button
         self.addExampleCard(
             self.tr('Filled tool button'),
             FilledToolButton(FluentIcon.BASKETBALL),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # outlined push button
         self.addExampleCard(
             self.tr('Outlined push button'),
             OutlinedPushButton(self.tr('Outlined push button')),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # outlined button
@@ -77,42 +77,42 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('Outlined tool button'),
             button,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # text push button
         self.addExampleCard(
             self.tr('Tonal push button'),
             TextPushButton(self.tr('Text push button')),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # tonal push button
         self.addExampleCard(
             self.tr('Tonal push button'),
             TonalPushButton(self.tr('Tonal push button')),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # tonal tool button
         self.addExampleCard(
             self.tr('Tonal tool button'),
             TonalToolButton(FluentIcon.GITHUB),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # transparent tool button
         self.addExampleCard(
             self.tr('Transparent tool button'),
             TransparentToolButton(FluentIcon.BOOK_SHELF, self),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # 2-state check box
         self.addExampleCard(
             self.tr('Two-state CheckBox'),
             CheckBox(self.tr('Two-state CheckBox')),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/check_box/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/check_box/demo.py'
         )
 
         # 3-state check box
@@ -121,35 +121,35 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('Three-state CheckBox'),
             checkBox,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/check_box/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/check_box/demo.py'
         )
 
         # combo box
         self.addExampleCard(
             self.tr('A combo box with items'),
             self.createComboBox(ComboBox),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/combo_box/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/combo_box/demo.py'
         )
 
         # editable combo box
         self.addExampleCard(
             self.tr('An editable combo box'),
             self.createEditableComboBox(ComboBox),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/combo_box/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/combo_box/demo.py'
         )
 
         # filled combo box
         self.addExampleCard(
             self.tr('A filled combo box with items'),
             self.createComboBox(FilledComboBox),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/combo_box/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/combo_box/demo.py'
         )
 
         # editable filled combo box
         self.addExampleCard(
             self.tr('An editable filled combo box'),
             self.createEditableComboBox(FilledComboBox),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/combo_box/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/combo_box/demo.py'
         )
 
         # drop down button
@@ -163,7 +163,7 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A filled push button with drop down menu'),
             button,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         button = OutlinedDropDownPushButton(self.tr('Email'), self, FluentIcon.MAIL)
@@ -171,7 +171,7 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A outlined push button with drop down menu'),
             button,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         button = ElevatedDropDownPushButton(self.tr('Email'), self, FluentIcon.MAIL)
@@ -179,7 +179,7 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A elevated push button with drop down menu'),
             button,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         button = TextDropDownPushButton(self.tr('Email'), self, FluentIcon.MAIL)
@@ -187,7 +187,7 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A text push button with drop down menu'),
             button,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         button = TonalDropDownPushButton(self.tr('Email'), self, FluentIcon.MAIL)
@@ -195,7 +195,7 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('A tonal push button with drop down menu'),
             button,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
 
@@ -218,7 +218,7 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('Radio button'),
             radioWidget,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/radio_button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/radio_button/demo.py'
         )
 
         # horizontal slider
@@ -229,7 +229,7 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('Horizontal slider'),
             slider,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/slider/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/slider/demo.py'
         )
 
         # switch button
@@ -238,28 +238,28 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('Switch button'),
             self.switchButton,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/switch_button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/switch_button/demo.py'
         )
 
         # Filled toggle tool button
         self.addExampleCard(
             self.tr('Filled toggle tool button'),
             FilledToggleToolButton(FluentIcon.GITHUB, self),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # Outlined toggle tool button
         self.addExampleCard(
             self.tr('Outlined toggle tool button'),
             OutlinedToggleToolButton(FluentIcon.BRIGHTNESS, self),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # Transparent toggle tool button
         self.addExampleCard(
             self.tr('Transparent toggle tool button'),
             TransparentToggleToolButton(FluentIcon.BASKETBALL, self),
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/button/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/button/demo.py'
         )
 
         # chips
@@ -276,7 +276,7 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('Input chip'),
             w,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/chip/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/chip/demo.py'
         )
 
         w = self.createChipView()
@@ -290,7 +290,7 @@ class BasicInputInterface(GalleryInterface):
         self.addExampleCard(
             self.tr('Filter chip'),
             w,
-            'https://github.com/zhiyiYo/QMaterialWidgets/blob/master/examples/chip/demo.py'
+            'https://github.com/zhiyiYo/QMaterialWidgets/blob/PySide2/examples/chip/demo.py'
         )
 
     def createChipView(self):

@@ -6,7 +6,7 @@ A material design widgets library based on PySide2.
 Documentation is available in the docstrings and
 online at https://qmaterialwidgets.readthedocs.io.
 
-Examples are available at https://github.com/zhiyiYo/QMaterialWidgets/tree/master/examples.
+Examples are available at https://github.com/zhiyiYo/QMaterialWidgets/tree/PySide2/examples.
 
 :copyright: (c) 2023 by zhiyiYo.
 :license: PySide2-Material-Widgets adopts dual licenses. Non-commercial usage is licensed under [GPLv3](./LICENSE).

@@ -88,13 +88,13 @@ class Demo1(Widget):
             self.filledToggleButton1, self.filledToggleButton2,
         ])
 
-        # tonal butons
+        # tonal buttons
         self.tonalButton1 = TonalToolButton(FluentIcon.TRAIN, self)
         self.tonalButton2 = TonalToolButton(FluentIcon.TRAIN, self)
         self.tonalButton2.setEnabled(False)
         self.addButtons('Tonal buttons', [self.tonalButton1, self.tonalButton2])
 
-        # outlined butons
+        # outlined buttons
         self.outlinedButton1 = OutlinedToolButton(FluentIcon.BUS, self)
         self.outlinedButton2 = OutlinedToolButton(FluentIcon.BUS, self)
         self.outlinedToggleButton1 = OutlinedToggleToolButton(FluentIcon.BUS, self)
@@ -204,7 +204,7 @@ if __name__ == '__main__':
         Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
     QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
     QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
+
     app = QApplication(sys.argv)
     w1 = Demo1()
     w1.show()

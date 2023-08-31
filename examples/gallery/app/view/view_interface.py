@@ -25,14 +25,14 @@ class ViewInterface(GalleryInterface):
         self.addExampleCard(
             title=self.tr('A simple table view'),
             widget=TableFrame(self),
-            sourcePath='https://github.com/zhiyiYo/QMaterilWidgets/blob/master/examples/table_view/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterilWidgets/blob/PySide2/examples/table_view/demo.py'
         )
 
         # list view
         self.addExampleCard(
             title=self.tr('A simple list view'),
             widget=ListFrame(self),
-            sourcePath='https://github.com/zhiyiYo/QMaterilWidgets/blob/master/examples/list_view/demo.py'
+            sourcePath='https://github.com/zhiyiYo/QMaterilWidgets/blob/PySide2/examples/list_view/demo.py'
         )
 
 

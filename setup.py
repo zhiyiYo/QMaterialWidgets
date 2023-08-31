@@ -14,7 +14,7 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     license="GPLv3",
-    url="https://github.com/zhiyiYo/QMaterialWidgets/tree/master",
+    url="https://github.com/zhiyiYo/QMaterialWidgets/tree/PySide2",
     packages=setuptools.find_packages(),
     install_requires=[
         "PySide2>=5.15.0",
@@ -28,7 +28,7 @@ setuptools.setup(
     ],
     project_urls={
         'Documentation': 'https://qmaterialwidgets.readthedocs.io/',
-        'Source Code': 'https://github.com/zhiyiYo/QMaterialWidgets/tree/master',
+        'Source Code': 'https://github.com/zhiyiYo/QMaterialWidgets/tree/PySide2',
         'Bug Tracker': 'https://github.com/zhiyiYo/QMaterialWidgets/issues',
     }
 )
