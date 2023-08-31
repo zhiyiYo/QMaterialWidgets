@@ -539,6 +539,10 @@ class TimePickerView(QFrame):
         self.timeEdit.minuteLineEdit.focused.connect(
             lambda: self.timeDial.setCurrentDial(False))
 
+        # fixes https://github.com/zhiyiYo/QMaterialWidgets/issues/14
+        self.yesButton.setAttribute(Qt.WidgetAttribute.WA_LayoutUsesWidgetRect)
+        self.cancelButton.setAttribute(Qt.WidgetAttribute.WA_LayoutUsesWidgetRect)
+
         self.timeDial.minuteChanged.connect(self._onDialMinuteChanged)
         self.timeDial.hourChanged.connect(self._onDialHourChanged)
 
