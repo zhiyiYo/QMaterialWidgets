@@ -1,8 +1,7 @@
 # coding:utf-8
 import sys
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QAction
-from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QLabel
+from PyQt5.QtWidgets import QApplication, QWidget, QHBoxLayout, QLabel, QAction
 from qmaterialwidgets import RoundMenu, setTheme, Theme, Action, MenuAnimationType, MenuItemDelegate, CheckableMenu, MenuIndicatorType
 from qmaterialwidgets import FluentIcon as FIF
 
@@ -73,7 +72,7 @@ if __name__ == '__main__':
         Qt.HighDpiScaleFactorRoundingPolicy.PassThrough)
     QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
     QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
-    
+
     app = QApplication(sys.argv)
     w = Demo()
     w.show()
