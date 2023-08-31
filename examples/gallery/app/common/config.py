@@ -3,8 +3,7 @@ from enum import Enum
 
 from PyQt6.QtCore import QLocale
 from qmaterialwidgets import (qconfig, QConfig, ConfigItem, OptionsConfigItem, BoolValidator,
-                            OptionsValidator, RangeConfigItem, RangeValidator,
-                            FolderListValidator, EnumSerializer, FolderValidator, ConfigSerializer, __version__)
+                            OptionsValidator, Theme, ConfigSerializer, __version__)
 
 
 class Language(Enum):
@@ -51,4 +50,5 @@ SUPPORT_URL = "https://afdian.net/a/zhiyiYo"
 
 
 cfg = Config()
+cfg.themeMode.value = Theme.AUTO
 qconfig.load('app/config/config.json', cfg)

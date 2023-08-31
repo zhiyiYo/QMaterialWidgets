@@ -261,7 +261,7 @@ class QConfig(QObject):
     themeColorChanged = pyqtSignal(QColor)
 
     themeMode = OptionsConfigItem(
-        "QMaterialWidgets", "ThemeMode", Theme.AUTO, OptionsValidator(Theme), EnumSerializer(Theme))
+        "QMaterialWidgets", "ThemeMode", Theme.LIGHT, OptionsValidator(Theme), EnumSerializer(Theme))
     themeColor = ColorConfigItem("QMaterialWidgets", "ThemeColor", '#6750A4')
 
     def __init__(self):

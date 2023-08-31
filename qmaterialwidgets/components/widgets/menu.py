@@ -332,7 +332,7 @@ class RoundMenu(QWidget):
 
         # disable item if the action is not enabled
         if not action.isEnabled():
-            item.setFlags(Qt.NoItemFlags)
+            item.setFlags(Qt.ItemFlag.NoItemFlags)
 
         item.setData(Qt.ItemDataRole.UserRole, action)
         action.setProperty('item', item)
@@ -388,7 +388,7 @@ class RoundMenu(QWidget):
         if before not in self._actions:
             return
 
-        beforeItem = before.pyqtProperty('item')
+        beforeItem = before.property('item')
         if not beforeItem:
             return
 
@@ -462,7 +462,7 @@ class RoundMenu(QWidget):
             raise ValueError('`before` should be in menu action list')
 
         item, w = self._createSubMenuItem(menu)
-        self.view.insertItem(self.view.row(before.pyqtProperty('item')), item)
+        self.view.insertItem(self.view.row(before.property('item')), item)
         self.view.setItemWidget(item, w)
         self.adjustSize()
 
@@ -514,10 +514,10 @@ class RoundMenu(QWidget):
 
         # add separator to list widget
         item = QListWidgetItem(self.view)
-        item.setFlags(Qt.NoItemFlags)
+        item.setFlags(Qt.ItemFlag.NoItemFlags)
         item.setSizeHint(QSize(w, 9))
         self.view.addItem(item)
-        item.setData(Qt.DecorationRole, "seperator")
+        item.setData(Qt.ItemDataRole.DecorationRole, "seperator")
         self.adjustSize()
 
     def _onItemClicked(self, item):
@@ -581,7 +581,7 @@ class RoundMenu(QWidget):
             return
 
         # hide submenu when mouse moves out of submenu item
-        pos = e.globalPos()
+        pos = e.globalPosition().toPoint()
         view = self.parentMenu.view
 
         # get the rect of menu item
@@ -596,15 +596,15 @@ class RoundMenu(QWidget):
     def _onActionChanged(self):
         """ action changed slot """
         action = self.sender()  # type: QAction
-        item = action.pyqtProperty('item')  # type: QListWidgetItem
+        item = action.property('item')  # type: QListWidgetItem
         item.setIcon(self._createItemIcon(action))
 
         self._adjustItemText(item, action)
 
         if action.isEnabled():
-            item.setFlags(Qt.ItemIsEnabled | Qt.ItemIsSelectable)
+            item.setFlags(Qt.ItemFlag.ItemIsEnabled | Qt.ItemFlag.ItemIsSelectable)
         else:
-            item.setFlags(Qt.NoItemFlags)
+            item.setFlags(Qt.ItemFlag.NoItemFlags)
 
         self.view.adjustSize()
         self.adjustSize()
