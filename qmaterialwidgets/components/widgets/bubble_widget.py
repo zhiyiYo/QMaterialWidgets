@@ -2,7 +2,7 @@
 from enum import Enum
 from typing import Union
 from PyQt5.QtCore import Qt, pyqtSignal, QPointF, QPoint
-from PyQt5.QtGui import QPixmap, QPainter, QColor
+from PyQt5.QtGui import QPixmap, QPainter, QColor, QPolygonF
 from PyQt5.QtWidgets import QWidget
 
 from ...common.font import getFont
@@ -70,29 +70,29 @@ class BubbleWidget(FadeInOutWidget, QWidget):
         # draw triangle
         pos = self._bubblePosition
         if pos == BubblePosition.TOP:
-            painter.drawPolygon([
+            painter.drawPolygon(QPolygonF([
                 QPointF(cx - r/1.414, h-1-r/1.414),
                 QPointF(cx + r/1.414, h-1-r/1.414),
                 QPointF(cx, h),
-            ])
+            ]))
         elif pos == BubblePosition.BOTTOM:
-            painter.drawPolygon([
+            painter.drawPolygon(QPolygonF([
                 QPointF(cx - r/1.414, r/1.414),
                 QPointF(cx + r/1.414, r/1.414),
                 QPointF(cx, 0),
-            ])
+            ]))
         elif pos == BubblePosition.RIGHT:
-            painter.drawPolygon([
+            painter.drawPolygon(QPolygonF([
                 QPointF(cx - r/1.414, cx - r/1.414),
                 QPointF(cx - r/1.414, cx + r/1.414),
                 QPointF(0, cx),
-            ])
+            ]))
         else:
-            painter.drawPolygon([
+            painter.drawPolygon(QPolygonF([
                 QPointF(cx + r/1.414, cx - r/1.414),
                 QPointF(cx + r/1.414, cx + r/1.414),
                 QPointF(self.width(), cx),
-            ])
+            ]))
 
         # draw text
         painter.setFont(getFont(11))
