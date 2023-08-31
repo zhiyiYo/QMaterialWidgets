@@ -344,6 +344,7 @@ class EditableComboBoxBase(ComboBoxBase):
         self.returnPressed.connect(self._onReturnPressed)
 
         MaterialStyleSheet.LINE_EDIT.apply(self)
+        self.setAttribute(Qt.WidgetAttribute.WA_MacShowFocusRect, False)
 
     def currentText(self):
         return self.text()
