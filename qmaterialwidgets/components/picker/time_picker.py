@@ -27,6 +27,7 @@ class TimeLineEdit(QLineEdit):
         self.setFixedSize(76, 64)
         self.setAlignment(Qt.AlignCenter)
         self.textEdited.connect(self._onTextEdited)
+        self.setAttribute(Qt.WidgetAttribute.WA_MacShowFocusRect, False)
 
     def focusInEvent(self, e):
         super().focusInEvent(e)
