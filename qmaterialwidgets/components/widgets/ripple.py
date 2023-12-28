@@ -2,8 +2,8 @@
 from typing import List
 from enum import Enum
 
-
-from PyQt6.QtCore import Qt, pyqtSignal, QEvent, QParallelAnimationGroup, QPoint, QPropertyAnimation, QEasingCurve, pyqtProperty
+from PyQt6.QtCore import Qt, pyqtSignal, QEvent, QParallelAnimationGroup, QPoint, QPropertyAnimation, QEasingCurve, \
+    pyqtProperty, QPointF
 from PyQt6.QtGui import QPixmap, QPainter, QColor, QBrush, QPainterPath
 from PyQt6.QtWidgets import QWidget
 
@@ -17,7 +17,6 @@ class RippleStyle(Enum):
     CENTERED = 0
     POSITIONED = 1
     NONE = 2
-
 
 
 class RippleAnimation(QParallelAnimationGroup):
@@ -97,7 +96,7 @@ class RippleOverlayWidget(OverlayWidget):
 
     def __init__(self, parent: QWidget):
         super().__init__(parent)
-        self.ripples = []    # type: List[RippleAnimation]
+        self.ripples = []  # type: List[RippleAnimation]
         self.clipPath = QPainterPath()
         self.isClipEnabled = True
         self.rippleStyle = RippleStyle.POSITIONED
@@ -123,7 +122,7 @@ class RippleOverlayWidget(OverlayWidget):
         """ add ripple animation """
         ripple.setOverlay(self)
         self.ripples.append(ripple)
-        ripple.finished.connect(lambda :self.removeRipple(ripple))
+        ripple.finished.connect(lambda: self.removeRipple(ripple))
         ripple.start()
 
     def removeRipple(self, ripple: RippleAnimation):
@@ -179,4 +178,4 @@ class RippleOverlayWidget(OverlayWidget):
     def _drawRipple(self, painter: QPainter, ripple: RippleAnimation):
         painter.setOpacity(ripple.opacity)
         painter.setBrush(ripple.brush)
-        painter.drawEllipse(ripple.center, ripple.radius, ripple.radius)
+        painter.drawEllipse(QPointF(ripple.center), ripple.radius, ripple.radius)
