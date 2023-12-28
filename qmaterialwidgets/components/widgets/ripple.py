@@ -179,4 +179,4 @@ class RippleOverlayWidget(OverlayWidget):
     def _drawRipple(self, painter: QPainter, ripple: RippleAnimation):
         painter.setOpacity(ripple.opacity)
         painter.setBrush(ripple.brush)
-        painter.drawEllipse(ripple.center, int(ripple.radius), int(ripple.radius))
+        painter.drawEllipse(ripple.center, ripple.radius, ripple.radius)
