@@ -3,7 +3,8 @@ from typing import List
 from enum import Enum
 
 
-from PyQt6.QtCore import Qt, pyqtSignal, QEvent, QParallelAnimationGroup, QPoint, QPropertyAnimation, QEasingCurve, pyqtProperty
+from PyQt6.QtCore import Qt, pyqtSignal, QEvent, QParallelAnimationGroup, QPoint, QPropertyAnimation, QEasingCurve, \
+    pyqtProperty, QPointF
 from PyQt6.QtGui import QPixmap, QPainter, QColor, QBrush, QPainterPath
 from PyQt6.QtWidgets import QWidget
 
@@ -179,4 +180,4 @@ class RippleOverlayWidget(OverlayWidget):
     def _drawRipple(self, painter: QPainter, ripple: RippleAnimation):
         painter.setOpacity(ripple.opacity)
         painter.setBrush(ripple.brush)
-        painter.drawEllipse(ripple.center, ripple.radius, ripple.radius)
+        painter.drawEllipse(QPointF(ripple.center), ripple.radius, ripple.radius)
